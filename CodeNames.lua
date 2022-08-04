@@ -129,6 +129,7 @@ images = {
     clue_input = "18234271bb2.png",
     vote_sign = "1824886ea60.png",
     game_logs = "18248843e60.png",
+    time_bg = "1826569dc5b.png",
 }
 
 textAreas = {
@@ -186,6 +187,7 @@ cards = {
 
 
 gameState = {
+    -- 0 Lobby, 1 Game Started, 2 Give Clue, 3 Select Card
     status = 0,
     guessCount = 0,
     blueTurn = false,
@@ -241,8 +243,7 @@ function eventNewGame()
 
     for n, player in pairs(tfm.get.room.playerList) do system.bindKeyboard(n, 69, false) system.bindKeyboard(n, 81, false) end
 
-    if firstTurn then addGameLog(string.format("New game started!")) end
-    
+    tfm.exec.setGameTime(240)
 
     local size = math.floor(#words.tr / 25)
     roundWords = {} roundCardTypes = {}
@@ -276,7 +277,7 @@ end
 
 function eventNewPlayer(n)
     gameStatus()
-    if gameState.status == 1 then 
+    if gameState.status >= 1 then 
         system.bindKeyboard(n, 69, false) system.bindKeyboard(n, 81, false)
         showRoundCards(false, n)
         updateCardsCount(n)
@@ -306,10 +307,15 @@ function eventLoop(elapsedTime, remainingTime)
     if gameState.status == 0 then return end
     if settings.time == false then return end
     local x = gameState.blueTurn and 30 or 725
-    ui.addTextArea(448,"<p align='center'>"..remainingTime ,nil,x,100,50,nil,"0x000","0x000",1)
+    ui.addTextArea(448,"<p align='center'>"..remainingTime ,nil,x,105,50,nil,"0x000","0x000",1)
 
-    if remainingTime < 1 then
-        eventTimeout(x)
+    if remainingTime < 1 and gameState.status == 1 then 
+        changeTurn()
+    end
+
+    if remainingTime < 1 and gameState.status == 2 then
+        clueConfirmed = true
+        checkClue(currentClueNum, currentClueText, currentPlayer) return
     end
 end
 
@@ -387,8 +393,8 @@ function loadGameUI(name)
     for i = 0, 3 do ui.addImage("blueline"..i, images.blue_line, "_27", 20, 270 + i * 20,nil,1,0.9) ui.addImage("redline"..i, images.red_line, "_35", 660, 270 + i * 20 ,nil,1,0.9) end
 
     if settings.time then 
-    ui.addImage("blueTime", images.join.blue, "_42", 25, 100,nil,1,1)
-    ui.addImage("redTime", images.join.red, "_44", 720, 100,nil,1,1)
+    ui.addImage("blueTime", images.time_bg, "_42", 20, 100,nil,1,1)
+    ui.addImage("redTime", images.time_bg, "_44", 715, 100,nil,1,1)
     end
 
     ui.addImage("bluespymasters", images.blue_spymasters, "_32", 20, 355,nil)
@@ -437,8 +443,8 @@ function updatePlayerNames(team,name,isSpymaster)
     ui.addTextArea(spymasterID, string.format("<p align='center'><font color='#000000'><b>%s</b></font></p>", spymasters[team] or ""),nil,x,370,120,30,"0x000","0x000",1)
 end
 
-function showTeamMembers()
-    ui.updateTextArea (id, text, targetPlayer)
+function showTeamPlayers()
+
 end
 
 
@@ -472,14 +478,14 @@ end
 
 
 function eventTextAreaCallback(id, name, e)
-    if e == "joinTeam" then
+    if e == "joinTeam" and gameState.status == 0 then
         if id == textAreas.join_blue_operative then joinRequest(name, "blue", id == 28 or id == 29) end
         if id == textAreas.join_red_operative then joinRequest(name, "red", id == 28 or id == 29) end
         if id == textAreas.join_blue_spymaster then joinRequest(name, "blue", id == 28 or id == 29) end
         if id == textAreas.join_red_spymaster then joinRequest(name, "red", id == 28 or id == 29) end
     end
 
-    if e == "leaveTeam" then
+    if e == "leaveTeam" and gameState.status == 0 then
         if id == textAreas.leave_blue_op then leaveRequest(name) end
         if id == textAreas.leave_red_op then leaveRequest(name) end
     end
@@ -525,7 +531,9 @@ function startGame(name)
 end
 
 function eventChatCommand(playerName, cmd) 
+    if not gameState.status == 2 then return end
     currentClueNum = 0 currentClueText = nil
+    if not gameState.canGiveClue then return end
     if operatives[teams[playerName]] == playerName then return end
     if spymasters[teams[playerName]] ~= playerName then return end
     if gameState.redTurn == false and spymasters["red"] == playerName or gameState.blueTurn == false and spymasters["blue"] == playerName then return end
@@ -543,17 +551,20 @@ function eventChatCommand(playerName, cmd)
 
     currentClueNum = clueNumber
     currentClueText = clueTxt
+    currentPlayer = playerName
 
     checkClue(currentClueNum, currentClueText, playerName)
+    gameState.canGiveClue = false
 end
 
 clueConfirmed = false
-
 function checkClue(clueNum, clueText, name)
     local whichspy = spymasters["red"] == name and spymasters["blue"] or spymasters["red"]
 
     if settings.clue and clueConfirmed == false then
-        ui.addPopup(1, 1, string.format("<p align='center'>The opponent's clue is <b>%s</b> and <b>%d</b> do you confirm it?</p>", clueText, clueNum), whichspy, 300, 250, 250, true)
+        gameState.status = 2
+        tfm.exec.setGameTime(30)
+        ui.addPopup(1, 1, string.format("<p align='center'>The opponent's clue is <b>%s</b> and <b>%d</b> do you confirm it?</p>", clueText, clueNum), whichspy, 280, 250, 250, true)
         return
     end
 
@@ -562,6 +573,8 @@ function checkClue(clueNum, clueText, name)
         addClue(clueText, clueNum, name)
         gameState.canGiveClue = false
         gameState.canVote = true
+        gameState.status = 3
+        ui.addPopup(1, 1, "", whichspy, 50000, 50000, 10, true)
     else
         print("The clue number can't be greater than remaining cards count.")
     end
@@ -570,12 +583,14 @@ end
 
 function addClue(clueText, clueNum, playerName)
     if spymasters[teams[playerName]] ~= playerName then return end
+    if settings.clue then clueConfirmed = false end
     local teamClue = clues[teams[playerName]]
     local colorCode = teams[playerName] == "red" and "#C70039" or "#3284a3"
     
     table.insert(teamClue, 1, string.format("The clue is <b>%s</b> and <b>%d</b> times.", clueText, clueNum))
     addGameLog(string.format("<b><font color='%s'>%s</b></font>'s clue is <font color='%s'><b>%s</b></font> and <b><font color='%s'>%d</b></font> times.", colorCode, spymasters[teams[playerName]],colorCode, clueText, colorCode,clueNum))
     setCurrentClue(clueText, clueNum, nil, colorCode)
+    tfm.exec.setGameTime(120)
 end
 
 function setCurrentClue(clueText, clueNum, playerName, colorCode)
@@ -636,7 +651,7 @@ function pickedCard(cardID, name)
 
     if redCount < 1 then gameOver(teams[name]) return
     elseif blueCount < 1 then gameOver(teams[name]) return
-    elseif clueNumber < 1 then changeTurn(cardID, name) end
+    elseif clueNumber < 1 then changeTurn(cardID, name) gameState.status = 1 end
 end
 
 
@@ -662,6 +677,7 @@ function changeTurn(cardID, name)
         ui.addTextArea(textAreas.turn_text, string.format("<b><p align='center'><font color='#ffffff'>KIRMIZI TAKIMIN SIRASI </b></p></font>") ,nil,310,373,180,nil,"0x000","0x000",0.5)
     end
     gameState.canGiveClue = true gameState.firstTurn = false gameState.canVote = false
+    tfm.exec.setGameTime(180)
 end
 
 function gameOver(team)
@@ -696,7 +712,7 @@ function eventKeyboard(name, key, down)
         keys.gameLogKey[name] = not keys.gameLogKey[name]
         if keys.gameLogKey[name] then
             ui.addImage("gamelogs", images.game_logs, ":999", 225, 20, name)
-            ui.addTextArea(textAreas.game_log, string.format("<font size='10' color='#000000'><b>%s</b></font>", gameLogList or ""),name,260,30,200,65,"0xfafafa","0xfafafa",1, true) 
+            ui.addTextArea(textAreas.game_log, string.format("<font size='10' color='#000000'><b>%s</b></font>", gameLogList or ""),name,260,30,200,65,"0x000","0x000",1, true) 
         else
             ui.removeImage("gamelogs", name)
             ui.removeTextArea(textAreas.game_log, name)
@@ -713,7 +729,7 @@ end
 function eventPopupAnswer(id, name, answer)
     if id == 1 and answer == "yes" then
         clueConfirmed = true
-        checkClue(currentClueNum, currentClueText, name)
+        checkClue(currentClueNum, currentClueText, currentPlayer)
     end
     if id == 1 and answer == "no" then
         clueConfirmed = false
