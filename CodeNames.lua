@@ -1,4 +1,4 @@
--- CodeNames V0.15
+-- CodeNames V0.16
 
 -- Lays's Image --
 do
@@ -317,7 +317,9 @@ function eventTimeout(x)
     ui.addTextArea(448,"<p align='center'>Time is up!" ,nil,x,100,50,nil,"0x000","0x000",1)
 end
 
+
 function loadLobby()
+
     ui.addImage("settings", "1826569905c.png", "_42", 235, 270,nil,1,1)
     ui.addTextArea(textAreas.opponent_setting, string.format("<p align='right'><font size='10' color='#FFFFFF'>CONFIRM OPPONENT'S CLUE</font></p>"),nil,370,293,120,nil,"0x000","0x000",1)
     ui.addTextArea(textAreas.time_settings, string.format("<p align='right'><font size='10' color='#FFFFFF'>ROUND TIME LIMIT</font></p>"),nil,370,345,120,nil,"0x000","0x000",1)
@@ -328,7 +330,7 @@ function loadLobby()
     ui.addImage("opponent_setting", images.settings.off, "_42", 508, 297,nil,1,1)
     ui.addImage("time_setting", images.settings.off, "_42", 508, 343,nil,1,1)
 
-    ui.addTextArea(textAreas.start_button, string.format("<p align='center'><font size='14' color='#FFFFFF'><a href='event:startGame'>START</font></p>"),nil,275,356,nil,nil,"0x000","0x000",1)
+    ui.addTextArea(textAreas.start_button, string.format("<p align='center'><font size='14' color='#FFFFFF'><a href='event:startGame'>START</font></p>"),nil,272,356,nil,nil,"0x000","0x000",1)
 
 
     ui.addImage("blueJoinButton", images.join.blue, "_42", 150, 270,nil,1,0.9)
@@ -493,6 +495,8 @@ function eventTextAreaCallback(id, name, e)
     if e == "startGame" then
         startGame(name)
     end
+
+
 end
 
 function changeSettings(isClueSettings)
@@ -511,16 +515,17 @@ end
 function startGame(name)
     local checkOperatives = (#operatives["blue"] and #operatives["red"]) >= 0 and true
     local checkSpymasters = (spymasters["blue"] and spymasters["red"]) ~= nil and true
+    
     if checkOperatives and checkSpymasters then
         gameState.status = 1
         tfm.exec.newGame(7911404)
         gameStatus()
     end
+
 end
 
-
-
 function eventChatCommand(playerName, cmd) 
+    currentClueNum = 0 currentClueText = nil
     if operatives[teams[playerName]] == playerName then return end
     if spymasters[teams[playerName]] ~= playerName then return end
     if gameState.redTurn == false and spymasters["red"] == playerName or gameState.blueTurn == false and spymasters["blue"] == playerName then return end
@@ -528,23 +533,40 @@ function eventChatCommand(playerName, cmd)
     local args = {}
 
     for arg in cmd:gmatch('%S+') do args[1+#args]=arg end
-    clueName = args[1] clueNumber = (tonumber(args[2]))
+    clueTxt = args[1] clueNumber = (tonumber(args[2]))
 
     if clueNumber == nil or clueNumber < 1 then clueNumber = 1 end
 
-    checkThisWord = string.upper(clueName:gsub('i', 'İ'))
+    checkThisWord = string.upper(clueTxt:gsub('i', 'İ'))
     local checkClueWord = table.index(roundWords, checkThisWord)
-    if roundWords[checkClueWord] == checkThisWord or roundWords[checkClueWord] == clueName then return end
-    
-    if redCount >= clueNumber or blueCount >= clueNumber then
-        print(clueName)
-        addClue(clueName, clueNumber, playerName)
+    if roundWords[checkClueWord] == checkThisWord or roundWords[checkClueWord] == clueTxt then return end
+
+    currentClueNum = clueNumber
+    currentClueText = clueTxt
+
+    checkClue(currentClueNum, currentClueText, playerName)
+end
+
+clueConfirmed = false
+
+function checkClue(clueNum, clueText, name)
+    local whichspy = spymasters["red"] == name and spymasters["blue"] or spymasters["red"]
+
+    if settings.clue and clueConfirmed == false then
+        ui.addPopup(1, 1, string.format("<p align='center'>The opponent's clue is <b>%s</b> and <b>%d</b> do you confirm it?</p>", clueText, clueNum), whichspy, 300, 250, 250, true)
+        return
+    end
+
+    if redCount >= clueNum or blueCount >= clueNum then
+        print(clueText)
+        addClue(clueText, clueNum, name)
         gameState.canGiveClue = false
         gameState.canVote = true
     else
         print("The clue number can't be greater than remaining cards count.")
     end
 end
+
 
 function addClue(clueText, clueNum, playerName)
     if spymasters[teams[playerName]] ~= playerName then return end
@@ -622,7 +644,7 @@ function updateCardsCount(n)
     ui.addTextArea(55, string.format("<p align='center'><b><font size='25' color='#FFFFFF'>%d</p></b></font>", blueCount),n,30,46,50,nil,"0x000","0x000",1)
     ui.addTextArea(56, string.format("<p align='center'><b><font size='25' color='#FFFFFF'>%d</p></b></font>", redCount),n,725,46,50,nil,"0x000","0x000",1)
 end
- 
+
 
 function changeTurn(cardID, name)
     for i = 1, #voteImages do ui.removeImage(voteImages[i], nil) end
@@ -688,7 +710,16 @@ function eventKeyboard(name, key, down)
     end
 end
 
-
+function eventPopupAnswer(id, name, answer)
+    if id == 1 and answer == "yes" then
+        clueConfirmed = true
+        checkClue(currentClueNum, currentClueText, name)
+    end
+    if id == 1 and answer == "no" then
+        clueConfirmed = false
+        changeTurn()
+    end
+end
 
 
 function table.index(tbl, val) for i=1, #tbl do if tbl[i] == val then return i end end end
