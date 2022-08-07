@@ -1,4 +1,4 @@
--- CodeNames V0.16
+-- CodeNames V0.17
 
 -- Lays's Image --
 do
@@ -163,6 +163,11 @@ textAreas = {
     opponent_button = 41,
     time_button = 42,
     start_button = 43,
+    room_admin = 44,
+    room_admin_info = 45,
+    blue_count = 46,
+    red_count = 47,
+    time = 48
 }
 
 cards = {
@@ -212,7 +217,7 @@ gameState = {
 settings = { clue = false, time = false, }
 
 admins = {["Mckeydown#0000"] = true}
-roomAdmin = {}
+roomAdmin = nil
 
 voted = {}
 teams = {}
@@ -237,10 +242,12 @@ tfm.exec.disableMortCommand(true)
 tfm.exec.newGame(7911404)
 
 function gameStatus()
+    checkRoomAdmin()
     if gameState.status == 0 then
- 
-        loadLobby()
-
+        for n, player in pairs(tfm.get.room.playerList) do 
+            if tfm.get.room.name:lower():match(n:lower()) then roomAdmin = n end
+        end
+        loadGameUI()
     end
 
     if gameState.status == 1 then
@@ -250,6 +257,7 @@ function gameStatus()
 end
 
 function startGame(name)
+    if roomAdmin ~= name then return end
     local checkOperatives = (#operatives["blue"] and #operatives["red"]) >= 0 and true
     local checkSpymasters = (spymasters["blue"] and spymasters["red"]) ~= nil and true
     
@@ -264,8 +272,9 @@ function eventNewGame()
 
     for n, player in pairs(tfm.get.room.playerList) do 
         system.bindKeyboard(n, 69, false) system.bindKeyboard(n, 81, false) 
-
-        if tfm.get.room.name:lower():match(n:lower()) then roomAdmin[n] = true end
+        if tfm.get.room.name:lower():match(n:lower()) then 
+            roomAdmin = n
+        end
     end
 
     if settings.time then tfm.exec.setGameTime(240) end
@@ -301,16 +310,24 @@ function eventNewGame()
 end
 
 function eventNewPlayer(n)
+    checkRoomAdmin()
+    loadGameUI(n)
+    updatePlayerTeam("red", false, n)
+    updatePlayerTeam("blue", false, n)
+
     if gameState.status >= 1 then 
         system.bindKeyboard(n, 69, false) system.bindKeyboard(n, 81, false)
         showRoundCards(false, n)
         updateCardsCount(n)
-        loadGameUI()
     end
 end
 
 function eventPlayerLeft(n)
     leaveRequest(n)
+    if n == roomAdmin then
+        roomAdmin = nil
+        checkRoomAdmin()
+    end
 end
 
 function selectRoundCards(count, color)
@@ -333,19 +350,16 @@ function eventLoop(elapsedTime, remainingTime)
     if gameState.status == 0 then return end
     if settings.time == false then return end
     local x = gameState.blueTurn and 30 or 725
-    ui.addTextArea(448,string.format("<p align='center'>%d</p>", remainingTime/1000) ,nil,x,105,50,nil,"0x000","0x000",1)
+    ui.addTextArea(textAreas.time,string.format("<p align='center'>%d</p>", remainingTime/1000) ,nil,x,105,50,nil,"0x000","0x000",1)
 
-    -- Oyun durumu: 2- İpucu veriliyor
     if remainingTime < 1 and gameState.status == 2 then
         changeTurn()
     end
 
-    -- Oyun durumu: 3- Kart seçiliyor
     if remainingTime < 1 and gameState.status == 3 then
         changeTurn()
     end
 
-    -- Oyun durumu: 4- Rakip takım ipucu kontrolü
     if remainingTime < 1 and gameState.status == 4 then
         clueConfirmed = true
         checkClue(currentClueNum, currentClueText, currentPlayer) 
@@ -353,79 +367,61 @@ function eventLoop(elapsedTime, remainingTime)
     end
 end
 
-function loadLobby()
-    ui.addImage("settings", "1826569905c.png", "_42", 235, 270,nil,1,1)
-    ui.addTextArea(textAreas.opponent_setting, string.format(translations[roomLang].opponentSetting),nil,370,293,120,nil,"0x000","0x000",1)
-    ui.addTextArea(textAreas.time_settings, string.format(translations[roomLang].timeSetting),nil,370,345,120,nil,"0x000","0x000",1)
-
-    ui.addTextArea(textAreas.opponent_button, string.format("<p align='center'><font size='13' color='#FFFFFF'><a href='event:settings'>         </font></p>"),nil,510,297,45,nil,"0x000","0x000",1)
-    ui.addTextArea(textAreas.time_button, string.format("<p align='center'><font size='13' color='#FFFFFF'><a href='event:settings'>         </font></p>"),nil,510,343,45,nil,"0x000","0x000",1)
-    
-    ui.addImage("opponent_setting", images.settings.off, "_42", 508, 297,nil,1,1)
-    ui.addImage("time_setting", images.settings.off, "_42", 508, 343,nil,1,1)
-
-    ui.addTextArea(textAreas.start_button, string.format(translations[roomLang].startButton),nil,272,356,nil,nil,"0x000","0x000",1)
-
-    ui.addImage("blueJoinButton", images.join.blue, "_42", 150, 270,nil,1,0.9)
-    ui.addTextArea(textAreas.join_blue_operative, string.format(translations[roomLang].joinButton),nil,155,270,50,20,"0x000","0x000",1)
-
-    ui.addImage("redJoinButton", images.join.red, "_44", 590, 270,nil,1,0.9)
-    ui.addTextArea(textAreas.join_red_operative, string.format(translations[roomLang].joinButton),nil,595,270,50,20,"0x000","0x000",1)
-
-    ui.addImage("join_blue_spymaster", images.join.blue, "_43", 150, 370,nil,1,0.9) 
-    ui.addImage("join_red_spymaster", images.join.red, "_45", 590, 370,nil,1,0.9)
-
-    for i = 0, 3 do ui.addImage("blueline"..i, images.blue_line, "_27", 20, 270 + i * 20,nil,1,0.9) ui.addImage("redline"..i, images.red_line, "_35", 660, 270 + i * 20 ,nil,1,0.9) end
-
-    ui.addImage("bluespymasters", images.blue_spymasters, "_32", 20, 355,nil)
-    ui.addImage("bluespymasterline", images.blue_line, "_33", 20, 370,nil,1,0.9) 
-    ui.addTextArea(textAreas.join_blue_spymaster, string.format(translations[roomLang].joinButton),nil,155,370,50,20,"0x000","0x000",1)
-
-    ui.addImage("redspymaster", images.red_spymasters, "_39", 690, 355,nil) 
-    ui.addImage("redspymasterline", images.red_line, "_40", 660, 370,nil,1,0.9) 
-    ui.addTextArea(textAreas.join_red_spymaster, string.format(translations[roomLang].joinButton),nil,595,370,50,20,"0x000","0x000",1)
-
-    ui.addImage("blueteamoperatives", images.blue_operatives, "_26", 20, 240,nil)
-    ui.addImage("redteamoperatives", images.red_operatives, "_34", 670, 240,nil)
-end
-
 function loadGameUI(name)
-    ui.removeTextArea(textAreas.opponent_setting, nil)
-    ui.removeTextArea(textAreas.time_settings, nil)
-    ui.removeTextArea(textAreas.opponent_button, nil)
-    ui.removeTextArea(textAreas.time_button, nil)
-    ui.removeTextArea(textAreas.start_button, nil)
-    ui.removeTextArea(textAreas.join_blue_operative, nil)
-    ui.removeTextArea(textAreas.join_red_operative, nil)
-    ui.removeTextArea(textAreas.join_blue_spymaster, nil)
-    ui.removeTextArea(textAreas.join_red_spymaster, nil)
+    print(name)
+    ui.addImage("blueteamoperatives", images.blue_operatives, "_26", 20, 240,name)
+    ui.addImage("redteamoperatives", images.red_operatives, "_34", 670, 240,name)
+    ui.addImage("bluespymasters", images.blue_spymasters, "_32", 20, 355,name)
+    ui.addImage("redspymaster", images.red_spymasters, "_39", 690, 355,name) 
+    ui.addImage("bluespymasterline", images.blue_line, "_33", 20, 370,name,1,0.9) 
+    ui.addImage("redspymasterline", images.red_line, "_40", 660, 370,name,1,0.9) 
+    for i = 0, 3 do ui.addImage("blueline"..i, images.blue_line, "_27", 20, 270 + i * 20,name,1,0.9) ui.addImage("redline"..i, images.red_line, "_35", 660, 270 + i * 20,name,1,0.9) end
 
-    ui.removeImage("blueJoinButton",nil)
-    ui.removeImage("redJoinButton",nil)
-    ui.removeImage("settings",nil)
-    ui.removeImage("opponent_setting",nil)
-    ui.removeImage("time_setting",nil)
+    if gameState.status == 0 then
+    ui.addImage("settings", "1826569905c.png", "_42", 235, 270,name,1,1)
+    ui.addImage("opponent_setting", images.settings.off, "_42", 508, 297,name,1,1)
+    ui.addImage("time_setting", images.settings.off, "_42", 508, 343,name,1,1)
+    ui.addTextArea(textAreas.opponent_setting, string.format(translations[roomLang].opponentSetting),name,370,293,120,nil,"0x000","0x000",1)
+    ui.addTextArea(textAreas.time_settings, string.format(translations[roomLang].timeSetting),name,370,345,120,nil,"0x000","0x000",1)
+    ui.addTextArea(textAreas.opponent_button, string.format("<p align='center'><font size='13' color='#FFFFFF'><a href='event:settings'>         </font></p>"),name,510,297,45,nil,"0x000","0x000",1)
+    ui.addTextArea(textAreas.time_button, string.format("<p align='center'><font size='13' color='#FFFFFF'><a href='event:settings'>         </font></p>"),name,510,343,45,nil,"0x000","0x000",1)
+    ui.addTextArea(textAreas.start_button, string.format(translations[roomLang].startButton),name,272,356,nil,nil,"0x000","0x000",1)
 
-    ui.addImage("clue", images.clue_input, "_41", 300, 260,nil)
+    ui.addImage("blueJoinButton", images.join.blue, "_42", 150, 270,name,1,0.9)
+    ui.addImage("redJoinButton", images.join.red, "_44", 590, 270,name,1,0.9)
+    ui.addTextArea(textAreas.join_blue_operative, string.format(translations[roomLang].joinButton),name,155,270,50,20,"0x000","0x000",1)
+    ui.addTextArea(textAreas.join_red_operative, string.format(translations[roomLang].joinButton),name,595,270,50,20,"0x000","0x000",1)
+    ui.addImage("join_blue_spymaster", images.join.blue, "_43", 150, 370,name,1,0.9) 
+    ui.addImage("join_red_spymaster", images.join.red, "_45", 590, 370,name,1,0.9)
+    ui.addTextArea(textAreas.join_blue_spymaster, string.format(translations[roomLang].joinButton),name,155,370,50,20,"0x000","0x000",1)
+    ui.addTextArea(textAreas.join_red_spymaster, string.format(translations[roomLang].joinButton),name,595,370,50,20,"0x000","0x000",1)
 
-    ui.addImage("bluecardscount", images.blue_circle, "_47", 30, 40,nil,1, 1)
-    ui.addImage("blueteamoperatives", images.blue_operatives, "_26", 20, 240,nil)
+    elseif gameState.status >= 1 then
+        ui.removeTextArea(textAreas.opponent_setting, name)
+        ui.removeTextArea(textAreas.time_settings, name)
+        ui.removeTextArea(textAreas.opponent_button, name)
+        ui.removeTextArea(textAreas.time_button, name)
+        ui.removeTextArea(textAreas.start_button, name)
+        ui.removeTextArea(textAreas.join_blue_operative, name)
+        ui.removeTextArea(textAreas.join_red_operative, name)
+        ui.removeTextArea(textAreas.join_blue_spymaster, name)
+        ui.removeTextArea(textAreas.join_red_spymaster, name)
+        ui.removeImage("blueJoinButton",name)
+        ui.removeImage("redJoinButton",name)
+        ui.removeImage("settings",name)
+        ui.removeImage("opponent_setting",name)
+        ui.removeImage("time_setting",name)
 
-    for i = 0, 3 do ui.addImage("blueline"..i, images.blue_line, "_27", 20, 270 + i * 20,nil,1,0.9) ui.addImage("redline"..i, images.red_line, "_35", 660, 270 + i * 20 ,nil,1,0.9) end
+        ui.addImage("clue", images.clue_input, "_41", 300, 260,name)
 
-    if settings.time then 
-    ui.addImage("blueTime", images.time_bg, "_42", 20, 100,nil,1,1)
-    ui.addImage("redTime", images.time_bg, "_44", 715, 100,nil,1,1)
+        ui.addImage("bluecardscount", images.blue_circle, "_47", 30, 40,name,1, 1)
+        ui.addImage("redcardscount", images.red_circle, "_47", 725, 40,name,1, 1)
+
+        if settings.time then 
+            ui.addImage("blueTime", images.time_bg, "_42", 20, 100,name,1,1)
+            ui.addImage("redTime", images.time_bg, "_44", 715, 100,name,1,1)
+        end
     end
-
-    ui.addImage("bluespymasters", images.blue_spymasters, "_32", 20, 355,nil)
-    ui.addImage("bluespymasterline", images.blue_line, "_33", 20, 370,nil,1,0.9) 
-
-    ui.addImage("redcardscount", images.red_circle, "_47", 725, 40,nil,1, 1)
-    ui.addImage("redteamoperatives", images.red_operatives, "_34", 670, 240,nil)
-
-    ui.addImage("redspymaster", images.red_spymasters, "_39", 690, 355,nil) 
-    ui.addImage("redspymasterline", images.red_line, "_40", 660, 370,nil,1,0.9) 
 end
 
 function updatePlayerTeam(t, isSpymaster, n)
@@ -436,20 +432,21 @@ function updatePlayerTeam(t, isSpymaster, n)
     local taID = textAreas["join_"..t.."_operative"]
     local joinSpy = "join_"..t.."_spymaster"
     
-    if isSpymaster then ui.removeImage(joinSpy) ui.removeTextArea(textAreas[joinSpy], nil) end
+    if isSpymaster then ui.removeImage(joinSpy,nil) ui.removeImage(joinSpy,n) ui.removeTextArea(textAreas[joinSpy], nil) end
 
     if isSpymaster and spymasters[t] then updatePlayerNames(t,n,isSpymaster) return end
 
-    ui.removeImage(joinButton)
+    if gameState.status == 0 then
+    ui.removeImage(joinButton,n)
     ui.addImage(joinButton, images.join[t], "_44", x[t], y[opCount+1],nil,1,0.9)
     ui.addTextArea(taID, string.format(translations[roomLang].joinButton),nil,x[t]+5,y[opCount+1],50,20,"0x000","0x000",1)
+    end
+    if opCount == 4 then ui.removeTextArea(taID, nil) ui.removeImage(joinButton,n) end
     
-    if opCount == 4 then ui.removeTextArea(taID, nil) ui.removeImage(joinButton) end
-    
-    updatePlayerNames(t,n,isSpymaster)
+    updatePlayerNames(t,n)
 end
 
-function updatePlayerNames(team,name,isSpymaster)
+function updatePlayerNames(team,name)
     blueVoteCount = #operatives["blue"] / 2
     redVoteCount = #operatives["red"] / 2
 
@@ -463,9 +460,6 @@ function updatePlayerNames(team,name,isSpymaster)
     ui.addTextArea(spymasterID, string.format("<p align='center'><font color='#000000'><b>%s</b></font></p>", spymasters[team] or ""),nil,x,370,120,30,"0x000","0x000",1)
 end
 
-function showTeamPlayers()
-
-end
 
 function joinRequest(name, playerTeam, isSpymaster)
     if teams[name] then return end
@@ -510,13 +504,17 @@ function eventTextAreaCallback(id, name, e)
 
     if e == "selectCard" then voteCard(id,name) end
 
-    if e == "settings" then changeSettings(id == textAreas.opponent_button) end
+    if e == "settings" then changeSettings(id == textAreas.opponent_button, name) end
 
-    if e == "startGame" then startGame(name) end
+    if e == "startGame" and roomAdmin == name then startGame(name) end
+
+    if e == "roomAdmin" and roomAdmin == nil then roomAdmin = name ui.removeTextArea(textAreas.room_admin, nil) ui.removeTextArea(textAreas.room_admin_info, nil) end
+
+    if e == "infoRoomAdmin" then print("The room admin can change the settings and start the game at any time.") end
 end
 
-function changeSettings(isClueSettings)
-    print(isClueSettings)
+function changeSettings(isClueSettings, name)
+    if roomAdmin ~= name then return end
     if isClueSettings then settings.clue = not settings.clue else settings.time = not settings.time end
 
     local image = isClueSettings and "opponent_setting" or "time_setting"
@@ -529,7 +527,16 @@ function changeSettings(isClueSettings)
 end
 
 function eventChatCommand(playerName, cmd) 
-    if admins[playerName] and cmd == "skip" then changeTurn() return end
+    if admins[playerName] then
+     if cmd == "skip" then changeTurn() return 
+     elseif cmd == "lobby" then resetGame() return end
+    end
+
+    if roomAdmin == playerName then
+        if cmd == "resetgame" then resetGame() tfm.exec.chatMessage(string.format("<R> %s oyunu yeniden başlattı. </R>"), nil) return end
+    end
+
+
 
     if gameState.status ~= 2 then return end
     if not gameState.canGiveClue then return end
@@ -566,7 +573,6 @@ function checkClue(clueNum, clueText, name)
     end
 
     if redCount >= clueNum or blueCount >= clueNum then
-        print(clueText)
         addClue(clueText, clueNum, name)
         gameState.canGiveClue = false
         gameState.canVote = true
@@ -654,8 +660,8 @@ end
 
 
 function updateCardsCount(n)
-    ui.addTextArea(55, string.format("<p align='center'><b><font size='25' color='#FFFFFF'>%d</p></b></font>", blueCount),n,30,46,50,nil,"0x000","0x000",1)
-    ui.addTextArea(56, string.format("<p align='center'><b><font size='25' color='#FFFFFF'>%d</p></b></font>", redCount),n,725,46,50,nil,"0x000","0x000",1)
+    ui.addTextArea(textAreas.blue_count, string.format("<p align='center'><b><font size='25' color='#FFFFFF'>%d</p></b></font>", blueCount),n,30,46,50,nil,"0x000","0x000",1)
+    ui.addTextArea(textAreas.red_count, string.format("<p align='center'><b><font size='25' color='#FFFFFF'>%d</p></b></font>", redCount),n,725,46,50,nil,"0x000","0x000",1)
 end
 
 
@@ -749,6 +755,37 @@ function eventPopupAnswer(id, name, answer)
         if noLimit == 3 then changeTurn() end
         gameState.status = 2
     end
+end
+
+function checkRoomAdmin()
+    if roomAdmin ~= nil then return end
+
+    for n, player in pairs(tfm.get.room.playerList) do 
+        if tfm.get.room.name:lower():match(n:lower()) then roomAdmin = n end
+    end
+
+    if roomAdmin == nil then
+        ui.addTextArea(textAreas.room_admin, string.format("<a href='event:roomAdmin'><b>GET ROOM ADMIN</b></a>"),nil,20,25,nil,nil,0,0,1) 
+        ui.addTextArea(textAreas.room_admin_info, string.format("<a href='event:infoRoomAdmin'><font size='9'>[?]</font></a>"),nil,140,20,nil,nil,0,0,1) 
+    end
+end
+
+function resetGame()
+    for i, v in pairs(textAreas) do ui.removeTextArea(textAreas[i]) end
+    for i = 1, 25 do ui.removeTextArea(cards[i].id) ui.removeImage("card"..i, nil) end
+
+    voted = {}
+    teams = {}
+    operatives = {red = {}, blue = {}}
+    spymasters = {}
+    clues = {red = {}, blue={}}
+    gameLog = {}
+    gameState = {status = 0, guessCount = 0, blueTurn = false, redTurn = false, firstTurn = true, canVote = false, canGiveClue = true}
+    settings = { clue = false, time = false, }
+
+    gameState.status = 0
+    tfm.exec.newGame(7911404)
+    gameStatus()
 end
 
 
