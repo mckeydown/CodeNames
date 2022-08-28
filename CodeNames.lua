@@ -1,79 +1,4 @@
 -- CodeNames V0.19
--- Lays's Image --
-do
-    local keyToId = {}
-    local keyToIdPlayer = {}
-    
-    local addImage = tfm.exec.addImage
-    local removeImage = tfm.exec.removeImage
-    
-    ui._imageCleanup = function(name)
-        if keyToIdPlayer[name] then
-            keyToIdPlayer[name] = nil
-        end
-    end
-    
-    ui.addImage = function(key, imageId, target, x, y, name, ...)
-        if name == "*" then
-            for pname in pairs(tfm.get.room.playerList) do
-                ui.addImage(key, imageId, target, x, y, pname, ...)
-            end
-
-            return
-        end
-
-        local id = addImage(imageId, target, x, y, name, ...)
-        
-        if id then
-            if name then
-                keyToIdPlayer[name] = keyToIdPlayer[name] or {}
-                
-                -- Removes previous image
-                if keyToIdPlayer[name][key] then
-                    removeImage(keyToIdPlayer[name][key])
-                end
-                
-                keyToIdPlayer[name][key] = id
-            else
-                -- Removes previous image
-                if keyToId[key] then
-                    removeImage(keyToId[key])
-                end
-                
-                keyToId[key] = id
-            end
-        end
-    end
-    
-    ui.removeImage = function(key, name, ...)
-        if name == "*" then
-            for pname in pairs(tfm.get.room.playerList) do
-                ui.removeImage(key, pname, ...)
-            end
-
-            return
-        end
-
-        local id
-        
-        if name then
-            id = keyToIdPlayer[name] and keyToIdPlayer[name][key]
-        else
-            id = keyToId[key]
-        end
-        
-        if id then
-            removeImage(id, ...)
-            
-            if name then
-                keyToIdPlayer[name][key] = nil
-            else
-                keyToId[key] = nil
-            end
-        end
-    end
-end
-
 words = {
     tr = {"POKER", "EJDERHA", "SAVAŞ", "BAL", "BOMBA", "KUMARHANE", "GÖKDELEN", "SATÜRN", "UZAYLI", "KIRBAÇ", "ANTARTİKA", "KARDAN ADAM", "KONSER", "ÇİKOLATA", "JET", "MİLYONER", "DİNOZOR", "KORSAN", "DÜDÜK", "PENGUEN", "ÖRÜMCEK", "FÜZE", "KONSOLOSLUK", "TABANCA", "HASTALIK", "AJAN", "PRENSES", "DAHİ", "HIRSIZ", "OPERA", "ŞÖVALYE", "STADYUM", "LİMUZİN", "HAYALET", "KAMYONET", "DONDURMA", "LAZER", "ÖLÜM", "HASTANE", "AMBULANS", "AHTAPOT", "HELİKOPTER", "KANGURU", "MİKROSKOP", "TARZAN", "KAHRAMAN", "TELESKOP", "PARAŞÜT", "KAYNANA", "NEMRUT", "UYDU", "MELEK", "ROBOT", "AZRAİL", "CADI", "MEZARCI", "DALGIÇ", "ZEHİR", "KÖPRÜ", "ATEŞ", "MASA", "BALİNA", "AY", "BALIK", "DOKTOR", "CAMİ", "KEMER", "HEMŞİRE", "RÜZGAR", "ÇİZME", "PARK", "ALBÜM", "SİMİT", "TAŞ", "ŞOK", "BEYAZ", "HESAP", "KUPON", "MORS", "PALET", "REJİM", "PARTİ", "MAKAS", "KÖSTEBEK", "TAMPON", "PİLİÇ", "MANTAR", "ÖRGÜ", "NUMARA", "KUYRUK", "ALAY", "MACUN", "TARLA", "SATIR", "CEP", "PİKE", "SIRT", "TOPUZ", "TULUM", "POSTA", "TERAZİ", "SİTE", "VİZE", "TORPİL", "KAPTAN", "ATLAS", "KÜME", "CİLT", "BOY", "KURŞUN", "BANKO", "MAT", "BOĞAZ", "DİYET", "DOĞRU", "DÖVİZ", "KÖPEK", "AT", "AYAKKABI", "SANDALYE", "TAHT", "BUZ", "ALTIN", "ÇATAL", "ZAMAN", "FLÜT", "FENER", "YASTIK", "TESBİH", "ASKER", "PİRAMİT", "HALAT", "YILDIZ", "OCAK", "EKMEK", "YÜREK", "BLOK", "KUPA", "İĞNE", "DON", "ÖRTÜ", "KABUK", "BAYRAM", "PERDE", "BALTA", "YAKA", "DÜĞME", "AĞIZ", "ETİKET", "EL", "YATAK", "DUVAR", "KULE", "KART", "BAĞ", "YAY", "ORTA", "İNTERNET", "KAYMAK", "PAS", "DAMAT", "DELİK", "NİŞAN", "KUVVET", "ANAHTAR", "MOTOR", "DALGA", "AKIM", "BAŞ", "İSKELE", "ÇEKİRDEK", "KAZA", "DÜŞ", "KAZIK", "PUL", "DAİRE", "AĞ", "KANAL", "İSTANBUL", "AVUSTRALYA", "KIBRIS", "TOKYO", "MISIR", "REKLAM", "KAVURMA", "MOSKOVA", "DÖVME", "MEVLANA", "HOLLYWOOD", "BİZANS", "ROMA", "ARABESK", "NİNJA", "LAZ", "MANGO", "ALMANYA", "DEVLET", "AMERİKA", "MEZOPOTAMYA", "İNGİLTERE", "SURVİVOR", "KRİZ", "MECNUN", "EŞKİYA", "NAL", "GULYABANİ", "İRAN", "BERLİN", "KARINCA", "AVRUPA", "HİNDİSTAN", "ÇEYİZ", "EVEREST", "KALPAZAN", "PEKİN", "KARTAL", "PAZI", "BAKLAVA", "HİTİT", "YAŞ", "ATLET", "DİZİ", "BASKI", "DERECE", "DOLU", "TABLET", "YEŞİL", "ALEM", "MARŞ", "KUŞAK", "BOZUK", "MAKARA", "AĞAÇ", "BOT", "ZAR", "ORDU", "GÖÇ", "SERVİS", "MARS", "GÖBEK", "FESTİVAL", "OMURGA", "ÇATI", "DÜMEN", "İZ", "TAKIM", "ÇAY", "KANUN", "FAN", "FIRÇA", "KAHVE", "TAVLA", "GÜL", "ANA", "KOCA", "MASKARA", "PAZAR", "TEZ", "MAYA", "UŞAK", "MEMUR", "KEPÇE", "BEYİN", "KLASİK", "KOVAN", "PALA", "SOĞUK", "ASLAN", "TOP", "BANKA", "GÖZ", "HAVA", "TAVŞAN", "PASTA", "ELBİSE", "ÇİMEN", "CÜCE", "ORMAN", "ARABA", "ELDİVEN", "BERE", "BENZİN", "AŞÇI", "AYI", "KEDİ", "HAYAT", "PİRİNÇ", "DEV", "YÜZ", "PLAJ", "OTEL", "SU", "KAĞIT", "SOLUCAN", "AVUKAT", "BİLİM ADAMI", "DANS", "HAVUÇ", "SEPET", "GECE", "PAMUK", "AYAK", "FARE", "BIÇAK", "TİYATRO", "POLİS", "GEMİ", "PİLOT", "PARMAK", "ÖĞRETMEN", "ŞİŞE", "GÜN", "KRAL", "BARDAK", "ELMAS", "DİŞ", "KOPYA", "DARBE", "FİLM", "GIRGIR", "ARPACIK", "HORTUM", "IZGARA", "TORPİDO", "KEPEK", "GICIK", "KESE", "KISIR", "KOLON", "KULAÇ", "GAZİNO", "FELEK", "KAVAL", "KİTAP", "TIP", "KAYNAK", "GARAJ", "PAÇA", "LASTİK", "SAZ", "SET", "FAR", "KUTU", "KANEPE", "MAKAM", "ŞANS", "MERKEZ", "ÜNLÜ", "DEVİR", "DÜĞÜN", "TABLO", "GÖLGE", "GAZ", "KALE", "HAZİNE", "KÖY", "MODA", "HAVUZ", "MAGAZİN", "KÜPE", "FATURA", "SAYFA", "ÇAMAŞIR", "TUR", "AMAZON", "SAHTE", "OYUNCAK", "SIRA", "FORM", "KARE", "KAŞ", "SANDIK", "ACI", "TREN", "SOSYETE", "ÖRGÜT", "SÖZ", "UÇAK", "ADET", "BALKON", "ÇOBAN", "AYNA", "KURU", "DELİ", "YAZ", "NOT", "BÖLÜM", "ŞERİT", "YUNANİSTAN", "HÜCRE", "MEZUNİYET", "FAUL", "LONDRA", "MUCİZE", "TEMEL", "AFRİKA", "BİLYE", "YAĞMUR", "KUYU", "KANAT"},
     en = {"STAR","BRIDGE","FIRE","RING","HEART","HORN","SPRING","TABLE","WHALE","SEAL","MOON","BLOCK","DRILL","FISH","TUBE","GRACE","IRON","DOCTOR","ROULETTE","DEGREE","WAKE","NEEDLE","TABLET","PIE","GREEN","DRAGON","NEW YORK","AUSTRALIA","MARCH","LINE","WAR","HONEY","JAM","CHURCH","COVER","LEAD","BERMUDA","CHANGE","TOKYO","EGYPT","BEAT","RAY","BELT","CAP","LEMON","NURSE","WIND","LION","LONDON","FALL","BOOT","DICE","EYE","BOARD","SWITCH","AIR","JUPITER","HAM","BATTERY","SPINE","VET","RABBIT","AGENT","DROP","TRACK","BANK","CLIFF","BOMB","CASINO","SKYSCRAPER","STOCK","BRUSH","GRASS","SATURN","DRESS","FAN","DWARF","ALIEN","WHIP","ANTARCTICA","PUMPKIN","MOSCOW","TRIP","SNOWMAN","FOREST","CAPITAL","STRIKE","COPPER","SOUL","CANADA","CONCERT","CHOCOLATE","JET","SHAKESPEARE","CAR","SHADOW","GLOVE","LITTER","COMIC","MILLIONAIRE","PITCH","BOND","APPLE","OIL","COOK","FLY","CAST","BEAR","PIN","MINE","CHECK","BAR","COLD","HOLLYWOOD","SCREEN","PLAY","MARBLE","DINOSAUR","CAT","GAME","LIFE","LUCK","HOOK","PARK","BAT","BOLT","GREECE","DECK","YARD","CONDUCTOR","GIANT","FACE","PIRATE","BEACH","POUND","ROUND","FIELD","CYCLE","ROME","HOTEL","SPOT","MOUNT","STICK","SINK","MOLE","SCHOOL","CHICK","WATER","PAPER","SLUG","BUTTON","HIMALAYAS","NINJA","CZECH","GROUND","BUGLE","MOUTH","TAG","NUT","WORM","PENGUIN","LAWYER","SPIDER","TAIL","TICK","MINT","MISSILE","EMBASSY","PISTOL","SCIENTIST","KIWI","LOG","GERMANY","HAND","DISEASE","BED","SPY","PRINCESS","DANCE","CARROT","STATE","RACKET","GENIUS","THIEF","TRUNK","AMERICA","NOVEL","WALL","BERRY","ATLANTIS","KETCHUP","PLOT","ENGLAND","TEMPLE","MAPLE","MAIL","AFRICA","OPERA","TOWER","NIGHT","POOL","ROBIN","BAND","DUCK","HOOD","CARD","COURT","TIE","DIAMOND","CROSS","NET","FRANCE","DATE","COTTON","POINT","OLIVE","MATCH","BALL","MERCURY","BOW","FIGHTER","SHOP","SLIP","KNIGHT","PASS","STADIUM","FOOT","LIMOUSINE","CONTRACT","PLATE","MOUSE","HORSESHOE","ORGAN","KNIFE","CELL","WATCH","ARM","ROSE","MODEL","THEATER","HOLE","POST","LIGHT","TRIANGLE","BELL","LEPRECHAUN","KID","POLICE","ROCK","SCALE","GHOST","SHIP","MEXICO","CLOAK","STRAW","CALF","SHARK","DRAFT","HAWK","PRESS","VAN","ICE CREAM","BUCK","PHOENIX","FORCE","BOOM","LAB","RULER","PILOT","LASER","DEATH","LOCK","SPELL","HOSPITAL","AMBULANCE","WEB","PLASTIC","KEY","OCTOPUS","THUMB","TEACHER","PALM","CRANE","HELICOPTER","BOTTLE","FENCE","KANGAROO","JACK","EUROPE","SCORPION","MUG","SUIT","MICROSCOPE","ENGINE","WAVE","CENTAUR","STREAM","HEAD","MAMMOTH","DAY","KING","PAN","POLE","SUPERHERO","REVOLUTION","PIT","GAS","GLASS","WASHINGTON","TURKEY","QUEEN","FILE","CRICKET","WELL","FAIR","TOOTH","STAFF","BILL","SHOT","WASHER","LAP","AMAZON","SPACE","FIGURE","MASS","CHINA","SQUARE","BUFFALO","CHEST","DOG","NAIL","BERLIN","HORSE","CHARGE","SUB","INDIA","TRAIN","TELESCOPE","PLANE","PARACHUTE","PIANO","BOX","PLATYPUS","CLUB","SHOE","SERVER","CENTER","CHAIR","SOUND","COMPOUND","FILM","CROWN","OLYMPUS","BACK","NOTE","PART","TAP","ICE","SOCK","ALPS","ROOT","SATELLITE","ANGEL","CRASH","GOLD","BUG","PASTE","ROBOT","ROW","SPIKE","CODE","LOCH NESS","FORK","SWING","PORT","CIRCLE","UNICORN","TIME","LINK","FLUTE","TORCH","BEIJING","EAGLE","BARK","SNOW","IVORY","PIPE","PANTS","SOLDIER","VACUUM","WITCH","PUPIL","SMUGGLER","ORANGE","AZTEC","UNDERTAKER","SCUBA DIVER","PYRAMID","POISON","STRING"},
@@ -95,7 +20,6 @@ translations = {
         ["joinButton"] = "<p align='center'><font color='#FFFFFF'><b><a href='event:joinTeam'>JOIN</a></b></font></p>",
         ["clueConfirmation"] = "<p align='center'>The opponent's clue is <b>%s</b> for <b>%d</b> words. Do you confirm it?</p>",
         ["clueChecking"] = "<font size='10'><p align='center'><font color='%s'><b>%s</b></font> is checking the opponent's clue..</p></font>",
-        ["clueNumberError"] = "The clue number can't be greater than remaining cards count.",
         ["clueInfo"] = "The clue is <b>%s</b> for <b>%d</b> words.",
         ["clueGameLog"] = "<b><font color='%s'>%s</b></font>'s clue is <font color='%s'><b>%s</b></font> for <b><font color='%s'>%d</b></font> words.",
         ["roomAdminInfo"] = "The room admin can change the settings and start the game at any time.",
@@ -107,6 +31,15 @@ translations = {
         ["validClue"] = "<p align='center'>Clue is valid! <b>%s</b> team can vote now.</p>",
         ["invalidClue"] = "<p align='center'>Clue is invalid! You can try <b><R>%d</R></b> more times. </p>",
         ["getRoomAdmin"] = "<p align='center'><font size='9'><a href='event:roomAdmin'><b>GET ROOM ADMIN</b></a></font></p>",
+        ["contactedBystander"] = "<font color='%s'><b>%s TEAM</b></font> have made contact with <font color='#ac987f'>Bystander %s</font>",
+        ["contactedAssassin"] = "<font color='%s'><b>%s TEAM</b></font> have made contact with <font color='#5B5B5B'>Assassin %s</font>",
+        ["contactedRedAgent"] = "<font color='%s'><b>%s TEAM</b></font> have made contact with <font color='#8F2B1C'>Agent %s</font>",
+        ["contactedBlueAgent"] = "<font color='%s'><b>%s TEAM</b></font> have made contact with <font color='#3284A3'>Agent %s</font>",
+        ["noClueLog"] = "<font color='%s'>%s</font> didn't give a clue within the specified time.",
+        ["noWordLog"] = "<font color='%s'>%s</font> didn't choose a word within the specified time.",
+        ["noActionSpy"] = "The opponent Spymaster didn't take any action within the specified time and the clue approved.",
+        ["approvedClue"] = "<font color='%s'>%s</font> approved the <font color='%s'>%s</font>'s clue.",
+        ["notApprovedClue"] = "<font color='%s'>%s</font> didn't approve the <font color='%s'>%s</font>'s clue.",
     },
 
     ["tr"] = {
@@ -120,7 +53,6 @@ translations = {
         ["joinButton"] = "<p align='center'><font color='#FFFFFF'><b><a href='event:joinTeam'>KATIL</a></b></font></p>",
         ["clueConfirmation"] = "<p align='center'>Rakibin verdiği ipucu <b>%s</b> (<b>%d</b> kelime için). Kabul edilebilir mi?</p>",
         ["clueChecking"] = "<font size='10'><p align='center'><font color='%s'><b>%s</b></font> verilen ipucunun geçerli olup olmadığına karar veriyor..</font></p>",
-        ["clueNumberError"] = "Değer kalan kart sayısından büyük olamaz.",
         ["clueInfo"] = "Verilen ipucu <b>%s</b> (<b>%d</b> kelime için).",
         ["clueGameLog"] = "<b><font color='%s'>%s</b></font> adlı kullanıcının verdiği ipucu <font color='%s'><b>%s</b></font> (<b><font color='%s'>%d</b></font> kelime için).",
         ["roomAdminInfo"] = "Oda ayarlarını belirler, istediği zaman oyunu başlatabilir.",
@@ -131,7 +63,16 @@ translations = {
         ["blueTeamWon"] = "<b><p align='center'><font color='#ffffff'>MAVİ TAKIM KAZANDI! </b></p></font>",
         ["validClue"] = "<p align='center'>Verilen ipucu geçerli! <b>%s</b> takım seçim yapabilir.</p>",
         ["invalidClue"] = "<p align='center'>Verilen ipucu geçersiz! <b><R>%d</R></b> hakkınız kaldı.</p>",
-        ["getRoomAdmin"] = "<p align='center'><font size='9'><a href='event:roomAdmin'><b>ODA YÖNETİCİSİ OL</b></a></font></p>"
+        ["getRoomAdmin"] = "<p align='center'><font size='9'><a href='event:roomAdmin'><b>ODA YÖNETİCİSİ OL</b></a></font></p>",
+        ["contactedBystander"] = "<font color='%s'><b>%s TAKIM</b></font> <font color='#F5D9B6'>Bystander %s</font> ile iletişime geçti.",
+        ["contactedAssassin"] = "<font color='%s'><b>%s TAKIM</b></font> <font color='#5B5B5B'>Assassin %s</font> ile iletişime geçti.",
+        ["contactedRedAgent"] = "<font color='%s'><b>%s TAKIM</b></font> <font color='#8F2B1C'>Agent %s</font> ile iletişime geçti.",
+        ["contactedBlueAgent"] = "<font color='%s'><b>%s TAKIM</b></font> <font color='#3284A3'>Agent %s</font> ile iletişime geçti.",
+        ["noClueLog"] = "<font color='%s'>%s</font> belirtilen zaman içerisinde ipucu vermedi.",
+        ["noWordLog"] = "<font color='%s'>%s</font> belirtilen zaman içerisinde kelime seçimi yapmadı.",
+        ["noActionSpy"] = "Rakip Spymaster belirtilen zaman içerisinde bir karar vermedi ve ipucu onaylandı.",
+        ["approvedClue"] = "Spymaster <font color='%s'>%s</font>, Spymaster <font color='%s'>%s</font> tarafından verilen ipucunu onayladı.",
+        ["notApprovedClue"] = "Spymaster <font color='%s'>%s</font>, Spymaster <font color='%s'>%s</font> tarafından verilen ipucunu onaylamadı."
     }
 }
 
@@ -166,7 +107,7 @@ help = {
         "<b><font color='#f5d8b6' size='14'>WINNING & LOSING</font></b>\n"..
         "Teams alternate turns. A team wins once all their words have been guessed. They lose if they guess the Assassin!\n\n"..
         "<b><font color='#f5d8b6' size='14'>SETTINGS</font></b>\n"..
-        "<b><PT>CONFIRM OPPONENT'S CLUE:</PT></b> Spymasters must confirm each other's clues, an unconfirmed clue will be voided and a different clue must be given. Each Spymaster has 3 chances to give a valid clue.\n\n"..
+        "<b><PT>CONFIRM OPPONENT'S CLUE:</PT></b> Spymasters must confirm each other's clues, an unconfirmed clue cannot be released and a different clue must be given. Each Spymaster has 3 chances to give a valid clue on their turn.\n\n"..
         "<b><PT>TIME LIMIT:</PT></b> It imposes a time limit on giving clues and choosing words. If no action is taken within the specified time, the turn passes to the other team. (180 seconds for clues, 120 seconds for choosing words)",
 
     },
@@ -279,6 +220,30 @@ commandsPage = {
 }
 }
 
+tips = {
+    ["en"] = {
+        "Click the button on the top left to be the room admin!",
+        "You need at least <b>4</b> players to start the game!",
+        "If you want to leave your team, click on your username.",
+        "The team that receives the first clue has <b>9</b> agents on the field!",
+        "The other team has <b>8</b> agents on the field!",
+        "Clue cannot exceed <b>20</b> characters!",
+        "You can't give more words than the remaining number of cards!",
+        "Click <b>[CTRL]</b> to see game log.",
+        "Click <b>[LSHIFT]</b> to see your team's clue log.",
+    },
+
+    ["tr"] = {
+        "Oda yöneticisi olmak istiyorsan, sol üstte bulunan butona tıkla!",
+        "Oyunu başlatabilmek için en az <b>4</b> oyuncuya ihtiyacınız var!",
+        "Takımınızdan ayrılmak istiyorsanız, kullanıcı adınıza tıklayın.",
+        "İlk ipucu alan takımın sahada <b>9</b>, diğer takımın <b>8</b> ajanı bulunur!",
+        "İpucu <b>20</b> karakterden fazla olamaz!",
+        "Kalan kart sayısından fazla kelime veremezsiniz!",
+        "Oyun geçmişini görmek için <b>[CTRL]</b> tuşuna basın.",
+        "Takımınızın ipucu geçmişini görmek için <b>[LSHIFT]</b> tuşuna basın.",
+    }
+}
 
 
 images = {
@@ -329,50 +294,61 @@ images = {
 
 textAreas = {
     help = {
-        tab1 = 48,
-        tab2 = 49,
-        tab3 = 50,
-        next = 51,
-        prev = 52,
-        titles = 53,
-        main = 54,
-        close = 55,
+        tab1 = 54,
+        tab2 = 55,
+        tab3 = 56,
+        next = 57,
+        prev = 58,
+        titles = 59,
+        main = 60,
+        close = 61,
     },
 
     commands = {
-        title = 56,
-        main = 57,
-        close = 58
+        title = 62,
+        main = 63,
+        close = 64
     },
 
     join_blue_operative = 26,
     join_red_operative = 27,
     join_blue_spymaster = 28,
     join_red_spymaster = 29,
-    leave_blue_op = 300,
-    leave_blue_op1 = 301,
-    leave_blue_op2 = 302,
-    leave_blue_op3 = 303,
-    leave_red_op = 310,
-    leave_red_op1 = 311,
-    leave_red_op2 = 312,
-    leave_red_op3 = 313,
-    update_blue_spy = 32,
-    update_red_spy = 33,
-    clue_text = 34,
-    clue_number = 35,
-    game_log = 36,
-    clue_log = 37,
-    turn_text = 38,
-    opponent_setting = 39,
-    time_settings = 40,
-    opponent_button = 41,
-    time_button = 42,
-    start_button = 43,
-    room_admin = 44,
-    time = 45,
-    blue_count = 46,
-    red_count = 47,
+    leave_blue_op = 30,
+    leave_blue_op1 = 31,
+    leave_blue_op2 = 32,
+    leave_blue_op3 = 33,
+    leave_red_op = 34,
+    leave_red_op1 = 35,
+    leave_red_op2 = 36,
+    leave_red_op3 = 37,
+    update_blue_spy = 38,
+    update_red_spy = 39,
+    clue_text = 40,
+    clue_number = 41,
+    game_log = 42,
+    clue_log = 43,
+    turn_text = 44,
+    opponent_setting = 45,
+    time_settings = 46,
+    opponent_button = 47,
+    time_button = 48,
+    start_button = 49,
+    room_admin = 50,
+    time = 51,
+    blue_count = 52,
+    red_count = 53,
+    clue_num = 65,
+    clue_num1 = 66,
+    clue_num2 = 67,
+    clue_num3 = 68,
+    clue_num4 = 69,
+    clue_num5 = 70,
+    clue_num6 = 71,
+    clue_num7 = 72,
+    clue_num8 = 73,
+    clue_num9 = 74,
+    clue_background = 75,
 }
 
 cards = {
@@ -409,7 +385,6 @@ cards = {
 
 
 gameState = {
-    -- 0 Lobby, 1 Game Started, 2 Give Clue
     status = 0,
     guessCount = 0,
     blueTurn = false,
@@ -431,7 +406,65 @@ clues = {red = {}, blue={}}
 gameLog = {}
 keys = {gameLogKey = {}, clueLogKey = {}, helpKey = true, commandsKey = true}
 settings = { clue = false, time = false, }
-colors = {red = "", blue = ""}
+colors = {["red"] = "#8F2B1C", ["blue"] = "#3284a3"}
+
+-- Lays's Image --
+do
+    local playerImages = {}
+
+    local addImage = tfm.exec.addImage
+    local removeImage = tfm.exec.removeImage
+
+    ui._imageCleanup = function(name)
+        if playerImages[name] then
+            playerImages[name] = nil
+        end
+    end
+
+    ui.addImage = function(key, imageId, target, x, y, name, ...)
+        if not name then
+            for pname in pairs(tfm.get.room.playerList) do
+                ui.addImage(key, imageId, target, x, y, pname, ...)
+            end
+
+            return
+        end
+
+        local id = addImage(imageId, target, x, y, name, ...)
+
+        if id then
+            playerImages[name] = playerImages[name] or {}
+
+            -- Removes previous image
+            if playerImages[name][key] then
+                removeImage(playerImages[name][key])
+            end
+
+            playerImages[name][key] = id
+        end
+    end
+
+    ui.removeImage = function(key, name, ...)
+        if not name then
+            for pname in pairs(tfm.get.room.playerList) do
+                ui.removeImage(key, pname, ...)
+            end
+
+            return
+        end
+
+        local id
+
+        if name then
+            id = playerImages[name] and playerImages[name][key]
+        end
+
+        if id then
+            removeImage(id, ...)
+            playerImages[name][key] = nil
+        end
+    end
+end
 
 blueVoteCount = #operatives["blue"] / 2
 redVoteCount = #operatives["red"] / 2
@@ -499,7 +532,7 @@ function eventNewGame()
         addInfo(string.format(translations[roomLang].redTurn))
     end
 
-    --math.randomseed(4)
+    -- math.randomseed(4)
     for i = 1, 25 do table.insert(roundWords, words[roomLang][math.random(1 + size * (i - 1), size * i)]) end
     -- math.randomseed(os.time())
     table.shuffle(roundWords)
@@ -522,18 +555,31 @@ function eventNewPlayer(n)
     loadGameUI(n)
     updatePlayerTeam("red", false, n)
     updatePlayerTeam("blue", false, n)
+    updatePlayerTeam("red",true,n)
+    updatePlayerTeam("blue",true,n)
     system.bindKeyboard(n, 72, false) 
     system.bindKeyboard(n, 75, false) 
-
 
     if gameState.status >= 1 then 
         system.bindKeyboard(n, 17, false) system.bindKeyboard(n, 16, false)
         showRoundCards(false, n)
+        if spymasters[teams[n]] == n then
+            showRoundCards(true, n)
+            if teams[n] == "red" and gameState.redTurn and gameState.canGiveClue then 
+                giveClue(n)
+            elseif teams[n] == "blue" and gameState.blueTurn and gameState.canGiveClue then 
+                giveClue(n)
+            end
+        else
+            showRoundCards(false, n)
+        end
         updateCardsCount(n)
+        addInfo(lastinfo)
     end
 end
 
 function eventPlayerLeft(n)
+    if spymasters[teams[n]] == n then return end
     leaveRequest(n)
     if n == roomAdmin then
         roomAdmin = nil
@@ -562,12 +608,14 @@ function eventLoop(elapsedTime, remainingTime)
     if settings.time == false then return end
     local x = gameState.blueTurn and 30 or 725
     ui.addTextArea(textAreas.time,string.format("<p align='center'>%d</p>", remainingTime/1000) ,nil,x,145,50,nil,0,0,1)
-
+    
     if remainingTime < 1 and gameState.status == 2 then
+        addGameLog(string.format(translations[roomLang].noClueLog, colors[teams[currentPlayer]], currentPlayer))
         changeTurn()
     end
 
     if remainingTime < 1 and gameState.status == 3 then
+        addGameLog(string.format(translations[roomLang].noWordLog, colors[teams[currentPlayer]], translations[roomLang][teams[currentPlayer]]))
         changeTurn()
     end
 
@@ -575,6 +623,7 @@ function eventLoop(elapsedTime, remainingTime)
         clueConfirmed = true
         checkClue(currentClueNum, currentClueText, currentPlayer)
         addInfo(string.format(translations[roomLang].validClue, translations[roomLang][teams[currentPlayer]]))
+        addGameLog(string.format(translations[roomLang].noActionSpy))
         return
     end
 
@@ -627,11 +676,11 @@ function showHelp(name, tabid, pageid)
         ui.addImage("help_image_3", images.help.image_3,"~999",530,105,name, 1, 1, 0, 1, 0, 0, false)
 
         if pageid ~= 2 then
-            ui.addTextArea(textAreas.help.prev,string.format("<font color='#ffffff'><a href='event:prev_%d_tab_%d'>PREV</a></font>",tabid,pageid), name, 225,106,nil,nil,0, 0, 1, true)
+            ui.addTextArea(textAreas.help.prev,string.format("<p align='center'><font color='#ffffff' size='18'><a href='event:prev_%d_tab_%d'>«</a></font></p>",tabid,pageid), name, 217,101,50,nil,0, 0, 1, true)
         end 
 
         if pageid ~= #help[roomLang][tabid] then
-            ui.addTextArea(textAreas.help.next,string.format("<font color='#ffffff'><a href='event:next_%d_tab_%d'>NEXT</a></font>",tabid,pageid), name, 540,106,nil,nil,0, 0, 1, true)
+            ui.addTextArea(textAreas.help.next,string.format("<p align='center'><font color='#ffffff' size='18'><a href='event:next_%d_tab_%d'>»</a></font></p>",tabid,pageid), name, 533,101,50,nil,0, 0, 1, true)
         end
 
         if pageid == 2 then
@@ -677,6 +726,39 @@ function hideCommands(name)
     ui.removeImage("commands_image1",name) ui.removeImage("commands_image2",name)
 end
 
+function giveTips(name, tipNum)
+    tipNum = tipNum or 1
+    
+    ui.addImage("tips", "182e4d08658.png", "_42", 160, 165,name,1,1)
+    ui.addTextArea(666,"<p align='center'>".. tips[roomLang][tipNum],name,210,170,380,20,0,0,1)
+
+    if tipNum < #tips[roomLang] and name == nil then
+        for n, player in pairs(tfm.get.room.playerList) do 
+            ui.addImage("next_tips", "182e4d03a7e.png", "_42", 590, 165,n,1,1)
+            ui.addTextArea(667,string.format("<a href='event:tipnext_%s'><font size='20'><p align='center'>»\n</p></font>",tipNum),n,596,164,40,25,0,0,1)
+        end
+        elseif tipNum < #tips[roomLang] and name ~= nil then
+            ui.addImage("next_tips", "182e4d03a7e.png", "_42", 590, 165,name,1,1)
+            ui.addTextArea(667,string.format("<a href='event:tipnext_%s'><font size='20'><p align='center'>»\n</p></font>",tipNum),name,596,164,40,25,0,0,1)
+    end
+
+    if tipNum > 1 then 
+        ui.addImage("prev_tips", "182e4d03a7e.png", "_42", 160, 165,name,1,1)
+        ui.addTextArea(668,string.format("<a href='event:tipprev_%s'><font size='20'><p align='center'>«\n</p></font>",tipNum),name,166,164,40,25,0,0,1)
+    end
+
+    if tipNum >= #tips[roomLang] then
+        ui.removeImage("next_tips",name)
+        ui.removeTextArea(667,name)
+    end
+
+    if tipNum <= 1 then
+        ui.removeImage("prev_tips",name)
+        ui.removeTextArea(668,name)
+    end
+end
+
+
 function loadGameUI(name)
     ui.addImage("blueteamoperatives", images.blue_operatives, "_26", 20, 240,name)
     ui.addImage("redteamoperatives", images.red_operatives, "_34", 670, 240,name)
@@ -692,7 +774,9 @@ function loadGameUI(name)
     ui.addTextArea(334, string.format("<font size='15'><a href='event:commands'>  <b>!</b>  </font></a>"),name,751,20,nil,nil,0,0,1)
     
     if gameState.status == 0 then
+    ui.addImage("logo", "182e4d0d25a.png", "_42", 145, 70,name,1,1)
     ui.addImage("settings", "1826569905c.png", "_42", 235, 270,name,1,1)
+    giveTips(name)
 
     if settings.time then ui.addImage("opponent_setting", images.settings.on, "_42", 508, 297,name,1,1) else ui.addImage("opponent_setting", images.settings.off, "_42", 508, 297,name,1,1) end
     if settings.clue then ui.addImage("time_setting", images.settings.on, "_42", 508, 343,name,1,1) else ui.addImage("time_setting", images.settings.off, "_42", 508, 343,name,1,1) end
@@ -723,11 +807,18 @@ function loadGameUI(name)
         ui.removeTextArea(textAreas.join_red_operative, name)
         ui.removeTextArea(textAreas.join_blue_spymaster, name)
         ui.removeTextArea(textAreas.join_red_spymaster, name)
+        ui.removeTextArea(666, name)
+        ui.removeTextArea(667, name)
+        ui.removeTextArea(668, name)
         ui.removeImage("blueJoinButton",name)
         ui.removeImage("redJoinButton",name)
         ui.removeImage("settings",name)
         ui.removeImage("opponent_setting",name)
         ui.removeImage("time_setting",name)
+        ui.removeImage("tips",name)
+        ui.removeImage("next_tips",name)
+        ui.removeImage("prev_tips",name)
+        ui.removeImage("logo",name)
 
         ui.addImage("clue", images.clue_input, "_41", 300, 260,name)
 
@@ -748,10 +839,14 @@ function updatePlayerTeam(t, isSpymaster, n)
     local taID = textAreas["join_"..t.."_operative"]
     local joinSpy = "join_"..t.."_spymaster"
     
-    if isSpymaster then 
+    if isSpymaster and spymasters[t] ~= nil then 
         ui.removeImage(joinSpy,nil) 
         ui.removeImage(joinSpy,n) 
         ui.removeTextArea(textAreas[joinSpy], nil) 
+    elseif isSpymaster and spymasters[t] == nil then
+        ui.addImage(joinSpy, images.join[t], "_45", x[t], 370,nil,1,0.9)
+        ui.addTextArea(textAreas[joinSpy], string.format(translations[roomLang].joinButton),nil,x[t]+5,370,50,20,0,0,1)
+        updatePlayerNames(t,n,true) return
     end
 
     if isSpymaster and spymasters[t] then
@@ -783,7 +878,7 @@ function updatePlayerNames(team,name,isSpymaster)
 
     if isSpymaster then
         local str = spymasters[team]
-        ui.addTextArea(spymasterID, string.format("<p align='center'><font color='#ffffff'>%s</font></p>", str or ""),nil,x,370,120,20,0,0,1)
+        ui.addTextArea(spymasterID, string.format("<p align='center'><font color='#ffffff'><a href='event:leaveTeam'>%s</a></font></p>", str or ""),nil,x,370,120,20,0,0,1)
     else
         ui.addTextArea(operativeID+#operatives[team], string.format("<font color='#ffffff'><p align='center'><a href='event:leaveTeam'>%s</a></p></font>",operatives[team][#operatives[team]] or ""),nil,x,253+(#operatives[team]*20),120,18,0,0,1,true)
     end
@@ -807,7 +902,7 @@ function leaveRequest(name)
     if not teams[name] then return end
 
     local playerTeam = teams[name]
-    if spymasters[playerTeam] == name then return end
+    if spymasters[playerTeam] == name then spymasters[playerTeam] = nil updatePlayerTeam(playerTeam, true, name) teams[name] = nil return end
 
     teams[name] = nil
 
@@ -848,7 +943,8 @@ function eventTextAreaCallback(id, name, e)
 
     if e == "leaveTeam" and gameState.status == 0 then      
         if not teams[name] then return end
-        if spymasters["red"] == name or spymasters["blue"] == name then return end
+        if spymasters["red"] == name or spymasters["blue"] == name then leaveRequest(name) return end
+        
         local operativeID = textAreas["leave_"..teams[name].."_op"]
         ui.removeTextArea(operativeID+#operatives[teams[name]], nil)
 
@@ -891,6 +987,19 @@ function eventTextAreaCallback(id, name, e)
             ui.addImage("selectednumber", "1829f06f65e.png", "~1", 80+(nums*40), 370, name, 1, 1, 0, 1, 0, 0, false)
         end
     end
+
+    if e:sub(1,8) == "tipnext_" then
+        local tipnums = tonumber(e:sub(9,9))
+        tipnums = tipnums + 1
+        giveTips(name, tipnums)
+    end
+
+    if e:sub(1,8) == "tipprev_" then
+        local tipnums = tonumber(e:sub(9,9))        
+        tipnums = tipnums - 1
+        giveTips(name, tipnums)
+    end
+
 end
 
 function changeSettings(isClueSettings, name)
@@ -913,47 +1022,54 @@ function eventChatCommand(playerName, cmd)
         end
     end 
 
-    if roomAdmin ~= playerName or not admins[playerName] then return end
+    if roomAdmin == playerName or admins[playerName] == playerName then
+            if cmd == "restart" then 
+                resetGame() 
+                addGameLog(string.format(translations[roomLang].restartedGame, playerName))
+                return 
+            end
 
-    if roomAdmin == playerName then
-        if cmd == "restart" then 
-            resetGame() 
-            tfm.exec.chatMessage(string.format(translations[roomLang].clueNumberError), playerName) 
-            return 
+        local args = {}
+        for arg in cmd:gmatch('%S+') do args[1+#args]=arg end
+        local command = args[1] 
+        local bannedPlayer = args[2]
+
+        if command == "ban" and roomAdmin == playerName or admins[playerName] then
+            table.insert(banList, bannedPlayer)
+            leaveRequest(bannedPlayer)
+            checkBan("ban", bannedPlayer)
+        end
+
+        if command == "uban" and roomAdmin == playerName or admins[playerName]  then
+            checkBan("uban", bannedPlayer)
+        end
+
+        if command == "time" and admins[playerName] then
+            tfm.exec.setGameTime(bannedPlayer)
         end
     end
-
-    local args = {}
-    for arg in cmd:gmatch('%S+') do args[1+#args]=arg end
-    local command = args[1] 
-    local bannedPlayer = args[2]
-
-    if command == "ban" and roomAdmin == playerName or admins[playerName] then
-        table.insert(banList, bannedPlayer)
-        leaveRequest(bannedPlayer)
-        checkBan("ban", bannedPlayer)
-    end
-
-    if command == "uban" and roomAdmin == playerName or admins[playerName]  then
-        checkBan("uban", bannedPlayer)
-    end
-
 end
 
 
 function giveClue(name)
     currentClueNum = 0 currentClueText = nil currentPlayer = name
-    ui.addTextArea(466, string.format(""),name,200,240,400,180,"0x3B3025","0x3B3025",1,true) 
+    ui.addTextArea(textAreas.clue_background, string.format(""),name,200,240,400,180,"0x3B3025","0x3B3025",1,true) 
     ui.addPopup(2,2,"Clue:", name,350,250,100,true)
     ui.addImage("popupskin", "1829f06aa22.png", "~1", 345, 245, name, 1, 1, 0, 1, 0, 0, false)
     ui.addImage("selectnumber", "1829f078e61.png", "~1", 300, 340, name, 1, 1, 0, 1, 0, 0, false)
 
+    if teams[name] == "blue" then 
+        startLoading(170, 380) 
+    else
+        startLoading(630, 380)
+    end
+
     for i = 1, 5 do
-        ui.addTextArea(456+i, string.format("<a href='event:number_%d'><font size='20'>            ", i),name,265+(i*40),345,20,20,1,1,0, true) 
+        ui.addTextArea(textAreas.clue_num+i, string.format("<a href='event:number_%d'><font size='20'>            ", i),name,265+(i*40),345,20,20,1,1,0, true) 
     end
     
     for i = 1, 4 do
-        ui.addTextArea(461+i, string.format("<a href='event:number_%d'><font size='20'>            ", i+5),name,285+(i*40),375,20,20,1,1,0, true) 
+        ui.addTextArea(textAreas.clue_num5+i, string.format("<a href='event:number_%d'><font size='20'>            ", i+5),name,285+(i*40),375,20,20,1,1,0, true) 
     end
 
 end
@@ -973,17 +1089,22 @@ function checkClue(clueNum, clueText, name)
     end
 
     if redCount >= clueNum or blueCount >= clueNum then
-        addClue(clueText, clueNum, name)
+        addClue(clueText:sub(1, 20), clueNum, name)
         gameState.canGiveClue = false
         gameState.canVote = true
         ui.addPopup(1, 1, "", whichspy, 50000, 50000, 10, true)
         ui.removeImage("popupskin", name)
         ui.removeImage("selectnumber", name)
         ui.removeImage("selectednumber", name)
-        for i = 1, 10 do ui.removeTextArea(456+i, name) end
+
+        if teams[name] == "blue" then
+            startLoading(170, 250) 
+        else
+            startLoading(630, 250) 
+        end
+
+        for i = 1, 10 do ui.removeTextArea(textAreas.clue_num+i, name) end
         gameState.status = 3
-    else
-        tfm.exec.chatMessage(string.format(translations[roomLang].clueNumberError), name) 
     end
 end
 
@@ -1004,7 +1125,63 @@ function setCurrentClue(clueText, clueNum, playerName, colorCode)
     ui.addTextArea(textAreas.clue_number,string.format("<p align='center'><font color='%s'><b>%d</font></b></p>",colorCode, clueNum),playerName,485,288,20,20,0,0,1)
 end
 
-function stopThinking()
+function startLoading(x, y)
+    tfm.exec.addPhysicObject(1, 0, 0, {
+        type = 13,
+        miceCollision = false,
+        groundCollision = false,
+    })
+    tfm.exec.addPhysicObject(44, x, y, {
+        dynamic = true,
+        type = 13,
+        mass = 1,
+        miceCollision = false,
+        groundCollision = false,
+        foreground = true,
+    })
+    tfm.exec.addJoint(3, 44, 1, {
+        type = 3,
+        point1 = x..","..y,
+        speedMotor = -2,
+        forceMotor = 100,
+    })
+    local dist = 10
+      tfm.exec.addJoint(4, 44, 44, {
+          type = 0,
+          point1 = (x)..","..(y+dist),
+          point2 = (x+1)..","..(y+dist),
+          color = 0xbb0000,
+          foreground = true,
+          line = 5,
+      })
+      tfm.exec.addJoint(5, 44, 44, {
+          type = 0,
+          point1 = (x)..","..(y-dist),
+          point2 = (x+1)..","..(y-dist),
+          color = 0xbb0000,
+          foreground = true,
+          line = 5,
+      })
+      tfm.exec.addJoint(6, 44, 44, {
+          type = 0,
+          point1 = (x-dist)..","..(y),
+          point2 = (x-dist)..","..(y+1),
+          color = 0xbb0000,
+          foreground = true,
+          line = 5,
+      })
+      tfm.exec.addJoint(7, 44, 44, {
+          type = 0,
+          point1 = (x+dist)..","..(y),
+          point2 = (x+dist)..","..(y+1),
+          color = 0xbb0000,
+          foreground = true,
+          line = 5,
+      })
+end
+
+function stopLoading()
+    tfm.exec.removePhysicObject(44)
 end
 
 voteImages = {}
@@ -1029,7 +1206,7 @@ function voteCard(cardID, name)
     voted[cardID] = votes + 1
     voted[name .. "|" .. cardID] = true
 
-    addGameLog(string.format("%s voted for %s",name,cards[cardID].word))
+    addGameLog(string.format("%s voted for %s",name, roundWords[cardID]))
     
     if voted[cardID] > checkVoteCount then
         pickedCard(cardID, name)
@@ -1039,23 +1216,37 @@ end
 function pickedCard(cardID, name)
     local card = cards[cardID]
     local replaceimg = images.card_selected[card.color]
-    local textcolor = card.color == "red" and "8f2b1c" or "3284a3"
+    local teamcolor = teams[name] == "red" and "#8f2b1c" or "#3284a3"
 
     ui.addTextArea(cardID, string.format("<font color='#ffffff'><p align='center'><b>%s</b></p></font>", roundWords[cardID]), nil, card.position.x, card.position.y+6, 100, 30,card.color,0,1)
     ui.addImage("card"..cardID, replaceimg, "_"..cardID+200, card.position.x, card.position.y, nil)
     card.covered = true
+    print(contactedBlueAgent)
 
-        if card.color == "yellow" then currentClueNum = 0 
-        elseif card.color == "black" then gameOver(teams[name], true) return
-        elseif card.color == "red" then redCount = redCount - 1 
-        elseif card.color == "blue" then blueCount = blueCount -1 
+        if card.color == "yellow" then 
+            currentClueNum = 0 
+            addGameLog(string.format(translations[roomLang].contactedBystander,teamcolor,translations[roomLang][teams[name]], roundWords[cardID]))
+
+        elseif card.color == "black" then 
+            gameOver(teams[name], true) 
+            addGameLog(string.format(translations[roomLang].contactedAssassin,teamcolor,translations[roomLang][teams[name]], roundWords[cardID]))
+            return
+
+        elseif card.color == "red" then 
+            redCount = redCount - 1 
+            addGameLog(string.format(translations[roomLang].contactedRedAgent,teamcolor,translations[roomLang][teams[name]], roundWords[cardID]))
+            
+        elseif card.color == "blue" then 
+            blueCount = blueCount -1 
+            addGameLog(string.format(translations[roomLang].contactedBlueAgent,teamcolor,translations[roomLang][teams[name]], roundWords[cardID]))
         end
 
         if card.color == teams[name] then 
-        currentClueNum = currentClueNum - 1 
+            currentClueNum = currentClueNum - 1 
         else 
-        currentClueNum = 0 
+            currentClueNum = 0 
         end
+
         updateCardsCount()
 
     if redCount < 1 then gameOver(teams[name]) return
@@ -1075,8 +1266,8 @@ function changeTurn(cardID, name)
     ui.updateTextArea(textAreas.clue_text, translations[roomLang].thinking, nil)
     ui.updateTextArea(textAreas.clue_number, "<font color='#000000'><b>-</b></font>", nil)
 
-
     for i = 1, #voteImages do ui.removeImage(voteImages[i], nil) end
+
     voteImages = {}
     voted = {}
 
@@ -1088,8 +1279,9 @@ function changeTurn(cardID, name)
         ui.removeImage("popupskin", spymasters["red"])
         ui.removeImage("selectnumber", spymasters["red"])
         ui.removeImage("selectednumber", spymasters["red"])
+        ui.removeTextArea(textAreas.clue_background)
         ui.addPopup(2,2,"Clue:", name,5000,5000,100,true)
-        for i = 1, 10 do ui.removeTextArea(456+i, name) end
+        for i = 1, 10 do ui.removeTextArea(textAreas.clue_num+i, name) end
 
         giveClue(spymasters["blue"])
     else
@@ -1100,8 +1292,9 @@ function changeTurn(cardID, name)
         ui.removeImage("popupskin", spymasters["blue"])
         ui.removeImage("selectnumber", spymasters["blue"])
         ui.removeImage("selectednumber", spymasters["blue"])
+        ui.removeTextArea(textAreas.clue_background)
         ui.addPopup(2,2,"Clue:", name,5000,5000,100,true)
-        for i = 1, 10 do ui.removeTextArea(456+i, name) end
+        for i = 1, 10 do ui.removeTextArea(textAreas.clue_num+i, name) end
 
         giveClue(spymasters["red"])
     end
@@ -1127,17 +1320,16 @@ function gameOver(team, isBlack)
     end
 end
 
-
 function addGameLog(message)
     table.insert(gameLog, 1, message)
-    gameLogList = table.concat(gameLog, '\n')
+    gameLogList = '• '.. table.concat(gameLog, '\n• ')
 end
 
 function addInfo(message)
+    lastinfo = message
     ui.addImage("infotab", "182bc8b716a.png", "?999",200,364,nil,1,1,0,1,0,0,false)
-    ui.addTextArea(textAreas.turn_text, message,nil,175,370,450,40,0,0,1)
+    ui.addTextArea(textAreas.turn_text, lastinfo,nil,175,370,450,40,0,0,1)
 end
-
 
 function teamClueLog(name, team)
     local cLogsID = teams[name].."logs"
@@ -1158,7 +1350,7 @@ function eventKeyboard(name, key, down)
         keys.gameLogKey[name] = not keys.gameLogKey[name]
         if keys.gameLogKey[name] then
             ui.addImage("gamelogs", images.game_logs, ":999", 225, 20, name)
-            ui.addTextArea(textAreas.game_log, string.format("<font size='10' color='#000000'><b>%s</b></font>", gameLogList or ""),name,260,30,200,65,0,0,1, true) 
+            ui.addTextArea(textAreas.game_log, string.format("<font size='10' color='#000000'><b>%s</b></font>", gameLogList or ""),name,255,30,220,120,0,0,1, true) 
         else
             ui.removeImage("gamelogs", name)
             ui.removeTextArea(textAreas.game_log, name)
@@ -1192,25 +1384,28 @@ end
 
 noLimit = 0
 function eventPopupAnswer(id, name, answer)
+    local sp = teams[name] == "red" and "blue" or "red"
+    local notsp = teams[name] == "blue" and "blue" or "red"
+
     if id == 2 then
-        local sp = teams[name] == "red" and "blue" or "red"
         ui.removeImage("popupskin", name)
         ui.removeImage("selectnumber", name)
         ui.removeImage("selectednumber", name)
-        for i = 1, 10 do ui.removeTextArea(456+i, name) end
+        for i = 1, 10 do ui.removeTextArea(textAreas.clue_num+i, name) end
     end
 
     if id == 1 and answer == "yes" then
         clueConfirmed = true
         addInfo(string.format(translations[roomLang].validClue, translations[roomLang][teams[currentPlayer]]))
         checkClue(currentClueNum, currentClueText, currentPlayer)
+        addGameLog(string.format(translations[roomLang].approvedClue, colors[notsp], spymasters[notsp], colors[sp], spymasters[sp]))
     end
 
     if id == 1 and answer == "no" then
-        local sp = teams[name] == "red" and "blue" or "red"
         noLimit = noLimit + 1
         clueConfirmed = false
         addInfo(string.format(translations[roomLang].invalidClue, 3-noLimit))
+        addGameLog(string.format(translations[roomLang].notApprovedClue, colors[notsp], spymasters[notsp], colors[sp], spymasters[sp]))
         if settings.time then tfm.exec.setGameTime(60) end 
         if noLimit == 3 then changeTurn() else giveClue(spymasters[sp]) end
         gameState.status = 2
@@ -1220,9 +1415,9 @@ function eventPopupAnswer(id, name, answer)
         currentClueText = answer:gsub('<.->', '')
 
         if roomLang == "tr" then 
-        checkThisWord = string.upper(currentClueText:gsub('i', 'İ'))
+            checkThisWord = string.upper(currentClueText:gsub('i', 'İ'))
         else
-        checkThisWord = string.upper(currentClueText)
+            checkThisWord = string.upper(currentClueText)
         end
 
         local checkClueWord = table.index(roundWords, checkThisWord)
@@ -1238,7 +1433,6 @@ function eventPopupAnswer(id, name, answer)
             checkClue(currentClueNum, currentClueText, currentPlayer)
         end
     end
-
 end
 
 function checkRoomAdmin()
@@ -1260,6 +1454,10 @@ function resetGame()
     ui.removeImage("popupskin", spymasters["red"])
     ui.removeImage("selectnumber", spymasters["red"])
     ui.removeImage("selectednumber", spymasters["red"])
+    ui.removeImage("popupskin", spymasters["blue"])
+    ui.removeImage("selectnumber", spymasters["blue"])
+    ui.removeImage("selectednumber", spymasters["blue"])
+    ui.removeTextArea(textAreas.clue_background)
     ui.addPopup(2,2,"Clue:", name,5000,5000,100,true)
 
     voted = {}
