@@ -497,8 +497,8 @@ end
 
 function startGame(name)
     if roomAdmin ~= name then return end
-    local checkOperatives = (#operatives["blue"] and #operatives["red"]) >= 0 and true
-    local checkSpymasters = (spymasters["blue"] and spymasters["red"]) ~= nil and true
+    local checkOperatives = (#operatives["blue"] >= 1 and #operatives["red"] >= 1)
+    local checkSpymasters = (spymasters["blue"] and spymasters["red"]) ~= nil
     
     if checkOperatives and checkSpymasters then
         gameState.status = 1
@@ -1036,7 +1036,6 @@ function eventChatCommand(playerName, cmd)
 
         if command == "ban" and roomAdmin == playerName or admins[playerName] then
             table.insert(banList, bannedPlayer)
-            leaveRequest(bannedPlayer)
             checkBan("ban", bannedPlayer)
         end
 
