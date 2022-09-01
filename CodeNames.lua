@@ -10,6 +10,7 @@ words = {
 
 translations = {
     ["en"] = {
+        ["welcome"] = "<J>Welcome to <b>CODENAMES!</b> Press <b><VP>H</VP></b> to learn how to play.</J>",
         ["red"] = "RED",
         ["blue"] = "BLUE",
         ["blueTurn"] = "<b><p align='center'><font color='#ffffff'>BLUE TEAM'S TURN </b></p></font>",
@@ -43,6 +44,7 @@ translations = {
     },
 
     ["tr"] = {
+        ["welcome"] = "<J><b>CODENAMES</b>'e hoşgeldiniz! Nasıl oynanacağını öğrenmek için <b><VP>H</VP></b>'ye basın.</J>",
         ["red"] = "KIRMIZI",
         ["blue"] = "MAVİ",
         ["blueTurn"] = "<b><p align='center'><font color='#ffffff'>MAVİ TAKIMIN SIRASI</b></p></font>",
@@ -229,8 +231,9 @@ tips = {
         "The other team has <b>8</b> agents on the field!",
         "Clue cannot exceed <b>20</b> characters!",
         "You can't give more words than the remaining number of cards!",
-        "Click <b>[CTRL]</b> to see game log.",
-        "Click <b>[LSHIFT]</b> to see your team's clue log.",
+        "Press <b>[CTRL]</b> to see game log.",
+        "Press <b>[LSHIFT]</b> to see your team's clue log.",
+        "You can play in 6 different languages: EN, TR, FR, ES, PT, AR",
     },
 
     ["tr"] = {
@@ -242,6 +245,7 @@ tips = {
         "Kalan kart sayısından fazla kelime veremezsiniz!",
         "Oyun geçmişini görmek için <b>[CTRL]</b> tuşuna basın.",
         "Takımınızın ipucu geçmişini görmek için <b>[LSHIFT]</b> tuşuna basın.",
+        "Oyunu 6 farklı dilde oynayabilirsiniz: EN, TR, FR, ES, PT, AR",
     }
 }
 
@@ -251,8 +255,7 @@ images = {
     red = "18234254e67.png", 
     blue = "18234259ab2.png",
     yellow = "1823425e7b6.png",
-    black = "182342634af.png"
-    },
+    black = "182342634af.png" },
 
     join = { red = "18256983759.png", blue = "18256979f5d.png" },
     settings = { on = "1826568f84b.png", off = "1826569445c.png" },
@@ -261,19 +264,16 @@ images = {
     red = "18248860660.png",
     blue = "1824885ba5f.png",
     yellow = "1824886525e.png",
-    black = "18248856e5f.png",
-    },
+    black = "18248856e5f.png", },
 
     help = {
     image_1 = "1828638111d.png",
     image_2 = "18284aa6a69.png",
-    image_3 = "18284aab665.png",
-    },
+    image_3 = "18284aab665.png", },
 
     commands = {
     image_1 = "182bc8bbd5a.png",
-    image_2 = "1829f074270.png",
-    },
+    image_2 = "1829f074270.png", },
 
     
     red_clues = "18248848a60.png",
@@ -478,6 +478,7 @@ tfm.exec.disableAfkDeath(true)
 tfm.exec.disableAutoNewGame(true)
 system.disableChatCommandDisplay()
 tfm.exec.disableMortCommand(true)
+tfm.exec.chatMessage(translations[roomLang].welcome, nil)
 
 
 function gameStatus()
@@ -498,7 +499,7 @@ end
 function startGame(name)
     if roomAdmin ~= name then return end
     local checkOperatives = (#operatives["blue"] >= 1 and #operatives["red"] >= 1)
-    local checkSpymasters = (spymasters["blue"] and spymasters["red"]) ~= nil
+    local checkSpymasters = (spymasters["blue"] ~= nil and spymasters["red"] ~= nil) 
     
     if checkOperatives and checkSpymasters then
         gameState.status = 1
@@ -551,6 +552,7 @@ function eventNewGame()
 end
 
 function eventNewPlayer(n)
+    tfm.exec.chatMessage(translations[roomLang].welcome, n)
     checkRoomAdmin()
     loadGameUI(n)
     updatePlayerTeam("red", false, n)
@@ -579,12 +581,21 @@ function eventNewPlayer(n)
 end
 
 function eventPlayerLeft(n)
-    if spymasters[teams[n]] == n then return end
+    ui._imageCleanup(n)
     leaveRequest(n)
     if n == roomAdmin then
         roomAdmin = nil
         checkRoomAdmin()
     end
+
+    local checkOperatives = (#operatives["blue"] < 1 or #operatives["red"] < 1)
+    local checkSpymasters = (spymasters["blue"] == nil or spymasters["red"] == nil)
+
+    if checkOperatives or checkSpymasters then
+        addGameLog(string.format("%s left, game restarted.", n))
+        resetGame()
+    end
+
 end
 
 function selectRoundCards(count, color)
