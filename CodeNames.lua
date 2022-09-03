@@ -25,7 +25,7 @@ translations = {
         ["clueGameLog"] = "<b><font color='%s'>%s</b></font>'s clue is <font color='%s'><b>%s</b></font> for <b><font color='%s'>%d</b></font> words.",
         ["roomAdminInfo"] = "The room admin can change the settings and start the game at any time.",
         ["restartedGame"] = "<R> %s restarted the game. </R>",
-        ["thinking"] = "<font color='#000000'><b> Thinking... </b></font>",
+        ["thinking"] = "<font color='#fafafa'><b> Thinking... </b></font>",
         ["blackGameOver"] = "<b><p align='center'><font color='#ffffff'>%s TEAM CONTACTED WITH THE ASSASIN AND LOST THE GAME! </b></p></font>",
         ["redTeamWon"] = "<b><p align='center'><font color='#ffffff'>RED TEAM WON! </b></p></font>",
         ["blueTeamWon"] = "<b><p align='center'><font color='#ffffff'>BLUE TEAM WON! </b></p></font>",
@@ -59,7 +59,7 @@ translations = {
         ["clueGameLog"] = "<b><font color='%s'>%s</b></font> adlı kullanıcının verdiği ipucu <font color='%s'><b>%s</b></font> (<b><font color='%s'>%d</b></font> kelime için).",
         ["roomAdminInfo"] = "Oda ayarlarını belirler, istediği zaman oyunu başlatabilir.",
         ["restartedGame"] = "<R> %s oyunu yeniden başlattı. </R>",
-        ["thinking"] = "<font color='#000000'><b> Düşünüyor... </b></font>",
+        ["thinking"] = "<font color='#fafafa'><b> Düşünüyor... </b></font>",
         ["blackGameOver"] = "<b><p align='center'><font color='#ffffff'>%s TAKIM ASSASIN İLE İLETİŞİME GEÇTİ VE OYUNU KAYBETTİ! </b></p></font>",
         ["redTeamWon"] = "<b><p align='center'><font color='#ffffff'>KIRMIZI TAKIM KAZANDI! </b></p></font>",
         ["blueTeamWon"] = "<b><p align='center'><font color='#ffffff'>MAVİ TAKIM KAZANDI! </b></p></font>",
@@ -234,6 +234,7 @@ tips = {
         "Press <b>[CTRL]</b> to see game log.",
         "Press <b>[LSHIFT]</b> to see your team's clue log.",
         "You can play in 6 different languages: EN, TR, FR, ES, PT, AR",
+        "Create your own room with: <b><J>#codenames0</J><V>PlayerName</V><G>#tag</G></b>",
     },
 
     ["tr"] = {
@@ -246,6 +247,7 @@ tips = {
         "Oyun geçmişini görmek için <b>[CTRL]</b> tuşuna basın.",
         "Takımınızın ipucu geçmişini görmek için <b>[LSHIFT]</b> tuşuna basın.",
         "Oyunu 6 farklı dilde oynayabilirsiniz: EN, TR, FR, ES, PT, AR",
+        "Kendi odanızı oluşturun: <b><J>#codenames0</J><V>KullanıcıAdı</V><G>#etiket</G></b>",
     }
 }
 
@@ -286,7 +288,7 @@ images = {
     blue_spymasters = "18248869e5d.png",
     red_operatives = "1824884d65e.png",
     red_spymasters = "18248869e5d.png",
-    clue_input = "18234271bb2.png",
+    clue_input = "18301921061.png",
     vote_sign = "1824886ea60.png",
     game_logs = "18248843e60.png",
     time_bg = "1826569dc5b.png",
@@ -400,8 +402,8 @@ banList = {}
 
 voted = {}
 teams = {}
-operatives = {red = {}, blue = {}}
-spymasters = {}
+operatives = {red = {"Mahmut#0000"}, blue = {"Muhittin#0000"}}
+spymasters = {["red"]="Tester#0000"}
 clues = {red = {}, blue={}}
 gameLog = {}
 keys = {gameLogKey = {}, clueLogKey = {}, helpKey = true, commandsKey = true}
@@ -522,7 +524,7 @@ function eventNewGame()
 
     local size = math.floor(#words.tr / 25)
     roundWords = {} roundCardTypes = {}
-    redCount = math.random(8,9) blueCount = nil
+    redCount = math.random(8,8) blueCount = nil
 
     if redCount == 8 then blueCount = 9 gameState.blueTurn = true
         giveClue(spymasters["blue"])
@@ -533,9 +535,9 @@ function eventNewGame()
         addInfo(string.format(translations[roomLang].redTurn))
     end
 
-    -- math.randomseed(4)
+    math.randomseed(4)
     for i = 1, 25 do table.insert(roundWords, words[roomLang][math.random(1 + size * (i - 1), size * i)]) end
-    -- math.randomseed(os.time())
+    --math.randomseed(os.time())
     table.shuffle(roundWords)
     for i=1, 25 do roundCardTypes[i] = i end
 
@@ -609,8 +611,8 @@ end
 function showRoundCards(showTrueColors, name)
     for i=1, 25 do
         cardsIMG = (showTrueColors or cards[i].covered) and images.cards[cards[i].color] or images.cards["yellow"]
-        ui.addTextArea(cards[i].id, string.format("<p align='center'><b><font color='#000000'><a href='event:selectCard'>%s</a></font></b></p>",roundWords[i]), name, cards[i].position.x,cards[i].position.y+6, 100, 30,0,0,true)
         ui.addImage("card"..i, cardsIMG, "_"..i+100, cards[i].position.x, cards[i].position.y, name)
+        ui.addTextArea(cards[i].id, string.format("<p align='center'><b><font color='#000000'><a href='event:selectCard'>%s</font></b></p>",roundWords[i]), name, cards[i].position.x,cards[i].position.y+6, 100, 30,0,0,true)
     end
 end
 
@@ -766,80 +768,6 @@ function giveTips(name, tipNum)
     if tipNum <= 1 then
         ui.removeImage("prev_tips",name)
         ui.removeTextArea(668,name)
-    end
-end
-
-
-function loadGameUI(name)
-    ui.addImage("blueteamoperatives", images.blue_operatives, "_26", 20, 240,name)
-    ui.addImage("redteamoperatives", images.red_operatives, "_34", 670, 240,name)
-    ui.addImage("bluespymasters", images.blue_spymasters, "_32", 20, 355,name)
-    ui.addImage("redspymaster", images.red_spymasters, "_39", 690, 355,name) 
-    ui.addImage("bluespymasterline", images.blue_line, "_33", 20, 370,name,1,0.9) 
-    ui.addImage("redspymasterline", images.red_line, "_40", 660, 370,name,1,0.9) 
-    for i = 0, 3 do ui.addImage("blueline"..i, images.blue_line, "_27", 20, 270 + i * 20,name,1,0.9) ui.addImage("redline"..i, images.red_line, "_35", 660, 270 + i * 20,name,1,0.9) end
-
-    ui.addImage("helpbutton", "1829f074270.png", "_50", 710, 20,nil,1,1)
-    ui.addImage("creditsbutton", "1829f074270.png", "_50", 750, 20,nil,1,1)
-    ui.addTextArea(333, string.format("<font size='15'><a href='event:help'>  <b>?</b>  </font></a>"),name,710,20,nil,nil,0,0,1)
-    ui.addTextArea(334, string.format("<font size='15'><a href='event:commands'>  <b>!</b>  </font></a>"),name,751,20,nil,nil,0,0,1)
-    
-    if gameState.status == 0 then
-    ui.addImage("logo", "182e4d0d25a.png", "_42", 145, 70,name,1,1)
-    ui.addImage("settings", "1826569905c.png", "_42", 235, 270,name,1,1)
-    giveTips(name)
-
-    if settings.time then ui.addImage("opponent_setting", images.settings.on, "_42", 508, 297,name,1,1) else ui.addImage("opponent_setting", images.settings.off, "_42", 508, 297,name,1,1) end
-    if settings.clue then ui.addImage("time_setting", images.settings.on, "_42", 508, 343,name,1,1) else ui.addImage("time_setting", images.settings.off, "_42", 508, 343,name,1,1) end
-
-    ui.addTextArea(textAreas.opponent_setting, string.format(translations[roomLang].opponentSetting),name,370,293,120,nil,0,0,1)
-    ui.addTextArea(textAreas.time_settings, string.format(translations[roomLang].timeSetting),name,370,345,120,nil,0,0,1)
-    ui.addTextArea(textAreas.opponent_button, string.format("<p align='center'><font size='13' color='#FFFFFF'><a href='event:settings'>         </font></p>"),name,510,297,45,nil,0,0,1)
-    ui.addTextArea(textAreas.time_button, string.format("<p align='center'><font size='13' color='#FFFFFF'><a href='event:settings'>         </font></p>"),name,510,343,45,nil,0,0,1)
-    ui.addTextArea(textAreas.start_button, string.format(translations[roomLang].startButton),name,239,356,120,nil,0,0,1)
-
-    ui.addImage("blueJoinButton", images.join.blue, "_42", 150, 270,name,1,0.9)
-    ui.addImage("redJoinButton", images.join.red, "_44", 590, 270,name,1,0.9)
-    ui.addTextArea(textAreas.join_blue_operative, string.format(translations[roomLang].joinButton),name,155,270,50,20,0,0,1)
-    ui.addTextArea(textAreas.join_red_operative, string.format(translations[roomLang].joinButton),name,595,270,50,20,0,0,1)
-    ui.addImage("join_blue_spymaster", images.join.blue, "_43", 150, 370,name,1,0.9) 
-    ui.addImage("join_red_spymaster", images.join.red, "_45", 590, 370,name,1,0.9)
-    ui.addTextArea(textAreas.join_blue_spymaster, string.format(translations[roomLang].joinButton),name,155,370,50,20,0,0,1)
-    ui.addTextArea(textAreas.join_red_spymaster, string.format(translations[roomLang].joinButton),name,595,370,50,20,0,0,1)
-
-
-    elseif gameState.status >= 1 then
-        ui.removeTextArea(textAreas.opponent_setting, name)
-        ui.removeTextArea(textAreas.time_settings, name)
-        ui.removeTextArea(textAreas.opponent_button, name)
-        ui.removeTextArea(textAreas.time_button, name)
-        ui.removeTextArea(textAreas.start_button, name)
-        ui.removeTextArea(textAreas.join_blue_operative, name)
-        ui.removeTextArea(textAreas.join_red_operative, name)
-        ui.removeTextArea(textAreas.join_blue_spymaster, name)
-        ui.removeTextArea(textAreas.join_red_spymaster, name)
-        ui.removeTextArea(666, name)
-        ui.removeTextArea(667, name)
-        ui.removeTextArea(668, name)
-        ui.removeImage("blueJoinButton",name)
-        ui.removeImage("redJoinButton",name)
-        ui.removeImage("settings",name)
-        ui.removeImage("opponent_setting",name)
-        ui.removeImage("time_setting",name)
-        ui.removeImage("tips",name)
-        ui.removeImage("next_tips",name)
-        ui.removeImage("prev_tips",name)
-        ui.removeImage("logo",name)
-
-        ui.addImage("clue", images.clue_input, "_41", 300, 260,name)
-
-        ui.addImage("bluecardscount", images.blue_circle, "_47", 30, 80,name,1, 1)
-        ui.addImage("redcardscount", images.red_circle, "_47", 725, 80,name,1, 1)
-
-        if settings.time then 
-            ui.addImage("blueTime", images.time_bg, "_42", 20, 140,name,1,1)
-            ui.addImage("redTime", images.time_bg, "_44", 715, 140,name,1,1)
-        end
     end
 end
 
@@ -1000,13 +928,13 @@ function eventTextAreaCallback(id, name, e)
     end
 
     if e:sub(1,8) == "tipnext_" then
-        local tipnums = tonumber(e:sub(9,9))
+        local tipnums = tonumber(e:sub(9))
         tipnums = tipnums + 1
         giveTips(name, tipnums)
     end
 
     if e:sub(1,8) == "tipprev_" then
-        local tipnums = tonumber(e:sub(9,9))        
+        local tipnums = tonumber(e:sub(9))        
         tipnums = tipnums - 1
         giveTips(name, tipnums)
     end
@@ -1069,9 +997,9 @@ function giveClue(name)
     ui.addImage("selectnumber", "1829f078e61.png", "~1", 300, 340, name, 1, 1, 0, 1, 0, 0, false)
 
     if teams[name] == "blue" then 
-        startLoading(170, 380) 
+        startLoading(168, 378) 
     else
-        startLoading(630, 380)
+        startLoading(632, 378)
     end
 
     for i = 1, 5 do
@@ -1108,9 +1036,9 @@ function checkClue(clueNum, clueText, name)
         ui.removeImage("selectednumber", name)
 
         if teams[name] == "blue" then
-            startLoading(170, 250) 
+            startLoading(168, 250) 
         else
-            startLoading(630, 250) 
+            startLoading(632, 250) 
         end
 
         for i = 1, 10 do ui.removeTextArea(textAreas.clue_num+i, name) end
@@ -1131,8 +1059,8 @@ function addClue(clueText, clueNum, playerName)
 end
 
 function setCurrentClue(clueText, clueNum, playerName, colorCode)
-    ui.addTextArea(textAreas.clue_text, string.format("<font color='%s'><b>%s</font></b>",colorCode, clueText),playerName,310,288,170,20,0,0,1)
-    ui.addTextArea(textAreas.clue_number,string.format("<p align='center'><font color='%s'><b>%d</font></b></p>",colorCode, clueNum),playerName,485,288,20,20,0,0,1)
+    ui.addTextArea(textAreas.clue_text, string.format("<font color='%s'><b>%s</font></b>",colorCode, clueText),playerName,310,286,170,20,0,0,1)
+    ui.addTextArea(textAreas.clue_number,string.format("<p align='center'><font color='%s'><b>%d</font></b></p>",colorCode, clueNum),playerName,485,286,20,20,0,0,1)
 end
 
 function startLoading(x, y)
@@ -1156,38 +1084,20 @@ function startLoading(x, y)
         forceMotor = 100,
     })
     local dist = 10
-      tfm.exec.addJoint(4, 44, 44, {
+    local dist2 = 15
+    for j=1,8 do
+      local ang=(j-1) * 2 * math.pi / 8
+      local rx = math.cos(ang)
+      local ry = math.sin(ang)
+      tfm.exec.addJoint(4+j, 44, 44, {
           type = 0,
-          point1 = (x)..","..(y+dist),
-          point2 = (x+1)..","..(y+dist),
-          color = 0xbb0000,
+          point1 = math.floor(x + dist*rx)..","..math.floor(y + dist*ry),
+          point2 = math.floor(x + dist2*rx)..","..math.floor(y + dist2*ry),
+          color = 0x00bb00,
           foreground = true,
-          line = 5,
+          line = 2,
       })
-      tfm.exec.addJoint(5, 44, 44, {
-          type = 0,
-          point1 = (x)..","..(y-dist),
-          point2 = (x+1)..","..(y-dist),
-          color = 0xbb0000,
-          foreground = true,
-          line = 5,
-      })
-      tfm.exec.addJoint(6, 44, 44, {
-          type = 0,
-          point1 = (x-dist)..","..(y),
-          point2 = (x-dist)..","..(y+1),
-          color = 0xbb0000,
-          foreground = true,
-          line = 5,
-      })
-      tfm.exec.addJoint(7, 44, 44, {
-          type = 0,
-          point1 = (x+dist)..","..(y),
-          point2 = (x+dist)..","..(y+1),
-          color = 0xbb0000,
-          foreground = true,
-          line = 5,
-      })
+    end
 end
 
 function stopLoading()
@@ -1218,7 +1128,7 @@ function voteCard(cardID, name)
 
     addGameLog(string.format("%s voted for %s",name, roundWords[cardID]))
     
-    if voted[cardID] > checkVoteCount then
+    if voted[cardID] >= checkVoteCount then
         pickedCard(cardID, name)
     end
 end
@@ -1274,7 +1184,7 @@ end
 function changeTurn(cardID, name)
     noLimit = 0
     ui.updateTextArea(textAreas.clue_text, translations[roomLang].thinking, nil)
-    ui.updateTextArea(textAreas.clue_number, "<font color='#000000'><b>-</b></font>", nil)
+    ui.updateTextArea(textAreas.clue_number, "<font color='#fafafa'><b>-</b></font>", nil)
 
     for i = 1, #voteImages do ui.removeImage(voteImages[i], nil) end
 
@@ -1457,6 +1367,80 @@ function checkRoomAdmin()
     end
 end
 
+function loadGameUI(name)
+    ui.addImage("blueteamoperatives", images.blue_operatives, "_26", 20, 240,name)
+    ui.addImage("redteamoperatives", images.red_operatives, "_34", 670, 240,name)
+    ui.addImage("bluespymasters", images.blue_spymasters, "_32", 20, 355,name)
+    ui.addImage("redspymaster", images.red_spymasters, "_39", 690, 355,name) 
+    ui.addImage("bluespymasterline", images.blue_line, "_33", 20, 370,name,1,0.9) 
+    ui.addImage("redspymasterline", images.red_line, "_40", 660, 370,name,1,0.9) 
+    for i = 0, 3 do ui.addImage("blueline"..i, images.blue_line, "_27", 20, 270 + i * 20,name,1,0.9) ui.addImage("redline"..i, images.red_line, "_35", 660, 270 + i * 20,name,1,0.9) end
+
+    ui.addImage("helpbutton", "1829f074270.png", "_50", 710, 20,nil,1,1)
+    ui.addImage("creditsbutton", "1829f074270.png", "_50", 750, 20,nil,1,1)
+    ui.addTextArea(333, string.format("<font size='15'><a href='event:help'>  <b>?</b>  </font></a>"),name,710,20,nil,nil,0,0,1)
+    ui.addTextArea(334, string.format("<font size='15'><a href='event:commands'>  <b>!</b>  </font></a>"),name,751,20,nil,nil,0,0,1)
+    
+    if gameState.status == 0 then
+    ui.addImage("logo", "182e4d0d25a.png", "_42", 145, 70,name,1,1)
+    ui.addImage("settings", "1826569905c.png", "_42", 235, 270,name,1,1)
+    giveTips(name)
+
+    if settings.time then ui.addImage("opponent_setting", images.settings.on, "_42", 508, 297,name,1,1) else ui.addImage("opponent_setting", images.settings.off, "_42", 508, 297,name,1,1) end
+    if settings.clue then ui.addImage("time_setting", images.settings.on, "_42", 508, 343,name,1,1) else ui.addImage("time_setting", images.settings.off, "_42", 508, 343,name,1,1) end
+
+    ui.addTextArea(textAreas.opponent_setting, string.format(translations[roomLang].opponentSetting),name,370,293,120,nil,0,0,1)
+    ui.addTextArea(textAreas.time_settings, string.format(translations[roomLang].timeSetting),name,370,345,120,nil,0,0,1)
+    ui.addTextArea(textAreas.opponent_button, string.format("<p align='center'><font size='13' color='#FFFFFF'><a href='event:settings'>         </font></p>"),name,510,297,45,nil,0,0,1)
+    ui.addTextArea(textAreas.time_button, string.format("<p align='center'><font size='13' color='#FFFFFF'><a href='event:settings'>         </font></p>"),name,510,343,45,nil,0,0,1)
+    ui.addTextArea(textAreas.start_button, string.format(translations[roomLang].startButton),name,239,356,120,nil,0,0,1)
+
+    ui.addImage("blueJoinButton", images.join.blue, "_42", 150, 270,name,1,0.9)
+    ui.addImage("redJoinButton", images.join.red, "_44", 590, 270,name,1,0.9)
+    ui.addTextArea(textAreas.join_blue_operative, string.format(translations[roomLang].joinButton),name,155,270,50,20,0,0,1)
+    ui.addTextArea(textAreas.join_red_operative, string.format(translations[roomLang].joinButton),name,595,270,50,20,0,0,1)
+    ui.addImage("join_blue_spymaster", images.join.blue, "_43", 150, 370,name,1,0.9) 
+    ui.addImage("join_red_spymaster", images.join.red, "_45", 590, 370,name,1,0.9)
+    ui.addTextArea(textAreas.join_blue_spymaster, string.format(translations[roomLang].joinButton),name,155,370,50,20,0,0,1)
+    ui.addTextArea(textAreas.join_red_spymaster, string.format(translations[roomLang].joinButton),name,595,370,50,20,0,0,1)
+
+
+    elseif gameState.status >= 1 then
+        ui.removeTextArea(textAreas.opponent_setting, name)
+        ui.removeTextArea(textAreas.time_settings, name)
+        ui.removeTextArea(textAreas.opponent_button, name)
+        ui.removeTextArea(textAreas.time_button, name)
+        ui.removeTextArea(textAreas.start_button, name)
+        ui.removeTextArea(textAreas.join_blue_operative, name)
+        ui.removeTextArea(textAreas.join_red_operative, name)
+        ui.removeTextArea(textAreas.join_blue_spymaster, name)
+        ui.removeTextArea(textAreas.join_red_spymaster, name)
+        ui.removeTextArea(666, name)
+        ui.removeTextArea(667, name)
+        ui.removeTextArea(668, name)
+        ui.removeImage("blueJoinButton",name)
+        ui.removeImage("redJoinButton",name)
+        ui.removeImage("settings",name)
+        ui.removeImage("opponent_setting",name)
+        ui.removeImage("time_setting",name)
+        ui.removeImage("tips",name)
+        ui.removeImage("next_tips",name)
+        ui.removeImage("prev_tips",name)
+        ui.removeImage("logo",name)
+
+        --ui.addTextArea(2135, string.format("<p align='center'><b>CLUE</b></p<"),name,315,262,60,20,0,0,1)
+        ui.addImage("clue", images.clue_input, "_41", 300, 260,name)
+
+        ui.addImage("bluecardscount", images.blue_circle, "_47", 30, 80,name,1, 1)
+        ui.addImage("redcardscount", images.red_circle, "_47", 725, 80,name,1, 1)
+
+        if settings.time then 
+            ui.addImage("blueTime", images.time_bg, "_42", 20, 140,name,1,1)
+            ui.addImage("redTime", images.time_bg, "_44", 715, 140,name,1,1)
+        end
+    end
+end
+
 function resetGame()
     for i, v in pairs(textAreas) do ui.removeTextArea(textAreas[i]) end
     for i = 1, 25 do ui.removeTextArea(cards[i].id) ui.removeImage("card"..i, nil) end
@@ -1468,6 +1452,7 @@ function resetGame()
     ui.removeImage("selectednumber", spymasters["blue"])
     ui.removeTextArea(textAreas.clue_background)
     ui.addPopup(2,2,"Clue:", name,5000,5000,100,true)
+    stopLoading()
 
     voted = {}
     teams = {}
