@@ -1,4 +1,4 @@
--- CodeNames V0.20
+-- CodeNames V0.21 
 tfm.get.room.language = "tr"
 words = {
     ["tr"] = {"POKER", "EJDERHA", "SAVAŞ", "BAL", "BOMBA", "KUMARHANE", "GÖKDELEN", "SATÜRN", "UZAYLI", "KIRBAÇ", "ANTARTİKA", "KARDAN ADAM", "KONSER", "ÇİKOLATA", "JET", "MİLYONER", "DİNOZOR", "KORSAN", "DÜDÜK", "PENGUEN", "ÖRÜMCEK", "FÜZE", "KONSOLOSLUK", "TABANCA", "HASTALIK", "AJAN", "PRENSES", "DAHİ", "HIRSIZ", "OPERA", "ŞÖVALYE", "STADYUM", "LİMUZİN", "HAYALET", "KAMYONET", "DONDURMA", "LAZER", "ÖLÜM", "HASTANE", "AMBULANS", "AHTAPOT", "HELİKOPTER", "KANGURU", "MİKROSKOP", "TARZAN", "KAHRAMAN", "TELESKOP", "PARAŞÜT", "KAYNANA", "NEMRUT", "UYDU", "MELEK", "ROBOT", "AZRAİL", "CADI", "MEZARCI", "DALGIÇ", "ZEHİR", "KÖPRÜ", "ATEŞ", "MASA", "BALİNA", "AY", "BALIK", "DOKTOR", "CAMİ", "KEMER", "HEMŞİRE", "RÜZGAR", "ÇİZME", "PARK", "ALBÜM", "SİMİT", "TAŞ", "ŞOK", "BEYAZ", "HESAP", "KUPON", "MORS", "PALET", "REJİM", "PARTİ", "MAKAS", "KÖSTEBEK", "TAMPON", "PİLİÇ", "MANTAR", "ÖRGÜ", "NUMARA", "KUYRUK", "ALAY", "MACUN", "TARLA", "SATIR", "CEP", "PİKE", "SIRT", "TOPUZ", "TULUM", "POSTA", "TERAZİ", "SİTE", "VİZE", "TORPİL", "KAPTAN", "ATLAS", "KÜME", "CİLT", "BOY", "KURŞUN", "BANKO", "MAT", "BOĞAZ", "DİYET", "DOĞRU", "DÖVİZ", "KÖPEK", "AT", "AYAKKABI", "SANDALYE", "TAHT", "BUZ", "ALTIN", "ÇATAL", "ZAMAN", "FLÜT", "FENER", "YASTIK", "TESBİH", "ASKER", "PİRAMİT", "HALAT", "YILDIZ", "OCAK", "EKMEK", "YÜREK", "BLOK", "KUPA", "İĞNE", "DON", "ÖRTÜ", "KABUK", "BAYRAM", "PERDE", "BALTA", "YAKA", "DÜĞME", "AĞIZ", "ETİKET", "EL", "YATAK", "DUVAR", "KULE", "KART", "BAĞ", "YAY", "ORTA", "İNTERNET", "KAYMAK", "PAS", "DAMAT", "DELİK", "NİŞAN", "KUVVET", "ANAHTAR", "MOTOR", "DALGA", "AKIM", "BAŞ", "İSKELE", "ÇEKİRDEK", "KAZA", "DÜŞ", "KAZIK", "PUL", "DAİRE", "AĞ", "KANAL", "İSTANBUL", "AVUSTRALYA", "KIBRIS", "TOKYO", "MISIR", "REKLAM", "KAVURMA", "MOSKOVA", "DÖVME", "MEVLANA", "HOLLYWOOD", "BİZANS", "ROMA", "ARABESK", "NİNJA", "LAZ", "MANGO", "ALMANYA", "DEVLET", "AMERİKA", "MEZOPOTAMYA", "İNGİLTERE", "SURVİVOR", "KRİZ", "MECNUN", "EŞKİYA", "NAL", "GULYABANİ", "İRAN", "BERLİN", "KARINCA", "AVRUPA", "HİNDİSTAN", "ÇEYİZ", "EVEREST", "KALPAZAN", "PEKİN", "KARTAL", "PAZI", "BAKLAVA", "HİTİT", "YAŞ", "ATLET", "DİZİ", "BASKI", "DERECE", "DOLU", "TABLET", "YEŞİL", "ALEM", "MARŞ", "KUŞAK", "BOZUK", "MAKARA", "AĞAÇ", "BOT", "ZAR", "ORDU", "GÖÇ", "SERVİS", "MARS", "GÖBEK", "FESTİVAL", "OMURGA", "ÇATI", "DÜMEN", "İZ", "TAKIM", "ÇAY", "KANUN", "FAN", "FIRÇA", "KAHVE", "TAVLA", "GÜL", "ANA", "KOCA", "MASKARA", "PAZAR", "TEZ", "MAYA", "UŞAK", "MEMUR", "KEPÇE", "BEYİN", "KLASİK", "KOVAN", "PALA", "SOĞUK", "ASLAN", "TOP", "BANKA", "GÖZ", "HAVA", "TAVŞAN", "PASTA", "ELBİSE", "ÇİMEN", "CÜCE", "ORMAN", "ARABA", "ELDİVEN", "BERE", "BENZİN", "AŞÇI", "AYI", "KEDİ", "HAYAT", "PİRİNÇ", "DEV", "YÜZ", "PLAJ", "OTEL", "SU", "KAĞIT", "SOLUCAN", "AVUKAT", "BİLİM ADAMI", "DANS", "HAVUÇ", "SEPET", "GECE", "PAMUK", "AYAK", "FARE", "BIÇAK", "TİYATRO", "POLİS", "GEMİ", "PİLOT", "PARMAK", "ÖĞRETMEN", "ŞİŞE", "GÜN", "KRAL", "BARDAK", "ELMAS", "DİŞ", "KOPYA", "DARBE", "FİLM", "GIRGIR", "ARPACIK", "HORTUM", "IZGARA", "TORPİDO", "KEPEK", "GICIK", "KESE", "KISIR", "KOLON", "KULAÇ", "GAZİNO", "FELEK", "KAVAL", "KİTAP", "TIP", "KAYNAK", "GARAJ", "PAÇA", "LASTİK", "SAZ", "SET", "FAR", "KUTU", "KANEPE", "MAKAM", "ŞANS", "MERKEZ", "ÜNLÜ", "DEVİR", "DÜĞÜN", "TABLO", "GÖLGE", "GAZ", "KALE", "HAZİNE", "KÖY", "MODA", "HAVUZ", "MAGAZİN", "KÜPE", "FATURA", "SAYFA", "ÇAMAŞIR", "TUR", "AMAZON", "SAHTE", "OYUNCAK", "SIRA", "FORM", "KARE", "KAŞ", "SANDIK", "ACI", "TREN", "SOSYETE", "ÖRGÜT", "SÖZ", "UÇAK", "ADET", "BALKON", "ÇOBAN", "AYNA", "KURU", "DELİ", "YAZ", "NOT", "BÖLÜM", "ŞERİT", "YUNANİSTAN", "HÜCRE", "MEZUNİYET", "FAUL", "LONDRA", "MUCİZE", "TEMEL", "AFRİKA", "BİLYE", "YAĞMUR", "KUYU", "KANAT"},
@@ -382,7 +382,6 @@ cards = {
     {position = {x = 470, y = 190}, color = "", id = 24, word = "", covered = false},
     {position = {x = 590, y = 190}, color = "", id = 25, word = "", covered = false},
 }
-
 
 gameState = {
     status = 0,
@@ -815,19 +814,23 @@ function updatePlayerTeam(t, isSpymaster, n)
     updatePlayerNames(t,n)
 end
 
+
 function updatePlayerNames(team,name,isSpymaster)
     blueVoteCount = #operatives["blue"] / 2
     redVoteCount = #operatives["red"] / 2
 
     local operativeID = textAreas["leave_"..team.."_op"]
     local spymasterID = textAreas["update_"..team.."_spy"]
+    local opIndex = table.index(operatives[team], name) or 1
+
     local x = team == "blue" and 20 or 660
+    local y = 253+(opIndex*20)
 
     if isSpymaster then
         local str = spymasters[team]
         ui.addTextArea(spymasterID, string.format("<p align='center'><font color='#ffffff'><a href='event:leaveTeam'>%s</a></font></p>", str or ""),nil,x,370,120,20,0,0,1)
     else
-        ui.addTextArea(operativeID+#operatives[team], string.format("<font color='#ffffff'><p align='center'><a href='event:leaveTeam'>%s</a></p></font>",operatives[team][#operatives[team]] or ""),nil,x,253+(#operatives[team]*20),120,18,0,0,1,true)
+        ui.addTextArea(operativeID-1+opIndex, string.format("<font color='#ffffff'><p align='center'><a href='event:leaveTeam'>%s</a></p></font>",operatives[team][opIndex] or ""),nil,x,y,120,18,0,0,1,true)
     end
 end
 
@@ -850,6 +853,10 @@ function leaveRequest(name)
 
     local playerTeam = teams[name]
     if spymasters[playerTeam] == name then spymasters[playerTeam] = nil updatePlayerTeam(playerTeam, true, name) teams[name] = nil return end
+
+    local opIndex = table.index(operatives[playerTeam], name)
+    local operativeID = textAreas["leave_"..playerTeam.."_op"]
+    ui.removeTextArea(operativeID-1+opIndex, nil)
 
     teams[name] = nil
 
@@ -894,10 +901,6 @@ function eventTextAreaCallback(id, name, e)
     if e == "leaveTeam" and gameState.status == 0 then      
         if not teams[name] then return end
         if spymasters["red"] == name or spymasters["blue"] == name then leaveRequest(name) return end
-        
-        local operativeID = textAreas["leave_"..teams[name].."_op"]
-        ui.removeTextArea(operativeID+#operatives[teams[name]], nil)
-
         leaveRequest(name)
     end
 
@@ -981,23 +984,34 @@ function eventChatCommand(playerName, cmd)
 
         local args = {}
         for arg in cmd:gmatch('%S+') do args[1+#args]=arg end
-        local command = args[1] 
-        local bannedPlayer = args[2]
+        local firstArg = args[1] 
+        local secondArg = args[2]
 
-        if command == "ban" and roomAdmin == playerName or command == "ban" and admins[playerName] then
-            if admins[bannedPlayer] then return end
-            table.insert(banList, bannedPlayer)
-            checkBan("ban", bannedPlayer)
+        if firstArg == "ban" and roomAdmin == playerName or firstArg == "ban" and admins[playerName] then
+            if admins[secondArg] then return end
+            table.insert(banList, secondArg)
+            checkBan("ban", secondArg)
         end
 
-        if command == "uban" and roomAdmin == playerName or command == "uban" and admins[playerName] then
-            local banIndex = table.index(banList, bannedPlayer)
+        if firstArg == "uban" and roomAdmin == playerName or firstArg == "uban" and admins[playerName] then
+            local banIndex = table.index(banList, secondArg)
             if banIndex ~= nil then table.remove(banList, banIndex) end
-            checkBan("uban", bannedPlayer)
+            checkBan("uban", secondArg)
         end
 
-        if command == "time" and admins[playerName] then
-            tfm.exec.setGameTime(bannedPlayer)
+        if firstArg == "lock" and roomAdmin == playerName or firstArg == "uban" and admins[playerName] then
+            tfm.exec.setRoomMaxPlayers(secondArg)
+            tfm.exec.chatMessage(string.format("%s has locked the room to %s mice.", playerName, secondArg), nil)
+        end
+
+        if firstArg == "pw" and roomAdmin == playerName or firstArg == "uban" and admins[playerName] then
+            tfm.exec.setRoomPassword(secondArg)
+            tfm.exec.chatMessage(string.format("Room password changed by %s", playerName), nil)
+        end
+
+
+        if firstArg == "time" and admins[playerName] then
+            tfm.exec.setGameTime(secondArg)
         end
     end
 end
