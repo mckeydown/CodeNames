@@ -394,7 +394,7 @@ gameState = {
     canGiveClue = true,
 }
 
-admins = {["Mckeydown#0000"] = true}
+admins = {["Mckeydown#0000"] = true, ["Indexinel#5948"] = true}
 roomAdmin = nil
 banList = {}
 
