@@ -1,5 +1,4 @@
 -- CodeNames V0.21 
-tfm.get.room.language = "tr"
 words = {
     ["tr"] = {"POKER", "EJDERHA", "SAVAŞ", "BAL", "BOMBA", "KUMARHANE", "GÖKDELEN", "SATÜRN", "UZAYLI", "KIRBAÇ", "ANTARTİKA", "KARDAN ADAM", "KONSER", "ÇİKOLATA", "JET", "MİLYONER", "DİNOZOR", "KORSAN", "DÜDÜK", "PENGUEN", "ÖRÜMCEK", "FÜZE", "KONSOLOSLUK", "TABANCA", "HASTALIK", "AJAN", "PRENSES", "DAHİ", "HIRSIZ", "OPERA", "ŞÖVALYE", "STADYUM", "LİMUZİN", "HAYALET", "KAMYONET", "DONDURMA", "LAZER", "ÖLÜM", "HASTANE", "AMBULANS", "AHTAPOT", "HELİKOPTER", "KANGURU", "MİKROSKOP", "TARZAN", "KAHRAMAN", "TELESKOP", "PARAŞÜT", "KAYNANA", "NEMRUT", "UYDU", "MELEK", "ROBOT", "AZRAİL", "CADI", "MEZARCI", "DALGIÇ", "ZEHİR", "KÖPRÜ", "ATEŞ", "MASA", "BALİNA", "AY", "BALIK", "DOKTOR", "CAMİ", "KEMER", "HEMŞİRE", "RÜZGAR", "ÇİZME", "PARK", "ALBÜM", "SİMİT", "TAŞ", "ŞOK", "BEYAZ", "HESAP", "KUPON", "MORS", "PALET", "REJİM", "PARTİ", "MAKAS", "KÖSTEBEK", "TAMPON", "PİLİÇ", "MANTAR", "ÖRGÜ", "NUMARA", "KUYRUK", "ALAY", "MACUN", "TARLA", "SATIR", "CEP", "PİKE", "SIRT", "TOPUZ", "TULUM", "POSTA", "TERAZİ", "SİTE", "VİZE", "TORPİL", "KAPTAN", "ATLAS", "KÜME", "CİLT", "BOY", "KURŞUN", "BANKO", "MAT", "BOĞAZ", "DİYET", "DOĞRU", "DÖVİZ", "KÖPEK", "AT", "AYAKKABI", "SANDALYE", "TAHT", "BUZ", "ALTIN", "ÇATAL", "ZAMAN", "FLÜT", "FENER", "YASTIK", "TESBİH", "ASKER", "PİRAMİT", "HALAT", "YILDIZ", "OCAK", "EKMEK", "YÜREK", "BLOK", "KUPA", "İĞNE", "DON", "ÖRTÜ", "KABUK", "BAYRAM", "PERDE", "BALTA", "YAKA", "DÜĞME", "AĞIZ", "ETİKET", "EL", "YATAK", "DUVAR", "KULE", "KART", "BAĞ", "YAY", "ORTA", "İNTERNET", "KAYMAK", "PAS", "DAMAT", "DELİK", "NİŞAN", "KUVVET", "ANAHTAR", "MOTOR", "DALGA", "AKIM", "BAŞ", "İSKELE", "ÇEKİRDEK", "KAZA", "DÜŞ", "KAZIK", "PUL", "DAİRE", "AĞ", "KANAL", "İSTANBUL", "AVUSTRALYA", "KIBRIS", "TOKYO", "MISIR", "REKLAM", "KAVURMA", "MOSKOVA", "DÖVME", "MEVLANA", "HOLLYWOOD", "BİZANS", "ROMA", "ARABESK", "NİNJA", "LAZ", "MANGO", "ALMANYA", "DEVLET", "AMERİKA", "MEZOPOTAMYA", "İNGİLTERE", "SURVİVOR", "KRİZ", "MECNUN", "EŞKİYA", "NAL", "GULYABANİ", "İRAN", "BERLİN", "KARINCA", "AVRUPA", "HİNDİSTAN", "ÇEYİZ", "EVEREST", "KALPAZAN", "PEKİN", "KARTAL", "PAZI", "BAKLAVA", "HİTİT", "YAŞ", "ATLET", "DİZİ", "BASKI", "DERECE", "DOLU", "TABLET", "YEŞİL", "ALEM", "MARŞ", "KUŞAK", "BOZUK", "MAKARA", "AĞAÇ", "BOT", "ZAR", "ORDU", "GÖÇ", "SERVİS", "MARS", "GÖBEK", "FESTİVAL", "OMURGA", "ÇATI", "DÜMEN", "İZ", "TAKIM", "ÇAY", "KANUN", "FAN", "FIRÇA", "KAHVE", "TAVLA", "GÜL", "ANA", "KOCA", "MASKARA", "PAZAR", "TEZ", "MAYA", "UŞAK", "MEMUR", "KEPÇE", "BEYİN", "KLASİK", "KOVAN", "PALA", "SOĞUK", "ASLAN", "TOP", "BANKA", "GÖZ", "HAVA", "TAVŞAN", "PASTA", "ELBİSE", "ÇİMEN", "CÜCE", "ORMAN", "ARABA", "ELDİVEN", "BERE", "BENZİN", "AŞÇI", "AYI", "KEDİ", "HAYAT", "PİRİNÇ", "DEV", "YÜZ", "PLAJ", "OTEL", "SU", "KAĞIT", "SOLUCAN", "AVUKAT", "BİLİM ADAMI", "DANS", "HAVUÇ", "SEPET", "GECE", "PAMUK", "AYAK", "FARE", "BIÇAK", "TİYATRO", "POLİS", "GEMİ", "PİLOT", "PARMAK", "ÖĞRETMEN", "ŞİŞE", "GÜN", "KRAL", "BARDAK", "ELMAS", "DİŞ", "KOPYA", "DARBE", "FİLM", "GIRGIR", "ARPACIK", "HORTUM", "IZGARA", "TORPİDO", "KEPEK", "GICIK", "KESE", "KISIR", "KOLON", "KULAÇ", "GAZİNO", "FELEK", "KAVAL", "KİTAP", "TIP", "KAYNAK", "GARAJ", "PAÇA", "LASTİK", "SAZ", "SET", "FAR", "KUTU", "KANEPE", "MAKAM", "ŞANS", "MERKEZ", "ÜNLÜ", "DEVİR", "DÜĞÜN", "TABLO", "GÖLGE", "GAZ", "KALE", "HAZİNE", "KÖY", "MODA", "HAVUZ", "MAGAZİN", "KÜPE", "FATURA", "SAYFA", "ÇAMAŞIR", "TUR", "AMAZON", "SAHTE", "OYUNCAK", "SIRA", "FORM", "KARE", "KAŞ", "SANDIK", "ACI", "TREN", "SOSYETE", "ÖRGÜT", "SÖZ", "UÇAK", "ADET", "BALKON", "ÇOBAN", "AYNA", "KURU", "DELİ", "YAZ", "NOT", "BÖLÜM", "ŞERİT", "YUNANİSTAN", "HÜCRE", "MEZUNİYET", "FAUL", "LONDRA", "MUCİZE", "TEMEL", "AFRİKA", "BİLYE", "YAĞMUR", "KUYU", "KANAT"},
     ["en"] = {"STAR","BRIDGE","FIRE","RING","HEART","HORN","SPRING","TABLE","WHALE","SEAL","MOON","BLOCK","DRILL","FISH","TUBE","GRACE","IRON","DOCTOR","ROULETTE","DEGREE","WAKE","NEEDLE","TABLET","PIE","GREEN","DRAGON","NEW YORK","AUSTRALIA","MARCH","LINE","WAR","HONEY","JAM","CHURCH","COVER","LEAD","BERMUDA","CHANGE","TOKYO","EGYPT","BEAT","RAY","BELT","CAP","LEMON","NURSE","WIND","LION","LONDON","FALL","BOOT","DICE","EYE","BOARD","SWITCH","AIR","JUPITER","HAM","BATTERY","SPINE","VET","RABBIT","AGENT","DROP","TRACK","BANK","CLIFF","BOMB","CASINO","SKYSCRAPER","STOCK","BRUSH","GRASS","SATURN","DRESS","FAN","DWARF","ALIEN","WHIP","ANTARCTICA","PUMPKIN","MOSCOW","TRIP","SNOWMAN","FOREST","CAPITAL","STRIKE","COPPER","SOUL","CANADA","CONCERT","CHOCOLATE","JET","SHAKESPEARE","CAR","SHADOW","GLOVE","LITTER","COMIC","MILLIONAIRE","PITCH","BOND","APPLE","OIL","COOK","FLY","CAST","BEAR","PIN","MINE","CHECK","BAR","COLD","HOLLYWOOD","SCREEN","PLAY","MARBLE","DINOSAUR","CAT","GAME","LIFE","LUCK","HOOK","PARK","BAT","BOLT","GREECE","DECK","YARD","CONDUCTOR","GIANT","FACE","PIRATE","BEACH","POUND","ROUND","FIELD","CYCLE","ROME","HOTEL","SPOT","MOUNT","STICK","SINK","MOLE","SCHOOL","CHICK","WATER","PAPER","SLUG","BUTTON","HIMALAYAS","NINJA","CZECH","GROUND","BUGLE","MOUTH","TAG","NUT","WORM","PENGUIN","LAWYER","SPIDER","TAIL","TICK","MINT","MISSILE","EMBASSY","PISTOL","SCIENTIST","KIWI","LOG","GERMANY","HAND","DISEASE","BED","SPY","PRINCESS","DANCE","CARROT","STATE","RACKET","GENIUS","THIEF","TRUNK","AMERICA","NOVEL","WALL","BERRY","ATLANTIS","KETCHUP","PLOT","ENGLAND","TEMPLE","MAPLE","MAIL","AFRICA","OPERA","TOWER","NIGHT","POOL","ROBIN","BAND","DUCK","HOOD","CARD","COURT","TIE","DIAMOND","CROSS","NET","FRANCE","DATE","COTTON","POINT","OLIVE","MATCH","BALL","MERCURY","BOW","FIGHTER","SHOP","SLIP","KNIGHT","PASS","STADIUM","FOOT","LIMOUSINE","CONTRACT","PLATE","MOUSE","HORSESHOE","ORGAN","KNIFE","CELL","WATCH","ARM","ROSE","MODEL","THEATER","HOLE","POST","LIGHT","TRIANGLE","BELL","LEPRECHAUN","KID","POLICE","ROCK","SCALE","GHOST","SHIP","MEXICO","CLOAK","STRAW","CALF","SHARK","DRAFT","HAWK","PRESS","VAN","ICE CREAM","BUCK","PHOENIX","FORCE","BOOM","LAB","RULER","PILOT","LASER","DEATH","LOCK","SPELL","HOSPITAL","AMBULANCE","WEB","PLASTIC","KEY","OCTOPUS","THUMB","TEACHER","PALM","CRANE","HELICOPTER","BOTTLE","FENCE","KANGAROO","JACK","EUROPE","SCORPION","MUG","SUIT","MICROSCOPE","ENGINE","WAVE","CENTAUR","STREAM","HEAD","MAMMOTH","DAY","KING","PAN","POLE","SUPERHERO","REVOLUTION","PIT","GAS","GLASS","WASHINGTON","TURKEY","QUEEN","FILE","CRICKET","WELL","FAIR","TOOTH","STAFF","BILL","SHOT","WASHER","LAP","AMAZON","SPACE","FIGURE","MASS","CHINA","SQUARE","BUFFALO","CHEST","DOG","NAIL","BERLIN","HORSE","CHARGE","SUB","INDIA","TRAIN","TELESCOPE","PLANE","PARACHUTE","PIANO","BOX","PLATYPUS","CLUB","SHOE","SERVER","CENTER","CHAIR","SOUND","COMPOUND","FILM","CROWN","OLYMPUS","BACK","NOTE","PART","TAP","ICE","SOCK","ALPS","ROOT","SATELLITE","ANGEL","CRASH","GOLD","BUG","PASTE","ROBOT","ROW","SPIKE","CODE","LOCH NESS","FORK","SWING","PORT","CIRCLE","UNICORN","TIME","LINK","FLUTE","TORCH","BEIJING","EAGLE","BARK","SNOW","IVORY","PIPE","PANTS","SOLDIER","VACUUM","WITCH","PUPIL","SMUGGLER","ORANGE","AZTEC","UNDERTAKER","SCUBA DIVER","PYRAMID","POISON","STRING"},
@@ -42,7 +41,8 @@ translations = {
         ["noActionSpy"] = "The opponent Spymaster didn't take any action within the specified time and the clue approved.",
         ["approvedClue"] = "<font color='%s'>%s</font> approved the <font color='%s'>%s</font>'s clue.",
         ["notApprovedClue"] = "<font color='%s'>%s</font> didn't approve the <font color='%s'>%s</font>'s clue.",
-        ["newGameStarting"] = "<p align='center'><font size='15'>New game is starting in <b>%d</b> seconds!</font></p>"
+        ["newGameStarting"] = "<p align='center'><font size='15'>New game is starting in <b>%d</b> seconds!</font></p>",
+        ["votedFor"] = "%s voted for %s",
     },
 
     ["tr"] = {
@@ -77,7 +77,8 @@ translations = {
         ["noActionSpy"] = "Rakip Spymaster belirtilen zaman içerisinde bir karar vermedi ve ipucu onaylandı.",
         ["approvedClue"] = "Spymaster <font color='%s'>%s</font>, Spymaster <font color='%s'>%s</font> tarafından verilen ipucunu onayladı.",
         ["notApprovedClue"] = "Spymaster <font color='%s'>%s</font>, Spymaster <font color='%s'>%s</font> tarafından verilen ipucunu onaylamadı.",
-        ["newGameStarting"] = "<p align='center'><font size='15'>Yeni oyunun başlamasına <b>%d</b> saniye!</font></p>"
+        ["newGameStarting"] = "<p align='center'><font size='15'>Yeni oyunun başlamasına <b>%d</b> saniye!</font></p>",
+        ["votedFor"] = "%s, %s için oy verdi."
     }
 }
 
@@ -133,7 +134,7 @@ help = {
         "<p align='center'><b><font color='#f5d8b6' size='13'>MODULE HOSTER                       GRAND ADVISOR</font></b></p>"..
         "<p align='left'><font color='#f5d8b6' size='13'><V>       Indexinel</V><G>#5948</G>                         <V>Lays</V><G>#1146</G></font></p>\n"..
         "<b><font color='#f5d8b6' size='13'>TESTERS</font></b>\n"..
-        "<font size='12'><V>Kucukstarr</V><G>#3074</G>, <V>Fatihmilano</V><G>#0000</G>, <V>Hotspotower</V><G>#0000</G>, <V>Neonstrayzer</V><G>#0000</G>, <V>Ulubilge</V><G>#0000</G>, <V>Meltlemon</V><G>#8284</G>, <V>Lagneia</V><G>#2678</G>, <V>Yoda</V><G>#7355</G>, <V>Marijuana</V><G>#0387</G>, <V>Lowdemort</V><G>#9914</G>, <V>Nehirsenn</V><G>#0000</G></font>",
+        "<font size='12'><V>Kucukstarr</V><G>#3074</G>, <V>Monteriple</V><G>#3222</G>, <V>Nnaaaz</V><G>#0000</G>, <V>Tactcat</V><G>#0000</G>, <V>Fatihmilano</V><G>#0000</G>, <V>Hotspotower</V><G>#0000</G>, <V>Neonstrayzer</V><G>#0000</G>, <V>Ulubilge</V><G>#0000</G>, <V>Meltlemon</V><G>#8284</G>, <V>Lagneia</V><G>#2678</G>, <V>Yoda</V><G>#7355</G>, <V>Marijuana</V><G>#0387</G>, <V>Lowdemort</V><G>#9914</G>, <V>Nehirsenn</V><G>#0000</G></font>",
     }
 },
     ["tr"] = {
@@ -159,7 +160,7 @@ help = {
 
         "<b><font color='#f5d8b6' size='14'>TAHMİN ETMEK</font></b>\n" ..
         "Operative'ler, Spymaster'ın ipucuna dayanarak kelimeleri tahmin etmeye çalışır. Verilen ipucunu takım arkadaşlarınızla tartışabilirsiniz. İpucuyla eşleştiğini düşündüğünüz kelimeye tıklayarak da bir tahminde bulunabilirsiniz."..
-        "İpucunun geçerli olması için takım arkadaşlarınızın yarısının aynı kelime için oy vermiş olması gerekir.\n\n"..
+        "Tahminin geçerli olması için takım arkadaşlarınızın yarısının aynı kelime için oy vermiş olması gerekir.\n\n"..
         "Takımınızın renginden bir kelime tahmin ederseniz, tekrar tahmin hakkınız olur.\n\n"..
         "Ayrıca önceki turlardan bulamadığınız ipuçlarını da tahmin edebilirsiniz.\n",
 
@@ -187,7 +188,7 @@ help = {
         "<p align='center'><b><font color='#f5d8b6' size='13'>MODÜL HOSTER                       BÜYÜK DANIŞMAN</font></b></p>"..
         "<p align='left'><font color='#f5d8b6' size='13'><V>     Indexinel</V><G>#5948</G>                          <V>Lays</V><G>#1146</G></font></p>\n"..
         "<b><font color='#f5d8b6' size='13'>TEST EDENLER</font></b>\n"..
-        "<font size='12'><V>Kucukstarr</V><G>#3074</G>, <V>Fatihmilano</V><G>#0000</G>, <V>Hotspotower</V><G>#0000</G>, <V>Neonstrayzer</V><G>#0000</G>, <V>Ulubilge</V><G>#0000</G>, <V>Meltlemon</V><G>#8284</G>, <V>Lagneia</V><G>#2678</G>, <V>Yoda</V><G>#7355</G>, <V>Marijuana</V><G>#0387</G>, <V>Lowdemort</V><G>#9914</G>, <V>Nehirsenn</V><G>#0000</G></font>",
+        "<font size='12'><V>Kucukstarr</V><G>#3074</G>, <V>Monteriple</V><G>#3222</G>, <V>Nnaaaz</V><G>#0000</G>, <V>Tactcat</V><G>#0000</G>, <V>Fatihmilano</V><G>#0000</G>, <V>Hotspotower</V><G>#0000</G>, <V>Neonstrayzer</V><G>#0000</G>, <V>Ulubilge</V><G>#0000</G>, <V>Meltlemon</V><G>#8284</G>, <V>Lagneia</V><G>#2678</G>, <V>Yoda</V><G>#7355</G>, <V>Marijuana</V><G>#0387</G>, <V>Lowdemort</V><G>#9914</G>, <V>Nehirsenn</V><G>#0000</G></font>",
     }
     }
 }
@@ -534,7 +535,7 @@ function eventNewGame()
 
     --math.randomseed(8)
     for i = 1, 25 do table.insert(roundWords, words[roomLang][math.random(1 + size * (i - 1), size * i)]) end
-    math.randomseed(os.time())
+    --math.randomseed(os.time())
     table.shuffle(roundWords)
     for i=1, 25 do roundCardTypes[i] = i end
 
@@ -824,13 +825,15 @@ function updatePlayerNames(team,name,isSpymaster)
     local opIndex = table.index(operatives[team], name) or 1
 
     local x = team == "blue" and 20 or 660
-    local y = 253+(opIndex*20)
 
     if isSpymaster then
         local str = spymasters[team]
         ui.addTextArea(spymasterID, string.format("<p align='center'><font color='#ffffff'><a href='event:leaveTeam'>%s</a></font></p>", str or ""),nil,x,370,120,20,0,0,1)
     else
-        ui.addTextArea(operativeID-1+opIndex, string.format("<font color='#ffffff'><p align='center'><a href='event:leaveTeam'>%s</a></p></font>",operatives[team][opIndex] or ""),nil,x,y,120,18,0,0,1,true)
+        for i = 1, 4 do
+        local y = 253+(i*20)
+        ui.addTextArea(operativeID-1+i, string.format("<font color='#ffffff'><p align='center'><a href='event:leaveTeam'>%s</a></p></font>",operatives[team][i] or ""),nil,x,y,120,18,0,0,1,true)
+        end
     end
 end
 
@@ -1154,7 +1157,7 @@ function voteCard(cardID, name)
     voted[cardID] = votes + 1
     voted[name .. "|" .. cardID] = true
 
-    addGameLog(string.format("%s voted for %s",name, roundWords[cardID]))
+    addGameLog(string.format(translations[roomLang].votedFor,name, roundWords[cardID]))
     
     if voted[cardID] >= checkVoteCount then
         pickedCard(cardID, name)
@@ -1169,7 +1172,6 @@ function pickedCard(cardID, name)
     ui.addTextArea(cardID, string.format("<font color='#ffffff'><p align='center'><b>%s</b></p></font>", roundWords[cardID]), nil, card.position.x, card.position.y+6, 100, 30,card.color,0,1)
     ui.addImage("card"..cardID, replaceimg, "_"..cardID+200, card.position.x, card.position.y, nil)
     card.covered = true
-    print(contactedBlueAgent)
 
         if card.color == "yellow" then 
             currentClueNum = 0 
@@ -1466,7 +1468,6 @@ function loadGameUI(name)
         ui.removeImage("prev_tips",name)
         ui.removeImage("logo",name)
 
-        --ui.addTextArea(2135, string.format("<p align='center'><b>CLUE</b></p<"),name,315,262,60,20,0,0,1)
         ui.addImage("clue", images.clue_input, "_41", 300, 260,name)
 
         ui.addImage("bluecardscount", images.blue_circle, "_47", 30, 80,name,1, 1)
