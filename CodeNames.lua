@@ -1,4 +1,4 @@
--- CodeNames V0.21 
+-- CodeNames V0.22
 words = {
     ["tr"] = {"POKER", "EJDERHA", "SAVAŞ", "BAL", "BOMBA", "KUMARHANE", "GÖKDELEN", "SATÜRN", "UZAYLI", "KIRBAÇ", "ANTARTİKA", "KARDAN ADAM", "KONSER", "ÇİKOLATA", "JET", "MİLYONER", "DİNOZOR", "KORSAN", "DÜDÜK", "PENGUEN", "ÖRÜMCEK", "FÜZE", "KONSOLOSLUK", "TABANCA", "HASTALIK", "AJAN", "PRENSES", "DAHİ", "HIRSIZ", "OPERA", "ŞÖVALYE", "STADYUM", "LİMUZİN", "HAYALET", "KAMYONET", "DONDURMA", "LAZER", "ÖLÜM", "HASTANE", "AMBULANS", "AHTAPOT", "HELİKOPTER", "KANGURU", "MİKROSKOP", "TARZAN", "KAHRAMAN", "TELESKOP", "PARAŞÜT", "KAYNANA", "NEMRUT", "UYDU", "MELEK", "ROBOT", "AZRAİL", "CADI", "MEZARCI", "DALGIÇ", "ZEHİR", "KÖPRÜ", "ATEŞ", "MASA", "BALİNA", "AY", "BALIK", "DOKTOR", "CAMİ", "KEMER", "HEMŞİRE", "RÜZGAR", "ÇİZME", "PARK", "ALBÜM", "SİMİT", "TAŞ", "ŞOK", "BEYAZ", "HESAP", "KUPON", "MORS", "PALET", "REJİM", "PARTİ", "MAKAS", "KÖSTEBEK", "TAMPON", "PİLİÇ", "MANTAR", "ÖRGÜ", "NUMARA", "KUYRUK", "ALAY", "MACUN", "TARLA", "SATIR", "CEP", "PİKE", "SIRT", "TOPUZ", "TULUM", "POSTA", "TERAZİ", "SİTE", "VİZE", "TORPİL", "KAPTAN", "ATLAS", "KÜME", "CİLT", "BOY", "KURŞUN", "BANKO", "MAT", "BOĞAZ", "DİYET", "DOĞRU", "DÖVİZ", "KÖPEK", "AT", "AYAKKABI", "SANDALYE", "TAHT", "BUZ", "ALTIN", "ÇATAL", "ZAMAN", "FLÜT", "FENER", "YASTIK", "TESBİH", "ASKER", "PİRAMİT", "HALAT", "YILDIZ", "OCAK", "EKMEK", "YÜREK", "BLOK", "KUPA", "İĞNE", "DON", "ÖRTÜ", "KABUK", "BAYRAM", "PERDE", "BALTA", "YAKA", "DÜĞME", "AĞIZ", "ETİKET", "EL", "YATAK", "DUVAR", "KULE", "KART", "BAĞ", "YAY", "ORTA", "İNTERNET", "KAYMAK", "PAS", "DAMAT", "DELİK", "NİŞAN", "KUVVET", "ANAHTAR", "MOTOR", "DALGA", "AKIM", "BAŞ", "İSKELE", "ÇEKİRDEK", "KAZA", "DÜŞ", "KAZIK", "PUL", "DAİRE", "AĞ", "KANAL", "İSTANBUL", "AVUSTRALYA", "KIBRIS", "TOKYO", "MISIR", "REKLAM", "KAVURMA", "MOSKOVA", "DÖVME", "MEVLANA", "HOLLYWOOD", "BİZANS", "ROMA", "ARABESK", "NİNJA", "LAZ", "MANGO", "ALMANYA", "DEVLET", "AMERİKA", "MEZOPOTAMYA", "İNGİLTERE", "SURVİVOR", "KRİZ", "MECNUN", "EŞKİYA", "NAL", "GULYABANİ", "İRAN", "BERLİN", "KARINCA", "AVRUPA", "HİNDİSTAN", "ÇEYİZ", "EVEREST", "KALPAZAN", "PEKİN", "KARTAL", "PAZI", "BAKLAVA", "HİTİT", "YAŞ", "ATLET", "DİZİ", "BASKI", "DERECE", "DOLU", "TABLET", "YEŞİL", "ALEM", "MARŞ", "KUŞAK", "BOZUK", "MAKARA", "AĞAÇ", "BOT", "ZAR", "ORDU", "GÖÇ", "SERVİS", "MARS", "GÖBEK", "FESTİVAL", "OMURGA", "ÇATI", "DÜMEN", "İZ", "TAKIM", "ÇAY", "KANUN", "FAN", "FIRÇA", "KAHVE", "TAVLA", "GÜL", "ANA", "KOCA", "MASKARA", "PAZAR", "TEZ", "MAYA", "UŞAK", "MEMUR", "KEPÇE", "BEYİN", "KLASİK", "KOVAN", "PALA", "SOĞUK", "ASLAN", "TOP", "BANKA", "GÖZ", "HAVA", "TAVŞAN", "PASTA", "ELBİSE", "ÇİMEN", "CÜCE", "ORMAN", "ARABA", "ELDİVEN", "BERE", "BENZİN", "AŞÇI", "AYI", "KEDİ", "HAYAT", "PİRİNÇ", "DEV", "YÜZ", "PLAJ", "OTEL", "SU", "KAĞIT", "SOLUCAN", "AVUKAT", "BİLİM ADAMI", "DANS", "HAVUÇ", "SEPET", "GECE", "PAMUK", "AYAK", "FARE", "BIÇAK", "TİYATRO", "POLİS", "GEMİ", "PİLOT", "PARMAK", "ÖĞRETMEN", "ŞİŞE", "GÜN", "KRAL", "BARDAK", "ELMAS", "DİŞ", "KOPYA", "DARBE", "FİLM", "GIRGIR", "ARPACIK", "HORTUM", "IZGARA", "TORPİDO", "KEPEK", "GICIK", "KESE", "KISIR", "KOLON", "KULAÇ", "GAZİNO", "FELEK", "KAVAL", "KİTAP", "TIP", "KAYNAK", "GARAJ", "PAÇA", "LASTİK", "SAZ", "SET", "FAR", "KUTU", "KANEPE", "MAKAM", "ŞANS", "MERKEZ", "ÜNLÜ", "DEVİR", "DÜĞÜN", "TABLO", "GÖLGE", "GAZ", "KALE", "HAZİNE", "KÖY", "MODA", "HAVUZ", "MAGAZİN", "KÜPE", "FATURA", "SAYFA", "ÇAMAŞIR", "TUR", "AMAZON", "SAHTE", "OYUNCAK", "SIRA", "FORM", "KARE", "KAŞ", "SANDIK", "ACI", "TREN", "SOSYETE", "ÖRGÜT", "SÖZ", "UÇAK", "ADET", "BALKON", "ÇOBAN", "AYNA", "KURU", "DELİ", "YAZ", "NOT", "BÖLÜM", "ŞERİT", "YUNANİSTAN", "HÜCRE", "MEZUNİYET", "FAUL", "LONDRA", "MUCİZE", "TEMEL", "AFRİKA", "BİLYE", "YAĞMUR", "KUYU", "KANAT"},
     ["en"] = {"STAR","BRIDGE","FIRE","RING","HEART","HORN","SPRING","TABLE","WHALE","SEAL","MOON","BLOCK","DRILL","FISH","TUBE","GRACE","IRON","DOCTOR","ROULETTE","DEGREE","WAKE","NEEDLE","TABLET","PIE","GREEN","DRAGON","NEW YORK","AUSTRALIA","MARCH","LINE","WAR","HONEY","JAM","CHURCH","COVER","LEAD","BERMUDA","CHANGE","TOKYO","EGYPT","BEAT","RAY","BELT","CAP","LEMON","NURSE","WIND","LION","LONDON","FALL","BOOT","DICE","EYE","BOARD","SWITCH","AIR","JUPITER","HAM","BATTERY","SPINE","VET","RABBIT","AGENT","DROP","TRACK","BANK","CLIFF","BOMB","CASINO","SKYSCRAPER","STOCK","BRUSH","GRASS","SATURN","DRESS","FAN","DWARF","ALIEN","WHIP","ANTARCTICA","PUMPKIN","MOSCOW","TRIP","SNOWMAN","FOREST","CAPITAL","STRIKE","COPPER","SOUL","CANADA","CONCERT","CHOCOLATE","JET","SHAKESPEARE","CAR","SHADOW","GLOVE","LITTER","COMIC","MILLIONAIRE","PITCH","BOND","APPLE","OIL","COOK","FLY","CAST","BEAR","PIN","MINE","CHECK","BAR","COLD","HOLLYWOOD","SCREEN","PLAY","MARBLE","DINOSAUR","CAT","GAME","LIFE","LUCK","HOOK","PARK","BAT","BOLT","GREECE","DECK","YARD","CONDUCTOR","GIANT","FACE","PIRATE","BEACH","POUND","ROUND","FIELD","CYCLE","ROME","HOTEL","SPOT","MOUNT","STICK","SINK","MOLE","SCHOOL","CHICK","WATER","PAPER","SLUG","BUTTON","HIMALAYAS","NINJA","CZECH","GROUND","BUGLE","MOUTH","TAG","NUT","WORM","PENGUIN","LAWYER","SPIDER","TAIL","TICK","MINT","MISSILE","EMBASSY","PISTOL","SCIENTIST","KIWI","LOG","GERMANY","HAND","DISEASE","BED","SPY","PRINCESS","DANCE","CARROT","STATE","RACKET","GENIUS","THIEF","TRUNK","AMERICA","NOVEL","WALL","BERRY","ATLANTIS","KETCHUP","PLOT","ENGLAND","TEMPLE","MAPLE","MAIL","AFRICA","OPERA","TOWER","NIGHT","POOL","ROBIN","BAND","DUCK","HOOD","CARD","COURT","TIE","DIAMOND","CROSS","NET","FRANCE","DATE","COTTON","POINT","OLIVE","MATCH","BALL","MERCURY","BOW","FIGHTER","SHOP","SLIP","KNIGHT","PASS","STADIUM","FOOT","LIMOUSINE","CONTRACT","PLATE","MOUSE","HORSESHOE","ORGAN","KNIFE","CELL","WATCH","ARM","ROSE","MODEL","THEATER","HOLE","POST","LIGHT","TRIANGLE","BELL","LEPRECHAUN","KID","POLICE","ROCK","SCALE","GHOST","SHIP","MEXICO","CLOAK","STRAW","CALF","SHARK","DRAFT","HAWK","PRESS","VAN","ICE CREAM","BUCK","PHOENIX","FORCE","BOOM","LAB","RULER","PILOT","LASER","DEATH","LOCK","SPELL","HOSPITAL","AMBULANCE","WEB","PLASTIC","KEY","OCTOPUS","THUMB","TEACHER","PALM","CRANE","HELICOPTER","BOTTLE","FENCE","KANGAROO","JACK","EUROPE","SCORPION","MUG","SUIT","MICROSCOPE","ENGINE","WAVE","CENTAUR","STREAM","HEAD","MAMMOTH","DAY","KING","PAN","POLE","SUPERHERO","REVOLUTION","PIT","GAS","GLASS","WASHINGTON","TURKEY","QUEEN","FILE","CRICKET","WELL","FAIR","TOOTH","STAFF","BILL","SHOT","WASHER","LAP","AMAZON","SPACE","FIGURE","MASS","CHINA","SQUARE","BUFFALO","CHEST","DOG","NAIL","BERLIN","HORSE","CHARGE","SUB","INDIA","TRAIN","TELESCOPE","PLANE","PARACHUTE","PIANO","BOX","PLATYPUS","CLUB","SHOE","SERVER","CENTER","CHAIR","SOUND","COMPOUND","FILM","CROWN","OLYMPUS","BACK","NOTE","PART","TAP","ICE","SOCK","ALPS","ROOT","SATELLITE","ANGEL","CRASH","GOLD","BUG","PASTE","ROBOT","ROW","SPIKE","CODE","LOCH NESS","FORK","SWING","PORT","CIRCLE","UNICORN","TIME","LINK","FLUTE","TORCH","BEIJING","EAGLE","BARK","SNOW","IVORY","PIPE","PANTS","SOLDIER","VACUUM","WITCH","PUPIL","SMUGGLER","ORANGE","AZTEC","UNDERTAKER","SCUBA DIVER","PYRAMID","POISON","STRING"},
@@ -43,6 +43,12 @@ translations = {
         ["notApprovedClue"] = "<font color='%s'>%s</font> didn't approve the <font color='%s'>%s</font>'s clue.",
         ["newGameStarting"] = "<p align='center'><font size='15'>New game is starting in <b>%d</b> seconds!</font></p>",
         ["votedFor"] = "%s voted for %s",
+        ["moduleAdmins"] = "<J>Module Admins:</J> Mckeydown#0000, Indexinel#5948, Lays#1146",
+        ["roomAdmin"] = "<J>Room Admin:</J> %s",
+        ["forumTopic"] = "https://atelier801.com/topic?f=6&t=897423",
+        ["lockedRoom"] = "%s has locked the room to %s mice.",
+        ["roomPassword"] = "Room password changed by %s",
+        ["kickedTeam"] = "%s kicked by %s",
     },
 
     ["tr"] = {
@@ -78,7 +84,14 @@ translations = {
         ["approvedClue"] = "Spymaster <font color='%s'>%s</font>, Spymaster <font color='%s'>%s</font> tarafından verilen ipucunu onayladı.",
         ["notApprovedClue"] = "Spymaster <font color='%s'>%s</font>, Spymaster <font color='%s'>%s</font> tarafından verilen ipucunu onaylamadı.",
         ["newGameStarting"] = "<p align='center'><font size='15'>Yeni oyunun başlamasına <b>%d</b> saniye!</font></p>",
-        ["votedFor"] = "%s, %s için oy verdi."
+        ["votedFor"] = "%s, %s için oy verdi.",
+        ["moduleAdmins"] = "<J>Modül Yöneticileri:</J> Mckeydown#0000, Indexinel#5948, Lays#1146",
+        ["roomAdmin"] = "<J>Oda Yöneticisi:</J> %s",
+        ["forumTopic"] = "https://atelier801.com/topic?f=6&t=897423",
+        ["lockedRoom"] = "%s odayı %s fare ile sınırlandırdı.",
+        ["roomPassword"] = "Oda şifresi %s tarafından değiştirildi.",
+        ["kickedTeam"] = "%s adlı oyuncu %s tarafından takımdan atıldı.",
+
     }
 }
 
@@ -196,10 +209,18 @@ help = {
 commandsPage = {
     ["en"] = {
     "<font color='#ffffff' size='20'><p align='center'>COMMANDS & KEYS</font></p>",
-    "<b><p align='left'><font size='13'><CS>COMMANDS</CS></font> <font size='10'><N2>(ONLY ROOM ADMIN)</N2></font></p></b>"..
-    "<PT><b>!restart</b></PT> — Resets settings, teams, cards, scores, logs and take you back to the lobby.\n\n"..
-    "<b><PT>!ban</PT> <V>PlayerName</V><G>#tag</G></b> — The specified player can't join any team, can't see the cards and clues.\n\n"..
-    "<b><PT>!uban</PT> <V>PlayerName</V><G>#tag</G></b> — Removes the effects of ban command from specified player.\n\n"..
+    "<b><p align='left'><font size='13'><CS>ROOM ADMIN COMMANDS</CS></font></p></b>"..
+    "<PT><b>!restart</b></PT> — Resets settings, teams, cards, scores, logs and take you back to the lobby.\n"..
+    "<b><PT>!ban</PT> <V>PlayerName</V><G>#tag</G></b> — The specified player can't join any team, can't see the cards and clues.\n"..
+    "<b><PT>!uban</PT> <V>PlayerName</V><G>#tag</G></b> — Removes the effects of ban command from specified player.\n"..
+    "<b><PT>!lock</PT> <V>[number]</V></b> — Sets a limit for the number of players in the room.\n"..
+    "<b><PT>!pw</PT> <V>[password]</V></b> — Sets room password.\n"..
+    "<b><PT>!kick</PT> <V>PlayerName</V><G>#tag</G></b> — Kicks specified player from the team.\n\n"..
+    "<b><p align='left'><font size='13'><CS>PLAYER COMMANDS</CS></font></p></b>"..
+    "<b><PT>!admins</PT></b> — Shows the module admins.\n"..
+    "<b><PT>!admin</PT></b> — Shows the room admin.\n"..
+    "<b><PT>!forum</PT></b> — Module forum thread.\n\n"..
+
     "<b><p align='left'><font size='13'><CS>KEYS</CS></font></p></b>"..
     "<b><PT>[H]</PT></b> — Shows the help page.\n"..
     "<b><PT>[K]</PT></b> — Shows the commands and keys page.\n"..
@@ -212,6 +233,9 @@ commandsPage = {
     "<PT><b>!restart</b></PT> — Ayarları, takımları, kartları, skorları, kayıtları sıfırlar ve sizi lobiye yönlendirir.\n\n"..
     "<b><PT>!ban</PT> <V>KullanıcıAdı</V><G>#etiket</G></b> — Belirtilen oyuncu herhangi bir takıma katılamaz, kartları ve ipuçlarını göremez.\n\n"..
     "<b><PT>!uban</PT> <V>KullanıcıAdı</V><G>#etiket</G></b> — Belirtilen kullanıcıdan ban komutunun etkilerini kaldırır.\n\n"..
+    "<b><PT>!lock</PT> <V>[sayı]</V></b> — Odadaki oyuncu sayısı için bir sınır belirler.\n"..
+    "<b><PT>!pw</PT> <V>[şifre]</V></b> — Oda şifresini ayarlar.\n"..
+    "<b><PT>!kick</PT> <V>PlayerName</V><G>#tag</G></b> — Belirtilen kullanıcıyı takımdan atar.\n"..
     "<b><p align='left'><font size='13'><CS>TUŞLAR</CS></font></p></b>"..
     "<b><PT>[H]</PT></b> — Yardım sayfasını gösterir.\n"..
     "<b><PT>[K]</PT></b> — Komutlar ve Tuşlar sayfasını gösterir.\n"..
@@ -394,7 +418,7 @@ gameState = {
     canGiveClue = true,
 }
 
-admins = {["Mckeydown#0000"] = true, ["Indexinel#5948"] = true}
+admins = {["Mckeydown#0000"] = true, ["Indexinel#5948"] = true, ["Lays#1146"] = true}
 roomAdmin = nil
 banList = {}
 
@@ -407,6 +431,7 @@ gameLog = {}
 keys = {gameLogKey = {}, clueLogKey = {}, helpKey = true, commandsKey = true}
 settings = { clue = false, time = false, }
 colors = {["red"] = "#8F2B1C", ["blue"] = "#3284a3"}
+last_enter = 0
 
 -- Lays's Image --
 do
@@ -478,7 +503,10 @@ tfm.exec.disableAfkDeath(true)
 tfm.exec.disableAutoNewGame(true)
 system.disableChatCommandDisplay()
 tfm.exec.disableMortCommand(true)
-tfm.exec.chatMessage(translations[roomLang].welcome, nil)
+
+if tfm.get.room.isTribeHouse then
+    tfm.exec.chatMessage(translations[roomLang].welcome, nil)
+end
 
 
 function gameStatus()
@@ -501,13 +529,14 @@ function startGame(name)
     local checkOperatives = (#operatives["blue"] >= 1 and #operatives["red"] >= 1)
     local checkSpymasters = (spymasters["blue"] ~= nil and spymasters["red"] ~= nil) 
     
-    if checkOperatives and checkSpymasters then
+    if checkOperatives and checkSpymasters and gameState.status ~= 1 then
         gameState.status = 1
         gameStatus()
     end
 end
 
 function eventNewGame()
+    last_enter = os.time()
     loadGameUI()
     if gameState.status == 0 then return end
 
@@ -595,11 +624,10 @@ if gameState.status >= 1 then
 
     if checkOperatives or checkSpymasters then
         addGameLog(string.format("%s left, game restarted.", n))
-        resetGame()
+        gameState.status = 5
+        tfm.exec.setGameTime(5)
     end
 end
-
-
 end
 
 function selectRoundCards(count, color)
@@ -669,6 +697,20 @@ function checkBan(action, name)
     end
 end
 
+function pickWinner()
+    local whichTeam = blueCount < redCount and "blue" or "red"
+    if os.time()-last_enter > 2 * 60 * 1000 then
+        for i = 1, #operatives[whichTeam] do
+            tfm.exec.respawnPlayer(operatives[whichTeam][i])
+            tfm.exec.giveCheese(operatives[whichTeam][i])
+            tfm.exec.playerVictory(operatives[whichTeam][i])
+        end
+            tfm.exec.respawnPlayer(spymasters[whichTeam])
+            tfm.exec.giveCheese(spymasters[whichTeam])
+            tfm.exec.playerVictory(spymasters[whichTeam])
+            last_enter = os.time()
+    end
+end
 
 function showHelp(name, tabid, pageid)
     ui.addImage("help_image_4", "1829f074270.png", "~666",590,100,name, 1, 1, 3.15, 1, 0, 0, false)
@@ -972,50 +1014,62 @@ function changeSettings(isClueSettings, name)
 end
 
 function eventChatCommand(playerName, cmd) 
-    if admins[playerName] then
-        if cmd == "skip" then changeTurn() return 
-            elseif cmd == "lobby" then resetGame() return 
-        end
-    end 
+    local isAdmin = roomAdmin == playerName or admins[playerName]
+    local args = {}
+    for arg in cmd:gmatch('%S+') do args[1+#args]=arg end
+    local firstArg = args[1] 
+    local secondArg = args[2]
 
-    if roomAdmin == playerName or admins[playerName] then
-        if cmd == "restart" then 
-            resetGame() 
-            addGameLog(string.format(translations[roomLang].restartedGame, playerName))
-            return 
-        end
+    if isAdmin then
+            if firstArg == "restart" then 
+                gameState.status = 5
+                tfm.exec.setGameTime(5)
+                addGameLog(string.format(translations[roomLang].restartedGame, playerName))
+                return 
+            end
+            if firstArg == "ban" then
+                if admins[secondArg] then return end
+                table.insert(banList, secondArg)
+                checkBan("ban", secondArg)
+            end
+            if firstArg == "uban" then
+                local banIndex = table.index(banList, secondArg)
+                if banIndex ~= nil then table.remove(banList, banIndex) end
+                checkBan("uban", secondArg)
+            end
+            if firstArg == "lock" then
+                tfm.exec.setRoomMaxPlayers(secondArg)
+                tfm.exec.chatMessage(string.format("%s has locked the room to %s mice.", playerName, secondArg), nil)
+            end
+            if firstArg == "pw" then
+                tfm.exec.setRoomPassword(secondArg)
+                tfm.exec.chatMessage(string.format("Room password changed by %s", playerName), nil)
+            end
 
-        local args = {}
-        for arg in cmd:gmatch('%S+') do args[1+#args]=arg end
-        local firstArg = args[1] 
-        local secondArg = args[2]
+            if firstArg == "kick" then
+                if admins[secondArg] then return end
+                for n in pairs(tfm.get.room.playerList) do
+                    if n == secondArg then
+                        leaveRequest(n)
+                        tfm.exec.chatMessage(string.format("%s kicked by %s",secondArg, playerName), nil)
+                    end
+                end
+            end
 
-        if firstArg == "ban" and roomAdmin == playerName or firstArg == "ban" and admins[playerName] then
-            if admins[secondArg] then return end
-            table.insert(banList, secondArg)
-            checkBan("ban", secondArg)
-        end
+            if admins[playerName] then
+                    if firstArg == "skip" then changeTurn() return end
+                    if firstArg == "lobby" then gameState.status = 5 tfm.exec.setGameTime(5) return end
+                    if firstArg == "time" then tfm.exec.setGameTime(secondArg) return end
+            end
+    end
 
-        if firstArg == "uban" and roomAdmin == playerName or firstArg == "uban" and admins[playerName] then
-            local banIndex = table.index(banList, secondArg)
-            if banIndex ~= nil then table.remove(banList, banIndex) end
-            checkBan("uban", secondArg)
-        end
-
-        if firstArg == "lock" and roomAdmin == playerName or firstArg == "uban" and admins[playerName] then
-            tfm.exec.setRoomMaxPlayers(secondArg)
-            tfm.exec.chatMessage(string.format("%s has locked the room to %s mice.", playerName, secondArg), nil)
-        end
-
-        if firstArg == "pw" and roomAdmin == playerName or firstArg == "uban" and admins[playerName] then
-            tfm.exec.setRoomPassword(secondArg)
-            tfm.exec.chatMessage(string.format("Room password changed by %s", playerName), nil)
-        end
-
-
-        if firstArg == "time" and admins[playerName] then
-            tfm.exec.setGameTime(secondArg)
-        end
+    if firstArg == "admins" then
+            tfm.exec.chatMessage(string.format(translations[roomLang].moduleAdmins), nil)
+        elseif firstArg == "admin" then
+            if roomAdmin == nil then return end
+            tfm.exec.chatMessage(string.format(translations[roomLang].roomAdmin, roomAdmin), nil)
+        elseif firstArg == "forum" then
+            tfm.exec.chatMessage(string.format(translations[roomLang].forumTopic), nil)
     end
 end
 
@@ -1213,6 +1267,7 @@ end
 
 function changeTurn(cardID, name)
     tfm.exec.playSound('transformice/son/np', 100, nil, nil, nil)
+    pickWinner()
     noLimit = 0
     ui.updateTextArea(textAreas.clue_text, translations[roomLang].thinking, nil)
     ui.updateTextArea(textAreas.clue_number, "<font color='#fafafa'><b>-</b></font>", nil)
@@ -1505,7 +1560,6 @@ function resetGame()
     for i = 1, 25 do cards[i].covered = false end
 
     gameState.status = 0
-    tfm.exec.newGame(7911404)
     gameStatus()
 end
 
