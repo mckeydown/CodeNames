@@ -1,4 +1,5 @@
 -- CodeNames V0.22
+tfm.get.room.language = "tr"
 words = {
     ["tr"] = {"POKER", "EJDERHA", "SAVAŞ", "BAL", "BOMBA", "KUMARHANE", "GÖKDELEN", "SATÜRN", "UZAYLI", "KIRBAÇ", "ANTARTİKA", "KARDAN ADAM", "KONSER", "ÇİKOLATA", "JET", "MİLYONER", "DİNOZOR", "KORSAN", "DÜDÜK", "PENGUEN", "ÖRÜMCEK", "FÜZE", "KONSOLOSLUK", "TABANCA", "HASTALIK", "AJAN", "PRENSES", "DAHİ", "HIRSIZ", "OPERA", "ŞÖVALYE", "STADYUM", "LİMUZİN", "HAYALET", "KAMYONET", "DONDURMA", "LAZER", "ÖLÜM", "HASTANE", "AMBULANS", "AHTAPOT", "HELİKOPTER", "KANGURU", "MİKROSKOP", "TARZAN", "KAHRAMAN", "TELESKOP", "PARAŞÜT", "KAYNANA", "NEMRUT", "UYDU", "MELEK", "ROBOT", "AZRAİL", "CADI", "MEZARCI", "DALGIÇ", "ZEHİR", "KÖPRÜ", "ATEŞ", "MASA", "BALİNA", "AY", "BALIK", "DOKTOR", "CAMİ", "KEMER", "HEMŞİRE", "RÜZGAR", "ÇİZME", "PARK", "ALBÜM", "SİMİT", "TAŞ", "ŞOK", "BEYAZ", "HESAP", "KUPON", "MORS", "PALET", "REJİM", "PARTİ", "MAKAS", "KÖSTEBEK", "TAMPON", "PİLİÇ", "MANTAR", "ÖRGÜ", "NUMARA", "KUYRUK", "ALAY", "MACUN", "TARLA", "SATIR", "CEP", "PİKE", "SIRT", "TOPUZ", "TULUM", "POSTA", "TERAZİ", "SİTE", "VİZE", "TORPİL", "KAPTAN", "ATLAS", "KÜME", "CİLT", "BOY", "KURŞUN", "BANKO", "MAT", "BOĞAZ", "DİYET", "DOĞRU", "DÖVİZ", "KÖPEK", "AT", "AYAKKABI", "SANDALYE", "TAHT", "BUZ", "ALTIN", "ÇATAL", "ZAMAN", "FLÜT", "FENER", "YASTIK", "TESBİH", "ASKER", "PİRAMİT", "HALAT", "YILDIZ", "OCAK", "EKMEK", "YÜREK", "BLOK", "KUPA", "İĞNE", "DON", "ÖRTÜ", "KABUK", "BAYRAM", "PERDE", "BALTA", "YAKA", "DÜĞME", "AĞIZ", "ETİKET", "EL", "YATAK", "DUVAR", "KULE", "KART", "BAĞ", "YAY", "ORTA", "İNTERNET", "KAYMAK", "PAS", "DAMAT", "DELİK", "NİŞAN", "KUVVET", "ANAHTAR", "MOTOR", "DALGA", "AKIM", "BAŞ", "İSKELE", "ÇEKİRDEK", "KAZA", "DÜŞ", "KAZIK", "PUL", "DAİRE", "AĞ", "KANAL", "İSTANBUL", "AVUSTRALYA", "KIBRIS", "TOKYO", "MISIR", "REKLAM", "KAVURMA", "MOSKOVA", "DÖVME", "MEVLANA", "HOLLYWOOD", "BİZANS", "ROMA", "ARABESK", "NİNJA", "LAZ", "MANGO", "ALMANYA", "DEVLET", "AMERİKA", "MEZOPOTAMYA", "İNGİLTERE", "SURVİVOR", "KRİZ", "MECNUN", "EŞKİYA", "NAL", "GULYABANİ", "İRAN", "BERLİN", "KARINCA", "AVRUPA", "HİNDİSTAN", "ÇEYİZ", "EVEREST", "KALPAZAN", "PEKİN", "KARTAL", "PAZI", "BAKLAVA", "HİTİT", "YAŞ", "ATLET", "DİZİ", "BASKI", "DERECE", "DOLU", "TABLET", "YEŞİL", "ALEM", "MARŞ", "KUŞAK", "BOZUK", "MAKARA", "AĞAÇ", "BOT", "ZAR", "ORDU", "GÖÇ", "SERVİS", "MARS", "GÖBEK", "FESTİVAL", "OMURGA", "ÇATI", "DÜMEN", "İZ", "TAKIM", "ÇAY", "KANUN", "FAN", "FIRÇA", "KAHVE", "TAVLA", "GÜL", "ANA", "KOCA", "MASKARA", "PAZAR", "TEZ", "MAYA", "UŞAK", "MEMUR", "KEPÇE", "BEYİN", "KLASİK", "KOVAN", "PALA", "SOĞUK", "ASLAN", "TOP", "BANKA", "GÖZ", "HAVA", "TAVŞAN", "PASTA", "ELBİSE", "ÇİMEN", "CÜCE", "ORMAN", "ARABA", "ELDİVEN", "BERE", "BENZİN", "AŞÇI", "AYI", "KEDİ", "HAYAT", "PİRİNÇ", "DEV", "YÜZ", "PLAJ", "OTEL", "SU", "KAĞIT", "SOLUCAN", "AVUKAT", "BİLİM ADAMI", "DANS", "HAVUÇ", "SEPET", "GECE", "PAMUK", "AYAK", "FARE", "BIÇAK", "TİYATRO", "POLİS", "GEMİ", "PİLOT", "PARMAK", "ÖĞRETMEN", "ŞİŞE", "GÜN", "KRAL", "BARDAK", "ELMAS", "DİŞ", "KOPYA", "DARBE", "FİLM", "GIRGIR", "ARPACIK", "HORTUM", "IZGARA", "TORPİDO", "KEPEK", "GICIK", "KESE", "KISIR", "KOLON", "KULAÇ", "GAZİNO", "FELEK", "KAVAL", "KİTAP", "TIP", "KAYNAK", "GARAJ", "PAÇA", "LASTİK", "SAZ", "SET", "FAR", "KUTU", "KANEPE", "MAKAM", "ŞANS", "MERKEZ", "ÜNLÜ", "DEVİR", "DÜĞÜN", "TABLO", "GÖLGE", "GAZ", "KALE", "HAZİNE", "KÖY", "MODA", "HAVUZ", "MAGAZİN", "KÜPE", "FATURA", "SAYFA", "ÇAMAŞIR", "TUR", "AMAZON", "SAHTE", "OYUNCAK", "SIRA", "FORM", "KARE", "KAŞ", "SANDIK", "ACI", "TREN", "SOSYETE", "ÖRGÜT", "SÖZ", "UÇAK", "ADET", "BALKON", "ÇOBAN", "AYNA", "KURU", "DELİ", "YAZ", "NOT", "BÖLÜM", "ŞERİT", "YUNANİSTAN", "HÜCRE", "MEZUNİYET", "FAUL", "LONDRA", "MUCİZE", "TEMEL", "AFRİKA", "BİLYE", "YAĞMUR", "KUYU", "KANAT"},
     ["en"] = {"STAR","BRIDGE","FIRE","RING","HEART","HORN","SPRING","TABLE","WHALE","SEAL","MOON","BLOCK","DRILL","FISH","TUBE","GRACE","IRON","DOCTOR","ROULETTE","DEGREE","WAKE","NEEDLE","TABLET","PIE","GREEN","DRAGON","NEW YORK","AUSTRALIA","MARCH","LINE","WAR","HONEY","JAM","CHURCH","COVER","LEAD","BERMUDA","CHANGE","TOKYO","EGYPT","BEAT","RAY","BELT","CAP","LEMON","NURSE","WIND","LION","LONDON","FALL","BOOT","DICE","EYE","BOARD","SWITCH","AIR","JUPITER","HAM","BATTERY","SPINE","VET","RABBIT","AGENT","DROP","TRACK","BANK","CLIFF","BOMB","CASINO","SKYSCRAPER","STOCK","BRUSH","GRASS","SATURN","DRESS","FAN","DWARF","ALIEN","WHIP","ANTARCTICA","PUMPKIN","MOSCOW","TRIP","SNOWMAN","FOREST","CAPITAL","STRIKE","COPPER","SOUL","CANADA","CONCERT","CHOCOLATE","JET","SHAKESPEARE","CAR","SHADOW","GLOVE","LITTER","COMIC","MILLIONAIRE","PITCH","BOND","APPLE","OIL","COOK","FLY","CAST","BEAR","PIN","MINE","CHECK","BAR","COLD","HOLLYWOOD","SCREEN","PLAY","MARBLE","DINOSAUR","CAT","GAME","LIFE","LUCK","HOOK","PARK","BAT","BOLT","GREECE","DECK","YARD","CONDUCTOR","GIANT","FACE","PIRATE","BEACH","POUND","ROUND","FIELD","CYCLE","ROME","HOTEL","SPOT","MOUNT","STICK","SINK","MOLE","SCHOOL","CHICK","WATER","PAPER","SLUG","BUTTON","HIMALAYAS","NINJA","CZECH","GROUND","BUGLE","MOUTH","TAG","NUT","WORM","PENGUIN","LAWYER","SPIDER","TAIL","TICK","MINT","MISSILE","EMBASSY","PISTOL","SCIENTIST","KIWI","LOG","GERMANY","HAND","DISEASE","BED","SPY","PRINCESS","DANCE","CARROT","STATE","RACKET","GENIUS","THIEF","TRUNK","AMERICA","NOVEL","WALL","BERRY","ATLANTIS","KETCHUP","PLOT","ENGLAND","TEMPLE","MAPLE","MAIL","AFRICA","OPERA","TOWER","NIGHT","POOL","ROBIN","BAND","DUCK","HOOD","CARD","COURT","TIE","DIAMOND","CROSS","NET","FRANCE","DATE","COTTON","POINT","OLIVE","MATCH","BALL","MERCURY","BOW","FIGHTER","SHOP","SLIP","KNIGHT","PASS","STADIUM","FOOT","LIMOUSINE","CONTRACT","PLATE","MOUSE","HORSESHOE","ORGAN","KNIFE","CELL","WATCH","ARM","ROSE","MODEL","THEATER","HOLE","POST","LIGHT","TRIANGLE","BELL","LEPRECHAUN","KID","POLICE","ROCK","SCALE","GHOST","SHIP","MEXICO","CLOAK","STRAW","CALF","SHARK","DRAFT","HAWK","PRESS","VAN","ICE CREAM","BUCK","PHOENIX","FORCE","BOOM","LAB","RULER","PILOT","LASER","DEATH","LOCK","SPELL","HOSPITAL","AMBULANCE","WEB","PLASTIC","KEY","OCTOPUS","THUMB","TEACHER","PALM","CRANE","HELICOPTER","BOTTLE","FENCE","KANGAROO","JACK","EUROPE","SCORPION","MUG","SUIT","MICROSCOPE","ENGINE","WAVE","CENTAUR","STREAM","HEAD","MAMMOTH","DAY","KING","PAN","POLE","SUPERHERO","REVOLUTION","PIT","GAS","GLASS","WASHINGTON","TURKEY","QUEEN","FILE","CRICKET","WELL","FAIR","TOOTH","STAFF","BILL","SHOT","WASHER","LAP","AMAZON","SPACE","FIGURE","MASS","CHINA","SQUARE","BUFFALO","CHEST","DOG","NAIL","BERLIN","HORSE","CHARGE","SUB","INDIA","TRAIN","TELESCOPE","PLANE","PARACHUTE","PIANO","BOX","PLATYPUS","CLUB","SHOE","SERVER","CENTER","CHAIR","SOUND","COMPOUND","FILM","CROWN","OLYMPUS","BACK","NOTE","PART","TAP","ICE","SOCK","ALPS","ROOT","SATELLITE","ANGEL","CRASH","GOLD","BUG","PASTE","ROBOT","ROW","SPIKE","CODE","LOCH NESS","FORK","SWING","PORT","CIRCLE","UNICORN","TIME","LINK","FLUTE","TORCH","BEIJING","EAGLE","BARK","SNOW","IVORY","PIPE","PANTS","SOLDIER","VACUUM","WITCH","PUPIL","SMUGGLER","ORANGE","AZTEC","UNDERTAKER","SCUBA DIVER","PYRAMID","POISON","STRING"},
@@ -49,6 +50,8 @@ translations = {
         ["lockedRoom"] = "%s has locked the room to %s mice.",
         ["roomPassword"] = "Room password changed by %s",
         ["kickedTeam"] = "%s kicked by %s",
+        ["currentlyPlaying"] = "A game is currently being played, if you don't want to wait, type <J>!room</J> to create your own room.",
+        ["createOwnRoom"] = "Create your own room: <V>/room <J>#codenames0<V>%s",
     },
 
     ["tr"] = {
@@ -91,8 +94,53 @@ translations = {
         ["lockedRoom"] = "%s odayı %s fare ile sınırlandırdı.",
         ["roomPassword"] = "Oda şifresi %s tarafından değiştirildi.",
         ["kickedTeam"] = "%s adlı oyuncu %s tarafından takımdan atıldı.",
-
-    }
+        ["currentlyPlaying"] = "Şu anda bir oyun oynanıyor, beklemek istemiyorsanız kendi odanızı oluşturmak için <J>!room</J> yazın.",
+        ["createOwnRoom"] = "Kendi odanızı oluşturun: <V>/room <J>#codenames0<V>%s",
+    },
+    
+    ["es"] = {
+        ["welcome"] = "<J>¡Bienvenid@ <b>CODENAMES!</b> Presiona <b><VP>H</VP></b> para saber cómo jugar.</J>",
+        ["red"] = "ROJO",
+        ["blue"] = "AZUL",
+        ["blueTurn"] = "<b><p align='center'><font color='#ffffff'>TURNO DEL EQUIPO AZUL</b></p></font>",
+        ["redTurn"] = "<b><p align='center'><font color='#ffffff'>TURNO DEL EQUIPO ROJO</b></p></font>",
+        ["opponentSetting"] = "<p align='right'><font size='10' color='#FFFFFF'>CONFIRMAR PISTA RIVAL</font></p>",
+        ["timeSetting"] = "<p align='right'><font size='10' color='#FFFFFF'>LÍMITE DE TIEMPO</font></p>",
+        ["startButton"] = "<p align='center'><font size='14' color='#FFFFFF'><a href='event:startGame'>JUGAR</font></p>",
+        ["joinButton"] = "<p align='center'><font color='#FFFFFF'><b><a href='event:joinTeam'>UNIRSE</a></b></font></p>",
+        ["clueConfirmation"] = "<p align='center'>La pista del oponente es <b>%s</b> para <b>%d</b> palabra(s). ¿Estás de acuerdo con ello?</p>",
+        ["clueChecking"] = "<font size='10'><p align='center'><font color='%s'><b>%s</b></font> está revisando la pista del oponente...</p></font>",
+        ["clueInfo"] = "La pista es <b>%s</b> para <b>%d</b> palabra(s).",
+        ["clueGameLog"] = "<b>La pista de <font color='%s'>%s</b></font> es <font color='%s'><b>%s</b></font> para <b><font color='%s'>%d</b></font> palabra(s).",
+        ["roomAdminInfo"] = "El gestor de la sala puede cambiar los ajustes e iniciar la partida en cualquier momento.",
+        ["restartedGame"] = "<R> %s ha reiniciado la partida. </R>",
+        ["thinking"] = "<font color='#fafafa'><b> Pensando... </b></font>",
+        ["blackGameOver"] = "<b><p align='center'><font size='10' color='#ffffff'>¡EL EQUIPO %s HIZO CONTACTO CON EL ASESINO Y HA PERDIDO EL JUEGO! </b></p></font>",
+        ["redTeamWon"] = "<b><p align='center'><font color='#ffffff'>¡EL EQUIPO ROJO HA GANADO! </b></p></font>",
+        ["blueTeamWon"] = "<b><p align='center'><font color='#ffffff'>¡EL EQUIPO AZUL HA GANADO! </b></p></font>",
+        ["validClue"] = "<p align='center'>¡La pista es válida! El equipo <b>%s</b> puede votar ahora.</p>",
+        ["invalidClue"] = "<p align='center'>¡Pista no válida! Puedes intentar <b><R>%d</R></b> veces más. </p>",
+        ["getRoomAdmin"] = "<p align='center'><font size='9'><a href='event:roomAdmin'><b>OBTENER GESTIÓN DE SALA</b></a></font></p>",
+        ["contactedBystander"] = "<font color='%s'><b>EL EQUIPO %s</b></font> ha hecho contacto con el <font color='#ac987f'>Observador %s</font>",
+        ["contactedAssassin"] = "<font color='%s'><b>EL EQUIPO %s</b></font> ha hecho contacto con el <font color='#5B5B5B'>Asesino %s</font>",
+        ["contactedRedAgent"] = "<font color='%s'><b>EL EQUIPO %s</b></font> ha hecho contacto con el <font color='#8F2B1C'>Agente %s</font>",
+        ["contactedBlueAgent"] = "<font color='%s'><b>EL EQUIPO %s</b></font> ha hecho contacto con el <font color='#3284A3'>Agente %s</font>",
+        ["noClueLog"] = "<font color='%s'>%s</font> no proporcionó una pista en el tiempo establecido.",
+        ["noWordLog"] = "<font color='%s'>%s</font> no eligió una palabra en el tiempo establecido.",
+        ["noActionSpy"] = "El Espía Maestro rival no tomó ninguna acción en el tiempo establecido por lo que la pista ha sido aprobada.",
+        ["approvedClue"] = "<font color='%s'>%s</font> ha aprobado la pista de <font color='%s'>%s</font>.",
+        ["notApprovedClue"] = "<font color='%s'>%s</font> no aprobó la pista de <font color='%s'>%s</font>.",
+        ["newGameStarting"] = "<p align='center'><font size='15'>¡Una nueva partida comenzará en <b>%d</b> segundos!</font></p>",
+        ["votedFor"] = "%s votó por %s",
+        ["moduleAdmins"] = "<J>Administradores del Módulo:</J> Mckeydown#0000, Indexinel#5948, Lays#1146",
+        ["roomAdmin"] = "<J>Gestor de la Sala:</J> %s",
+        ["forumTopic"] = "https://atelier801.com/topic?f=6&t=897423",
+        ["lockedRoom"] = "%s ha restringido la sala a %s ratones.",
+        ["roomPassword"] = "Contraseña de la sala cambiada por %s",
+        ["kickedTeam"] = "%s expulsad@ por %s",
+        ["currentlyPlaying"] = "A game is currently being played, if you don't want to wait, type <J>!room</J> to create your own room.",
+        ["createOwnRoom"] = "Create your own room: <V>/room <J>#codenames0<V>%s",
+    },
 }
 
 help = {
@@ -203,7 +251,59 @@ help = {
         "<b><font color='#f5d8b6' size='13'>TEST EDENLER</font></b>\n"..
         "<font size='12'><V>Kucukstarr</V><G>#3074</G>, <V>Monteriple</V><G>#3222</G>, <V>Nnaaaz</V><G>#0000</G>, <V>Tactcat</V><G>#0000</G>, <V>Fatihmilano</V><G>#0000</G>, <V>Hotspotower</V><G>#0000</G>, <V>Neonstrayzer</V><G>#0000</G>, <V>Ulubilge</V><G>#0000</G>, <V>Meltlemon</V><G>#8284</G>, <V>Lagneia</V><G>#2678</G>, <V>Yoda</V><G>#7355</G>, <V>Marijuana</V><G>#0387</G>, <V>Lowdemort</V><G>#9914</G>, <V>Nehirsenn</V><G>#0000</G></font>",
     }
+},
+
+    ["es"] = {
+        {
+            "CÓMO JUGAR",
+        
+            "Codenames es un juego de dos equipos. Hay una cuadrícula de <b>25</b> palabras."..
+            " Algunas de esas están secretamente asignadas al <font color='#8f2b1c'><b>Equipo Rojo</b></font>, otras al <font color='#3284a3'><b>Equipo Azul</b></font>. Un jugador de cada equipo es el Espía Maestro y sólo ellos pueden ver qué palabras pertenecen a cada equipo."..
+            " Los Espías Maestros toman turnos para dar pistas a sus Operativos, tratando de llevarlos a adivinar las palabras de su equipo. El equipo que adivine todas sus palabras primero, ganará la partida.\n" ..
+            "\n<b><font color='#f5d8b6' size='14'>EQUIPOS</font></b>\n" ..
+            "Un jugador de cada equipo debe cliquear en Unirse como Espía Maestro, este verá el color de las cartas. Todos los demás deben cliquear en Unirse como Operativos, estos no verán el color de las cartas. Has clic en tu nombre para salir de tu equipo, puedes hacerlo mientras no haya comenzado la partida.",
+                
+            "<b><font color='#f5d8b6' size='14'>PISTAS</font></b>\n" ..
+            "El Espía Maestro da pistas." ..
+            " Cuando es tu turno de dar una pista, una entrada de texto y un tablero de números aparecerá en la pantalla."..
+            " Debes escribir una palabra en esa entrada y seleccionar en el tablero de números cuántas cartas están relacionadas con esa palabra, luego deberás darle al botón de Enviar para presentar tu pista."..
+            " Tus Operativos sólo verán la pista y el número de cartas relacionadas a ella.\n"..
+            "\n¡Ten cuidado con la carta negra, es una Asesina! Evita pistas que puedan llevar a la carta asesina o palabras del equipo rival."..
+            "\n\nAlgunas pistas no están permitidas, por ejemplo: usar cualquier palabra que esté en el tablero.",
+        
+            "<b><font color='#f5d8b6' size='14'>ADIVINANZA</font></b>\n" ..
+            "Los Operativos deben adivinar palabras en base a la pista del Espía Maestro. Puedes discutir la pista con tus compañeros. También puedes sugerir una palabra tocando la carta que pienses que encaja con la pista. "..
+            "La mitad de tu equipo debe votar por la misma palabra para que el voto sea enviado.\n\n"..
+            "Si adivinas una palabra del color de tu equipo, quizás debas adivinar de nuevo. Querrás adivinar cuantas palabras te indique tu Espía Maestro. "..
+            "\n\n<p align='center'>También puedes adivinar pistas que no hayan sido resolvidas en turnos anteriores.</p>\n",
+        
+            "<b><font color='#f5d8b6' size='14'>VICTORIA Y DERROTA</font></b>\n"..
+            "Los equipos se alternan los turnos. Un equipo ganará cuando todas sus palabras hayan sido adivinadas. ¡Pederán si adivinan la carta Asesina!\n\n"..
+            "<b><font color='#f5d8b6' size='14'>AJUSTES</font></b>\n"..
+            "<b><PT>CONFIRMAR PISTA RIVAL:</PT></b> Los Espías Maestros deben confirmar la pista de su contraparte. Si una puesta no es aprobada, esta no podrá ser enviada y se deberá proporcionar una pista distinta. Cada Espía Maestro tiene 3 intentos para proporcionar una pista válida en su turno.\n\n"..
+            "<b><PT>LÍMITE DE TIEMPO:</PT></b> Impone un tiempo límite al dar pistas y elegir palabras. Si no se toma ninguna acción en el tiempo especificado, el turno pasará al equipo rival (180 segundos para pistas, 120 para elegir paabras).",
+        },
+        {
+            "REGLAS",
+            "• La pista está estrictamente limitada a <b>una palabra y un número</b>. El Espía Maestro <u>no debe</u> comentar en la discusión de los jugadores, para evitar proporcionar información no deseada.\n\n"..
+            "• Tu pista debería de ser <b>una sola palabra</b>, pero los Espías Maestros pueden acordar reglas más flexibles. Por ejemplo, pueden acordar permitir nombres de lugares de múltiples palabras, como NUEVA YORK.\n\n"..
+            "• No utilices <b>ninguna forma de alguna palabra en el tablero</b> como pista. No escribas AZÚCAR como pista para AZÚCAR y CHOCOLATE, no intentes evadir esta regla utilizando pistas como AZUCARADO o AZUCAROSO.\n\n",
+            "• Da pistas<b>en el idioma en el que estés jugando</b>. No utilices palabras foráneas para proporcionar información demás.\n\n"..
+            "• La pista necesita estar relacionada con el <b>significado de las palabras</b>. No proporciones pistas en la forma de letras en la palabra o su posición en el tablero.\n\n"..
+            "• <b>NO TROLLEES.</b> Trollear de una forma que afecte el progreso del juego puede causar que se te prohiba jugar el módulo de manera <u>permanente</u>.\n\n"..
+            "• Mantén tus pistas dentro del espíritu del juego. Si no estás seguro, pregúntale al Espía Maestro enemigo (utilizando un canal que los otros jugadores no puedan ver).",
+        },
+        {
+            "CRÉDITOS",
+            "<p align='center'><b><font color='#f5d8b6' size='13'>DESARROLLO Y DISEÑO</font></b>\n"..
+            "<font size='12'><V>Mckeydown</V><G>#0000</G></font>\n\n"..
+            "<p align='center'><b><font color='#f5d8b6' size='13'>HOST DEL MÓDULO                       GRAN ASESOR</font></b></p>"..
+            "<p align='left'><font color='#f5d8b6' size='13'><V>       Indexinel</V><G>#5948</G>                         <V>Lays</V><G>#1146</G></font></p>\n"..
+            "<b><font color='#f5d8b6' size='13'>AYUDANTES</font></b>\n"..
+            "<font size='12'><V>Kucukstarr</V><G>#3074</G>, <V>Monteriple</V><G>#3222</G>, <V>Nnaaaz</V><G>#0000</G>, <V>Tactcat</V><G>#0000</G>, <V>Fatihmilano</V><G>#0000</G>, <V>Hotspotower</V><G>#0000</G>, <V>Neonstrayzer</V><G>#0000</G>, <V>Ulubilge</V><G>#0000</G>, <V>Meltlemon</V><G>#8284</G>, <V>Lagneia</V><G>#2678</G>, <V>Yoda</V><G>#7355</G>, <V>Marijuana</V><G>#0387</G>, <V>Lowdemort</V><G>#9914</G>, <V>Nehirsenn</V><G>#0000</G></font>",
+        }
     }
+
 }
 
 commandsPage = {
@@ -215,12 +315,12 @@ commandsPage = {
     "<b><PT>!uban</PT> <V>PlayerName</V><G>#tag</G></b> — Removes the effects of ban command from specified player.\n"..
     "<b><PT>!lock</PT> <V>[number]</V></b> — Sets a limit for the number of players in the room.\n"..
     "<b><PT>!pw</PT> <V>[password]</V></b> — Sets room password.\n"..
-    "<b><PT>!kick</PT> <V>PlayerName</V><G>#tag</G></b> — Kicks specified player from the team.\n\n"..
+    "<b><PT>!kick</PT> <V>PlayerName</V><G>#tag</G></b> — Kicks specified player from the team.\n\n",
     "<b><p align='left'><font size='13'><CS>PLAYER COMMANDS</CS></font></p></b>"..
     "<b><PT>!admins</PT></b> — Shows the module admins.\n"..
     "<b><PT>!admin</PT></b> — Shows the room admin.\n"..
-    "<b><PT>!forum</PT></b> — Module forum thread.\n\n"..
-
+    "<b><PT>!forum</PT></b> — Module forum thread.\n"..
+    "<b><PT>!room</PT></b> — Prints your own room.\n\n"..
     "<b><p align='left'><font size='13'><CS>KEYS</CS></font></p></b>"..
     "<b><PT>[H]</PT></b> — Shows the help page.\n"..
     "<b><PT>[K]</PT></b> — Shows the commands and keys page.\n"..
@@ -230,18 +330,43 @@ commandsPage = {
     ["tr"] = {
     "<font color='#ffffff' size='19'><p align='center'>KOMUTLAR & TUŞLAR</font></p>",
     "<b><p align='left'><font size='13'><CS>KOMUTLAR</CS></font> <font size='10'><N2>(SADECE ODA YÖNETİCİLERİ)</N2></font></p></b>"..
-    "<PT><b>!restart</b></PT> — Ayarları, takımları, kartları, skorları, kayıtları sıfırlar ve sizi lobiye yönlendirir.\n\n"..
-    "<b><PT>!ban</PT> <V>KullanıcıAdı</V><G>#etiket</G></b> — Belirtilen oyuncu herhangi bir takıma katılamaz, kartları ve ipuçlarını göremez.\n\n"..
-    "<b><PT>!uban</PT> <V>KullanıcıAdı</V><G>#etiket</G></b> — Belirtilen kullanıcıdan ban komutunun etkilerini kaldırır.\n\n"..
+    "<PT><b>!restart</b></PT> — Ayarları, takımları, kartları, skorları, kayıtları sıfırlar ve sizi lobiye yönlendirir.\n"..
+    "<b><PT>!ban</PT> <V>KullanıcıAdı</V><G>#etiket</G></b> — Belirtilen oyuncu herhangi bir takıma katılamaz, kartları ve ipuçlarını göremez.\n"..
+    "<b><PT>!uban</PT> <V>KullanıcıAdı</V><G>#etiket</G></b> — Belirtilen kullanıcıdan ban komutunun etkilerini kaldırır.\n"..
     "<b><PT>!lock</PT> <V>[sayı]</V></b> — Odadaki oyuncu sayısı için bir sınır belirler.\n"..
     "<b><PT>!pw</PT> <V>[şifre]</V></b> — Oda şifresini ayarlar.\n"..
-    "<b><PT>!kick</PT> <V>PlayerName</V><G>#tag</G></b> — Belirtilen kullanıcıyı takımdan atar.\n"..
+    "<b><PT>!kick</PT> <V>PlayerName</V><G>#tag</G></b> — Belirtilen kullanıcıyı takımdan atar.\n\n",
+    "<b><p align='left'><font size='13'><CS>OYUNCU KOMUTLARI</CS></font></p></b>"..
+    "<b><PT>!admins</PT></b> — Modül yöneticilerini gösterir.\n"..
+    "<b><PT>!admin</PT></b> — Oda yöneticisini gösterir.\n"..
+    "<b><PT>!forum</PT></b> — Modül forum konusu.\n"..
+    "<b><PT>!room</PT></b> — Odanızı yazdırır.\n\n"..
     "<b><p align='left'><font size='13'><CS>TUŞLAR</CS></font></p></b>"..
     "<b><PT>[H]</PT></b> — Yardım sayfasını gösterir.\n"..
     "<b><PT>[K]</PT></b> — Komutlar ve Tuşlar sayfasını gösterir.\n"..
     "<b><PT>[CTRL]</PT></b> — Oyun geçmişini gösterir.\n"..
     "<b><PT>[LSHIFT]</PT></b> — İçinde bulunduğunuz takımın ipucu geçmişini gösterir.\n",
-}
+},  
+    ["es"] = {
+    "<font color='#ffffff' size='18'><p align='center'>COMANDOS Y TECLAS</font></p>",
+    "<b><p align='left'><font size='13'><CS>COMANDOS DE GESTOR</CS></font></p></b>"..
+    "<PT><b>!restart</b></PT> — Reinicia los ajustes, equipos, cartas, puntuaciones, registros y te regresa a la sala de espera.\n"..
+    "<b><PT>!ban</PT> <V>PlayerName</V><G>#tag</G></b> — El jugador especificado no se podrá unir a ningún equipo, ni podrá ver las cartas o pistas.\n"..
+    "<b><PT>!uban</PT> <V>PlayerName</V><G>#tag</G></b> — Remueve los efectos del comando ban para el jugador especificado.\n"..
+    "<b><PT>!lock</PT> <V>[number]</V></b> — Establece un límite para el número de jugadores en la sala.\n"..
+    "<b><PT>!pw</PT> <V>[password]</V></b> — Establece la contraseña de la sala.\n"..
+    "<b><PT>!kick</PT> <V>PlayerName</V><G>#tag</G></b> — Expulsa al jugador especificado de un equipo.\n\n",
+    "<b><p align='left'><font size='13'><CS>COMANDOS DE JUGADORES</CS></font></p></b>"..
+    "<b><PT>!admins</PT></b> — Muestra a los administradores del módulo.\n"..
+    "<b><PT>!admin</PT></b> — Muestra al gestor del la sala.\n"..
+    "<b><PT>!forum</PT></b> — Hilo del Módulo en el foro.\n"..
+    "<b><PT>!room</PT></b> — Prints your own room.\n\n"..
+    "<b><p align='left'><font size='13'><CS>TECLAS</CS></font></p></b>"..
+    "<b><PT>[H]</PT></b> — Muestra la pestaña de ayuda.\n"..
+    "<b><PT>[K]</PT></b> — Muestra la pestaña de teclas y comandos.\n"..
+    "<b><PT>[CTRL]</PT></b> — Muestra los registros de la partida.\n"..
+    "<b><PT>[LSHIFT]</PT></b> — Muestra los registros del equipo en el que estás.\n",
+    },
 }
 
 tips = {
@@ -270,7 +395,20 @@ tips = {
         "Takımınızın ipucu geçmişini görmek için <b>[LSHIFT]</b> tuşuna basın.",
         "Oyunu 6 farklı dilde oynayabilirsiniz: EN, TR, FR, ES, PT, AR",
         "Kendi odanızı oluşturun: <b><J>#codenames0</J><V>KullanıcıAdı</V><G>#etiket</G></b>",
-    }
+    },
+    ["es"] = {
+        "¡Has clic en el botón superior izquierdo para ser gestor de sala!!",
+        "¡Necesitas al menos <b>4</b> jugadores para jugar!",
+        "Si deseas salir de tu equipo, has clic en tu nombre.",
+        "<font size='10'>¡El Equipo que elige la primera pista tendrá <b>9</b> cartas en el tablero!</font>",
+        "¡El otro equipo tendrá <b>8</b> cartas en el tablero!",
+        "¡Las pistas no pueden exceder los <b>20</b> caracteres!",
+        "¡No puedes dar más pistas que el número restante de cartas!",
+        "Presiona <b>[CTRL]</b> para ver el registro de la partida.",
+        "Presiona <b>[LSHIFT]</b> para ver el registro de pistas de tu equipo.",
+        "Puedes jugar en 6 idiomas distintos: EN, TR, FR, ES, PT, AR",
+        "<font size='10'>Crea tu propia sala escribiendo <b><J>#codenames0</J><V>PlayerName</V><G>#tag</G></b></font>",
+    },
 }
 
 
@@ -374,6 +512,8 @@ textAreas = {
     clue_num9 = 74,
     clue_background = 75,
     new_game_starting = 76,
+    commands_next = 77,
+    commands_prev = 78,
 }
 
 cards = {
@@ -607,6 +747,7 @@ function eventNewPlayer(n)
         end
         updateCardsCount(n)
         addInfo(lastinfo, n)
+        tfm.exec.chatMessage(translations[roomLang].currentlyPlaying, n)
     end
 end
 
@@ -774,12 +915,36 @@ function hideHelp(name)
 
 end
 
-function showCommands(name)
+function showCommands(name, pageid)
     ui.addImage("commands_image2", images.commands.image_2, "~666",590,108,name, 1, 1, 3.15, 1, 0, 0, false)
     ui.addTextArea(textAreas.commands.close, string.format("<a href='event:closecommands'>X</a>"), name, 568,84,nil,nil,0, 0, 1, true)
     ui.addImage("commands_image1", images.commands.image_1, "~999",200,25,name, 1, 1, 0, 1, 0, 0, false)
     ui.addTextArea(textAreas.commands.title, string.format(commandsPage[roomLang][1]), name, 290,108,220,nil,0, 0, 1, true)
-    ui.addTextArea(textAreas.commands.main, commandsPage[roomLang][2], name, 210, 150, 380, 230, 0, 0, 1, true)
+    ui.addTextArea(textAreas.commands.main, commandsPage[roomLang][pageid], name, 210, 150, 380, 230, 0, 0, 1, true)
+
+    if #commandsPage[roomLang] > 1 then
+        if pageid < #commandsPage[roomLang] then
+            ui.addImage("command_next", images.help.image_3,"~999",530,115,name, 1, 1, 0, 1, 0, 0, false)
+            ui.addTextArea(textAreas.commands_next,string.format("<p align='center'><font color='#ffffff' size='18'><a href='event:command_next_%d'>»</a></font></p>",pageid), name, 533,111,50,nil,0, 0, 1, true)
+        end
+
+        if pageid > 2 then 
+            ui.addImage("command_prev", images.help.image_2,"~999",210,115,name, 1, 1, 0, 1, 0, 0, false)
+            ui.addTextArea(textAreas.commands_prev,string.format("<p align='center'><font color='#ffffff' size='18'><a href='event:command_prev_%d'>«</a></font></p>",pageid), name, 217,111,50,nil,0, 0, 1, true)
+        end
+
+        if pageid >= 3 then
+            ui.removeImage("command_next",name)
+            ui.removeTextArea(textAreas.commands_next,name)
+        end
+    
+        if pageid <= 2 then
+            ui.removeImage("command_prev",name)
+            ui.removeTextArea(textAreas.commands_prev,name)
+        end
+        
+    end
+
 end
 
 function hideCommands(name)
@@ -787,6 +952,10 @@ function hideCommands(name)
         ui.removeTextArea(i, name)
     end
     ui.removeImage("commands_image1",name) ui.removeImage("commands_image2",name)
+    ui.removeImage("command_next",name)
+    ui.removeTextArea(textAreas.commands_next,name)
+    ui.removeImage("command_prev",name)
+    ui.removeTextArea(textAreas.commands_prev,name)
 end
 
 function giveTips(name, tipNum)
@@ -935,7 +1104,7 @@ function eventTextAreaCallback(id, name, e)
 
     if e == "commands" then
         keys.commandsKey = false
-        showCommands(name)
+        showCommands(name, 2)
     end
 
     if e == "closecommands" then
@@ -998,6 +1167,18 @@ function eventTextAreaCallback(id, name, e)
         giveTips(name, tipnums)
     end
 
+    if e:sub(1,13) == "command_next_" then
+        local pagenum = tonumber(e:sub(14,14))
+        pagenum = pagenum + 1
+        showCommands(name, pagenum)
+    end
+
+    if e:sub(1,13) == "command_prev_" then
+        local pagenum = tonumber(e:sub(14,14))
+        pagenum = pagenum - 1
+        showCommands(name, pagenum)
+    end
+
 end
 
 function changeSettings(isClueSettings, name)
@@ -1049,7 +1230,7 @@ function eventChatCommand(playerName, cmd)
             if firstArg == "kick" then
                 if admins[secondArg] then return end
                 for n in pairs(tfm.get.room.playerList) do
-                    if n == secondArg then
+                    if n == secondArg and teams[secondArg] then
                         leaveRequest(n)
                         tfm.exec.chatMessage(string.format("%s kicked by %s",secondArg, playerName), nil)
                     end
@@ -1060,16 +1241,19 @@ function eventChatCommand(playerName, cmd)
                     if firstArg == "skip" then changeTurn() return end
                     if firstArg == "lobby" then gameState.status = 5 tfm.exec.setGameTime(5) return end
                     if firstArg == "time" then tfm.exec.setGameTime(secondArg) return end
+                    if firstArg == "uadmin" then roomAdmin = nil checkRoomAdmin() end
             end
     end
 
     if firstArg == "admins" then
-            tfm.exec.chatMessage(string.format(translations[roomLang].moduleAdmins), nil)
+            tfm.exec.chatMessage(string.format(translations[roomLang].moduleAdmins), playerName)
         elseif firstArg == "admin" then
             if roomAdmin == nil then return end
-            tfm.exec.chatMessage(string.format(translations[roomLang].roomAdmin, roomAdmin), nil)
+            tfm.exec.chatMessage(string.format(translations[roomLang].roomAdmin, roomAdmin), playerName)
         elseif firstArg == "forum" then
-            tfm.exec.chatMessage(string.format(translations[roomLang].forumTopic), nil)
+            tfm.exec.chatMessage(string.format(translations[roomLang].forumTopic), playerName)
+        elseif firstArg == "room" then
+            tfm.exec.chatMessage(string.format("Create your own room: <V>/room <J>#codenames0<V>%s",playerName), playerName)
     end
 end
 
@@ -1392,7 +1576,7 @@ function eventKeyboard(name, key, down)
         if keys.commandsKey then
             hideCommands(name)
         else
-            showCommands(name)
+            showCommands(name, 2)
         end
     end
 end
@@ -1457,8 +1641,9 @@ function checkRoomAdmin()
     end
 
     if roomAdmin == nil then 
-        ui.addImage("getroomAdmin", "182bc8c095c.png", ":80", 0, 20,nil)
-        ui.addTextArea(textAreas.room_admin, string.format(translations[roomLang].getRoomAdmin),nil,10,25,110,nil,0,0,1,true)
+        local y = roomLang == "es" and 21 or 25
+        ui.addImage("getroomAdmin", "182bc8c095c.png", ":80", 0, 21,nil)
+        ui.addTextArea(textAreas.room_admin, string.format(translations[roomLang].getRoomAdmin),nil,5,y,120,nil,0,0,1,true)
     end
 end
 
