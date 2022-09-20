@@ -51,7 +51,7 @@ translations = {
         ["kickedTeam"] = "%s kicked by %s",
         ["currentlyPlaying"] = "A game is currently being played, if you don't want to wait, type <J>!room</J> to create your own room.",
         ["createOwnRoom"] = "Create your own room: <V>/room <J>#codenames0<V>%s",
-        ["shuffleButton"] = "<a href='event:shufflewords'><b>CHANGE WORDS</b></a>",
+        ["shuffleButton"] = "<p align='center'><a href='event:shufflewords'><b>CHANGE WORDS</b></a></p>",
         ["shuffled"] = "<p align='center'><b>WORDS CHANGED, GAME IS STARTING IN %d SECONDS</b></p>",
         ["shuffleText"] = "<p align='center'><b>YOU CAN CHANGE WORDS IN %d SECONDS</b></p>"
     },
@@ -98,7 +98,7 @@ translations = {
         ["kickedTeam"] = "%s adlı oyuncu %s tarafından takımdan atıldı.",
         ["currentlyPlaying"] = "Şu anda bir oyun oynanıyor, beklemek istemiyorsanız kendi odanızı oluşturmak için <J>!room</J> yazın.",
         ["createOwnRoom"] = "Kendi odanızı oluşturun: <V>/room <J>#codenames0<V>%s",
-        ["shuffleButton"] = "<a href='event:shufflewords'><b>KELİMELERİ DEĞİŞTİR</b></a>",
+        ["shuffleButton"] = "<p align='center'><a href='event:shufflewords'><b>KELİMELERİ DEĞİŞTİR</b></a></p>",
         ["shuffled"] = "<p align='center'><b>KELİMELER DEĞİŞTİ, OYUN %d SANİYE SONRA BAŞLAYACAK!</b></p>",
         ["shuffleText"] = "<p align='center'><b>KELİMELERİ %d SANİYE İÇERİSİNDE DEĞİŞTİREBİLİRSİNİZ.</b></p>",
     },
@@ -143,11 +143,11 @@ translations = {
         ["lockedRoom"] = "%s ha restringido la sala a %s ratones.",
         ["roomPassword"] = "Contraseña de la sala cambiada por %s",
         ["kickedTeam"] = "%s expulsad@ por %s",
-        ["currentlyPlaying"] = "A game is currently being played, if you don't want to wait, type <J>!room</J> to create your own room.",
+        ["currentlyPlaying"] = "Una partida se está jugando en este momento. Si no quieres esperar, escribe <J>!room</J> para crear tu propia sala.",
         ["createOwnRoom"] = "Crea tu propia sala: <V>/room <J>#codenames0<V>%s",
-        ["shuffleButton"] = "<a href='event:shufflewords'><b>CAMBIAR PALABRAS</b></a>",
-        ["shuffled"] = "<p align='center'><b>WORDS CHANGED, GAME IS STARTING IN %d SECONDS</b></p>",
-        ["shuffleText"] = "<p align='center'><b>YOU CAN CHANGE WORDS IN %d SECONDS</b></p>"
+        ["shuffleButton"] = "<p align='center'><a href='event:shufflewords'><b>CAMBIAR PALABRAS</b></a></p>",
+        ["shuffled"] = "<p align='center'><b>PALABRAS CAMBIANDAS, LA PARTIDA COMENZARÁ EN %d SEGUNDOS</b></p>",
+        ["shuffleText"] = "<p align='center'><b>PODRÁS CAMBIAR PALABRAS EN %d SEGUNDOS</b></p>",
     },
 }
 
@@ -702,9 +702,9 @@ function eventNewGame()
     redCount = math.random(8,9) blueCount = nil
 
     if redCount == 8 then blueCount = 9 else blueCount = 8 end
-
+    
     ui.addImage("shuffle_img", "182bc8c095c.png", ":80", 465, 368,nil,1, 1, 3.14)
-    ui.addTextArea(textAreas.shuffle_words, string.format(translations[roomLang].shuffleButton),nil,355,345,nil,nil,0,0,1,true) 
+    ui.addTextArea(textAreas.shuffle_words, string.format(translations[roomLang].shuffleButton),nil,340,345,120,20,-1,0,1,true) 
 
     tfm.exec.setGameTime(15)
     shuffleWords(size)
@@ -821,6 +821,9 @@ function eventLoop(elapsedTime, remainingTime)
                 giveClue(spymasters["red"])
                 addInfo(string.format(translations[roomLang].redTurn))
             end
+
+            ui.removeImage("vote_shuffle_red",nil)
+            ui.removeImage("vote_shuffle_blue", nil)
 
             if settings.time then tfm.exec.setGameTime(240) end
         end
