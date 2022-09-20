@@ -51,6 +51,9 @@ translations = {
         ["kickedTeam"] = "%s kicked by %s",
         ["currentlyPlaying"] = "A game is currently being played, if you don't want to wait, type <J>!room</J> to create your own room.",
         ["createOwnRoom"] = "Create your own room: <V>/room <J>#codenames0<V>%s",
+        ["shuffleButton"] = "<a href='event:shufflewords'><b>CHANGE WORDS</b></a>",
+        ["shuffled"] = "<p align='center'><b>WORDS CHANGED, GAME IS STARTING IN %d SECONDS</b></p>",
+        ["shuffleText"] = "<p align='center'><b>YOU CAN CHANGE WORDS IN %d SECONDS</b></p>"
     },
 
     ["tr"] = {
@@ -95,6 +98,9 @@ translations = {
         ["kickedTeam"] = "%s adlı oyuncu %s tarafından takımdan atıldı.",
         ["currentlyPlaying"] = "Şu anda bir oyun oynanıyor, beklemek istemiyorsanız kendi odanızı oluşturmak için <J>!room</J> yazın.",
         ["createOwnRoom"] = "Kendi odanızı oluşturun: <V>/room <J>#codenames0<V>%s",
+        ["shuffleButton"] = "<a href='event:shufflewords'><b>KELİMELERİ DEĞİŞTİR</b></a>"
+        ["shuffled"] = "<p align='center'><b>KELİMELER DEĞİŞTİ, OYUN %d SANİYE SONRA BAŞLAYACAK!</b></p>",
+        ["shuffleText"] = "<p align='center'><b>KELİMELERİ %d SANİYE İÇERİSİNDE DEĞİŞTİREBİLİRSİNİZ.</b></p>",
     },
     
     ["es"] = {
@@ -138,7 +144,10 @@ translations = {
         ["roomPassword"] = "Contraseña de la sala cambiada por %s",
         ["kickedTeam"] = "%s expulsad@ por %s",
         ["currentlyPlaying"] = "A game is currently being played, if you don't want to wait, type <J>!room</J> to create your own room.",
-        ["createOwnRoom"] = "Create your own room: <V>/room <J>#codenames0<V>%s",
+        ["createOwnRoom"] = "Crea tu propia sala: <V>/room <J>#codenames0<V>%s",
+        ["shuffleButton"] = "<a href='event:shufflewords'><b>CAMBIAR PALABRAS</b></a>",
+        ["shuffled"] = "<p align='center'><b>WORDS CHANGED, GAME IS STARTING IN %d SECONDS</b></p>",
+        ["shuffleText"] = "<p align='center'><b>YOU CAN CHANGE WORDS IN %d SECONDS</b></p>"
     },
 }
 
@@ -513,6 +522,7 @@ textAreas = {
     new_game_starting = 76,
     commands_next = 77,
     commands_prev = 78,
+    shuffle_words = 79,
 }
 
 cards = {
@@ -571,6 +581,7 @@ keys = {gameLogKey = {}, clueLogKey = {}, helpKey = true, commandsKey = true}
 settings = { clue = false, time = false, }
 colors = {["red"] = "#8F2B1C", ["blue"] = "#3284a3"}
 last_enter = 0
+shuffleVotes = {}
 
 -- Lays's Image --
 do
@@ -686,37 +697,20 @@ function eventNewGame()
         end
     end
 
-    if settings.time then tfm.exec.setGameTime(240) end
-
-    local size = math.floor(#words[roomLang] / 25)
+    wordsSize = math.floor(#words[roomLang] / 25)
     roundWords = {} roundCardTypes = {}
     redCount = math.random(8,9) blueCount = nil
 
-    if redCount == 8 then blueCount = 9 gameState.blueTurn = true
-        giveClue(spymasters["blue"])
-        addInfo(string.format(translations[roomLang].blueTurn))
-    else 
-        blueCount = 8 gameState.redTurn = true 
-        giveClue(spymasters["red"])
-        addInfo(string.format(translations[roomLang].redTurn))
-    end
+    if redCount == 8 then blueCount = 9 else blueCount = 8 end
 
-    --math.randomseed(8)
-    for i = 1, 25 do table.insert(roundWords, words[roomLang][math.random(1 + size * (i - 1), size * i)]) end
-    --math.randomseed(os.time())
-    table.shuffle(roundWords)
-    for i=1, 25 do roundCardTypes[i] = i end
+    ui.addImage("shuffle_img", "182bc8c095c.png", ":80", 465, 368,nil,1, 1, 3.14)
+    ui.addTextArea(textAreas.shuffle_words, string.format(translations[roomLang].shuffleButton),nil,355,345,nil,nil,0,0,1,true) 
 
-    selectRoundCards(1, "black")
-    selectRoundCards(7, "yellow")
-    selectRoundCards(blueCount, "blue")
-    selectRoundCards(redCount, "red")
-    showRoundCards(false)
-    showRoundCards(true, spymasters["red"])
-    showRoundCards(true, spymasters["blue"])
+    tfm.exec.setGameTime(15)
+    shuffleWords(size)
     updateCardsCount()
 
-    gameState.status = 2
+    gameState.status = 6
 end
 
 function eventNewPlayer(n)
@@ -786,11 +780,54 @@ function showRoundCards(showTrueColors, name)
     end
 end
 
+function shuffleWords()
+        --math.randomseed(8)
+        for i = 1, 25 do table.insert(roundWords, words[roomLang][math.random(1 + wordsSize * (i - 1), wordsSize * i)]) end
+        --math.randomseed(os.time())
+        table.shuffle(roundWords)
+        for i=1, 25 do roundCardTypes[i] = i end
+    
+        selectRoundCards(1, "black")
+        selectRoundCards(7, "yellow")
+        selectRoundCards(blueCount, "blue")
+        selectRoundCards(redCount, "red")
+        showRoundCards(false)
+        showRoundCards(true, spymasters["red"])
+        showRoundCards(true, spymasters["blue"])
+end
+
 function eventLoop(elapsedTime, remainingTime)
     if gameState.status == 0 then return end
+    local remtime = remainingTime/1000
+
+    if gameState.status == 6 then
+        if shuffleVotes[spymasters["red"]] and shuffleVotes[spymasters["blue"]] then
+            addInfo(string.format(translations[roomLang].shuffled, remtime))
+        else
+            addInfo(string.format(translations[roomLang].shuffleText, remtime))
+        end
+
+        if remainingTime <= 1 then
+            gameState.status = 2
+            ui.removeImage("shuffle_img",nil)
+            ui.removeTextArea(textAreas.shuffle_words,nil)
+
+            if redCount == 8 then
+                gameState.blueTurn = true
+                giveClue(spymasters["blue"])
+                addInfo(string.format(translations[roomLang].blueTurn))
+            else 
+                gameState.redTurn = true 
+                giveClue(spymasters["red"])
+                addInfo(string.format(translations[roomLang].redTurn))
+            end
+
+            if settings.time then tfm.exec.setGameTime(240) end
+        end
+    end
 
     if gameState.status == 5 then 
-        ui.addTextArea(textAreas.new_game_starting, string.format(translations[roomLang].newGameStarting,remainingTime/1000),nil,175,330,450,40,0,0,1)
+        ui.addTextArea(textAreas.new_game_starting, string.format(translations[roomLang].newGameStarting,remtime),nil,175,330,450,40,0,0,1)
     end
     
     if remainingTime < 1 and gameState.status == 5 then
@@ -800,7 +837,7 @@ function eventLoop(elapsedTime, remainingTime)
 
     if settings.time == false then return end
     local x = gameState.blueTurn and 30 or 725
-    ui.addTextArea(textAreas.time,string.format("<p align='center'>%d</p>", remainingTime/1000) ,nil,x,145,50,nil,0,0,1)
+    ui.addTextArea(textAreas.time,string.format("<p align='center'>%d</p>", remtime) ,nil,x,145,50,nil,0,0,1)
     
     if remainingTime < 1 and gameState.status == 2 then
         addGameLog(string.format(translations[roomLang].noClueLog, colors[teams[currentPlayer]], currentPlayer))
@@ -1125,6 +1162,23 @@ function eventTextAreaCallback(id, name, e)
 
     if e == "roomAdmin" and roomAdmin == nil then roomAdmin = name ui.removeTextArea(textAreas.room_admin, nil)  ui.removeImage("getroomAdmin",nil) end
 
+    if e == "shufflewords" then
+        if gameState.status ~= 6 then return end
+        if spymasters[teams[name]] ~= name then return end
+        if shuffleVotes[name] == true then return end
+        local x = teams[name] == "blue" and 350 or 440
+
+        ui.addImage("vote_shuffle_"..teams[name], images.vote_sign, ":99", x, 332, nil, 1, 1, 0, 1, 0, 0, false)
+
+        shuffleVotes[name] = true
+        if shuffleVotes[spymasters["red"]] and shuffleVotes[spymasters["blue"]] then
+            shuffleWords(wordsSize)
+            tfm.exec.setGameTime(3)
+            ui.removeImage("vote_shuffle_red",nil)
+            ui.removeImage("vote_shuffle_blue", nil)
+        end
+    end
+
     if e:sub(1, 4) == "tab_" then
         showHelp(name, tonumber(e:sub(5,5)), 2)
     end
@@ -1219,11 +1273,11 @@ function eventChatCommand(playerName, cmd)
             end
             if firstArg == "lock" then
                 tfm.exec.setRoomMaxPlayers(secondArg)
-                tfm.exec.chatMessage(string.format("%s has locked the room to %s mice.", playerName, secondArg), nil)
+                tfm.exec.chatMessage(string.format(translations[roomLang].lockedRoom, playerName, secondArg), nil)
             end
             if firstArg == "pw" then
                 tfm.exec.setRoomPassword(secondArg)
-                tfm.exec.chatMessage(string.format("Room password changed by %s", playerName), nil)
+                tfm.exec.chatMessage(string.format(translations[roomLang].roomPassword, playerName), nil)
             end
 
             if firstArg == "kick" then
@@ -1231,7 +1285,7 @@ function eventChatCommand(playerName, cmd)
                 for n in pairs(tfm.get.room.playerList) do
                     if n == secondArg and teams[secondArg] then
                         leaveRequest(n)
-                        tfm.exec.chatMessage(string.format("%s kicked by %s",secondArg, playerName), nil)
+                        tfm.exec.chatMessage(string.format(translations[roomLang].kickedTeam,secondArg, playerName), nil)
                     end
                 end
             end
@@ -1252,7 +1306,8 @@ function eventChatCommand(playerName, cmd)
         elseif firstArg == "forum" then
             tfm.exec.chatMessage(string.format(translations[roomLang].forumTopic), playerName)
         elseif firstArg == "room" then
-            tfm.exec.chatMessage(string.format("Create your own room: <V>/room <J>#codenames0<V>%s",playerName), playerName)
+            tfm.exec.chatMessage(string.format(translations[roomLang].createOwnRoom,playerName), playerName)
+            createOwnRoom
     end
 end
 
@@ -1643,6 +1698,8 @@ function checkRoomAdmin()
         local y = roomLang == "es" and 21 or 25
         ui.addImage("getroomAdmin", "182bc8c095c.png", ":80", 0, 21,nil)
         ui.addTextArea(textAreas.room_admin, string.format(translations[roomLang].getRoomAdmin),nil,5,y,120,nil,0,0,1,true)
+    else
+        ui.removeImage("getroomAdmin",nil)
     end
 end
 
@@ -1740,6 +1797,7 @@ function resetGame()
     gameLog = {}
     gameState = {status = 0, guessCount = 0, blueTurn = false, redTurn = false, firstTurn = true, canVote = false, canGiveClue = true}
     settings = { clue = false, time = false, }
+    shuffleVotes = {}
 
     for i = 1, 25 do cards[i].covered = false end
 
