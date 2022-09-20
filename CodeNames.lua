@@ -98,7 +98,7 @@ translations = {
         ["kickedTeam"] = "%s adlı oyuncu %s tarafından takımdan atıldı.",
         ["currentlyPlaying"] = "Şu anda bir oyun oynanıyor, beklemek istemiyorsanız kendi odanızı oluşturmak için <J>!room</J> yazın.",
         ["createOwnRoom"] = "Kendi odanızı oluşturun: <V>/room <J>#codenames0<V>%s",
-        ["shuffleButton"] = "<p align='center'><a href='event:shufflewords'><b>KELİMELERİ DEĞİŞTİR</b></a></p>",
+        ["shuffleButton"] = "<p align='center'><a href='event:shufflewords'><b><font size='9'>KELİMELERİ DEĞİŞTİR</font></b></a></p>",
         ["shuffled"] = "<p align='center'><b>KELİMELER DEĞİŞTİ, OYUN %d SANİYE SONRA BAŞLAYACAK!</b></p>",
         ["shuffleText"] = "<p align='center'><b>KELİMELERİ %d SANİYE İÇERİSİNDE DEĞİŞTİREBİLİRSİNİZ.</b></p>",
     },
@@ -145,7 +145,7 @@ translations = {
         ["kickedTeam"] = "%s expulsad@ por %s",
         ["currentlyPlaying"] = "Una partida se está jugando en este momento. Si no quieres esperar, escribe <J>!room</J> para crear tu propia sala.",
         ["createOwnRoom"] = "Crea tu propia sala: <V>/room <J>#codenames0<V>%s",
-        ["shuffleButton"] = "<p align='center'><a href='event:shufflewords'><b>CAMBIAR PALABRAS</b></a></p>",
+        ["shuffleButton"] = "<p align='center'><a href='event:shufflewords'><b><font size='9'>CAMBIAR PALABRAS</font></b></a></p>",
         ["shuffled"] = "<p align='center'><b>PALABRAS CAMBIANDAS, LA PARTIDA COMENZARÁ EN %d SEGUNDOS</b></p>",
         ["shuffleText"] = "<p align='center'><b>PODRÁS CAMBIAR PALABRAS EN %d SEGUNDOS</b></p>",
     },
@@ -807,8 +807,10 @@ function eventLoop(elapsedTime, remainingTime)
             addInfo(string.format(translations[roomLang].shuffleText, remtime))
         end
 
-        if remainingTime <= 1 then
+        if remtime <= 2 then
             gameState.status = 2
+            if settings.time then tfm.exec.setGameTime(240) end
+
             ui.removeImage("shuffle_img",nil)
             ui.removeTextArea(textAreas.shuffle_words,nil)
 
@@ -824,8 +826,6 @@ function eventLoop(elapsedTime, remainingTime)
 
             ui.removeImage("vote_shuffle_red",nil)
             ui.removeImage("vote_shuffle_blue", nil)
-
-            if settings.time then tfm.exec.setGameTime(240) end
         end
     end
 
@@ -833,26 +833,27 @@ function eventLoop(elapsedTime, remainingTime)
         ui.addTextArea(textAreas.new_game_starting, string.format(translations[roomLang].newGameStarting,remtime),nil,175,330,450,40,0,0,1)
     end
     
-    if remainingTime < 1 and gameState.status == 5 then
+    if remtime < 1 and gameState.status == 5 then
         resetGame()
         return
     end
 
     if settings.time == false then return end
+    if gameState.status == 6 then return end
     local x = gameState.blueTurn and 30 or 725
     ui.addTextArea(textAreas.time,string.format("<p align='center'>%d</p>", remtime) ,nil,x,145,50,nil,0,0,1)
     
-    if remainingTime < 1 and gameState.status == 2 then
+    if remtime < 1 and gameState.status == 2 then
         addGameLog(string.format(translations[roomLang].noClueLog, colors[teams[currentPlayer]], currentPlayer))
         changeTurn()
     end
 
-    if remainingTime < 1 and gameState.status == 3 then
+    if remtime < 1 and gameState.status == 3 then
         addGameLog(string.format(translations[roomLang].noWordLog, colors[teams[currentPlayer]], translations[roomLang][teams[currentPlayer]]))
         changeTurn()
     end
 
-    if remainingTime < 1 and gameState.status == 4 then
+    if remtime < 1 and gameState.status == 4 then
         clueConfirmed = true
         checkClue(currentClueNum, currentClueText, currentPlayer)
         addInfo(string.format(translations[roomLang].validClue, translations[roomLang][teams[currentPlayer]]))
