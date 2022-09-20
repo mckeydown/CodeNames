@@ -702,9 +702,9 @@ function eventNewGame()
     redCount = math.random(8,9) blueCount = nil
 
     if redCount == 8 then blueCount = 9 else blueCount = 8 end
-    
+
     ui.addImage("shuffle_img", "182bc8c095c.png", ":80", 465, 368,nil,1, 1, 3.14)
-    ui.addTextArea(textAreas.shuffle_words, string.format(translations[roomLang].shuffleButton),nil,340,345,120,20,-1,0,1,true) 
+    ui.addTextArea(textAreas.shuffle_words, string.format(translations[roomLang].shuffleButton),nil,340,345,120,20,0,0,1,true) 
 
     tfm.exec.setGameTime(15)
     shuffleWords(size)
