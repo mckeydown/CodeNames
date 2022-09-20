@@ -98,7 +98,7 @@ translations = {
         ["kickedTeam"] = "%s adlı oyuncu %s tarafından takımdan atıldı.",
         ["currentlyPlaying"] = "Şu anda bir oyun oynanıyor, beklemek istemiyorsanız kendi odanızı oluşturmak için <J>!room</J> yazın.",
         ["createOwnRoom"] = "Kendi odanızı oluşturun: <V>/room <J>#codenames0<V>%s",
-        ["shuffleButton"] = "<a href='event:shufflewords'><b>KELİMELERİ DEĞİŞTİR</b></a>"
+        ["shuffleButton"] = "<a href='event:shufflewords'><b>KELİMELERİ DEĞİŞTİR</b></a>",
         ["shuffled"] = "<p align='center'><b>KELİMELER DEĞİŞTİ, OYUN %d SANİYE SONRA BAŞLAYACAK!</b></p>",
         ["shuffleText"] = "<p align='center'><b>KELİMELERİ %d SANİYE İÇERİSİNDE DEĞİŞTİREBİLİRSİNİZ.</b></p>",
     },
@@ -1307,7 +1307,6 @@ function eventChatCommand(playerName, cmd)
             tfm.exec.chatMessage(string.format(translations[roomLang].forumTopic), playerName)
         elseif firstArg == "room" then
             tfm.exec.chatMessage(string.format(translations[roomLang].createOwnRoom,playerName), playerName)
-            createOwnRoom
     end
 end
 
