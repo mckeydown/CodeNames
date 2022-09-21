@@ -1,4 +1,4 @@
--- CodeNames V0.23
+-- CodeNames V0.24
 words = {
     ["tr"] = {"POKER", "EJDERHA", "SAVAŞ", "BAL", "BOMBA", "KUMARHANE", "GÖKDELEN", "SATÜRN", "UZAYLI", "KIRBAÇ", "ANTARTİKA", "KARDAN ADAM", "KONSER", "ÇİKOLATA", "JET", "MİLYONER", "DİNOZOR", "KORSAN", "DÜDÜK", "PENGUEN", "ÖRÜMCEK", "FÜZE", "KONSOLOSLUK", "TABANCA", "HASTALIK", "AJAN", "PRENSES", "DAHİ", "HIRSIZ", "OPERA", "ŞÖVALYE", "STADYUM", "LİMUZİN", "HAYALET", "KAMYONET", "DONDURMA", "LAZER", "ÖLÜM", "HASTANE", "AMBULANS", "AHTAPOT", "HELİKOPTER", "KANGURU", "MİKROSKOP", "TARZAN", "KAHRAMAN", "TELESKOP", "PARAŞÜT", "KAYNANA", "NEMRUT", "UYDU", "MELEK", "ROBOT", "AZRAİL", "CADI", "MEZARCI", "DALGIÇ", "ZEHİR", "KÖPRÜ", "ATEŞ", "MASA", "BALİNA", "AY", "BALIK", "DOKTOR", "CAMİ", "KEMER", "HEMŞİRE", "RÜZGAR", "ÇİZME", "PARK", "ALBÜM", "SİMİT", "TAŞ", "ŞOK", "BEYAZ", "HESAP", "KUPON", "MORS", "PALET", "REJİM", "PARTİ", "MAKAS", "KÖSTEBEK", "TAMPON", "PİLİÇ", "MANTAR", "ÖRGÜ", "NUMARA", "KUYRUK", "ALAY", "MACUN", "TARLA", "SATIR", "CEP", "PİKE", "SIRT", "TOPUZ", "TULUM", "POSTA", "TERAZİ", "SİTE", "VİZE", "TORPİL", "KAPTAN", "ATLAS", "KÜME", "CİLT", "BOY", "KURŞUN", "BANKO", "MAT", "BOĞAZ", "DİYET", "DOĞRU", "DÖVİZ", "KÖPEK", "AT", "AYAKKABI", "SANDALYE", "TAHT", "BUZ", "ALTIN", "ÇATAL", "ZAMAN", "FLÜT", "FENER", "YASTIK", "TESBİH", "ASKER", "PİRAMİT", "HALAT", "YILDIZ", "OCAK", "EKMEK", "YÜREK", "BLOK", "KUPA", "İĞNE", "DON", "ÖRTÜ", "KABUK", "BAYRAM", "PERDE", "BALTA", "YAKA", "DÜĞME", "AĞIZ", "ETİKET", "EL", "YATAK", "DUVAR", "KULE", "KART", "BAĞ", "YAY", "ORTA", "İNTERNET", "KAYMAK", "PAS", "DAMAT", "DELİK", "NİŞAN", "KUVVET", "ANAHTAR", "MOTOR", "DALGA", "AKIM", "BAŞ", "İSKELE", "ÇEKİRDEK", "KAZA", "DÜŞ", "KAZIK", "PUL", "DAİRE", "AĞ", "KANAL", "İSTANBUL", "AVUSTRALYA", "KIBRIS", "TOKYO", "MISIR", "REKLAM", "KAVURMA", "MOSKOVA", "DÖVME", "MEVLANA", "HOLLYWOOD", "BİZANS", "ROMA", "ARABESK", "NİNJA", "LAZ", "MANGO", "ALMANYA", "DEVLET", "AMERİKA", "MEZOPOTAMYA", "İNGİLTERE", "SURVİVOR", "KRİZ", "MECNUN", "EŞKİYA", "NAL", "GULYABANİ", "İRAN", "BERLİN", "KARINCA", "AVRUPA", "HİNDİSTAN", "ÇEYİZ", "EVEREST", "KALPAZAN", "PEKİN", "KARTAL", "PAZI", "BAKLAVA", "HİTİT", "YAŞ", "ATLET", "DİZİ", "BASKI", "DERECE", "DOLU", "TABLET", "YEŞİL", "ALEM", "MARŞ", "KUŞAK", "BOZUK", "MAKARA", "AĞAÇ", "BOT", "ZAR", "ORDU", "GÖÇ", "SERVİS", "MARS", "GÖBEK", "FESTİVAL", "OMURGA", "ÇATI", "DÜMEN", "İZ", "TAKIM", "ÇAY", "KANUN", "FAN", "FIRÇA", "KAHVE", "TAVLA", "GÜL", "ANA", "KOCA", "MASKARA", "PAZAR", "TEZ", "MAYA", "UŞAK", "MEMUR", "KEPÇE", "BEYİN", "KLASİK", "KOVAN", "PALA", "SOĞUK", "ASLAN", "TOP", "BANKA", "GÖZ", "HAVA", "TAVŞAN", "PASTA", "ELBİSE", "ÇİMEN", "CÜCE", "ORMAN", "ARABA", "ELDİVEN", "BERE", "BENZİN", "AŞÇI", "AYI", "KEDİ", "HAYAT", "PİRİNÇ", "DEV", "YÜZ", "PLAJ", "OTEL", "SU", "KAĞIT", "SOLUCAN", "AVUKAT", "BİLİM ADAMI", "DANS", "HAVUÇ", "SEPET", "GECE", "PAMUK", "AYAK", "FARE", "BIÇAK", "TİYATRO", "POLİS", "GEMİ", "PİLOT", "PARMAK", "ÖĞRETMEN", "ŞİŞE", "GÜN", "KRAL", "BARDAK", "ELMAS", "DİŞ", "KOPYA", "DARBE", "FİLM", "GIRGIR", "ARPACIK", "HORTUM", "IZGARA", "TORPİDO", "KEPEK", "GICIK", "KESE", "KISIR", "KOLON", "KULAÇ", "GAZİNO", "FELEK", "KAVAL", "KİTAP", "TIP", "KAYNAK", "GARAJ", "PAÇA", "LASTİK", "SAZ", "SET", "FAR", "KUTU", "KANEPE", "MAKAM", "ŞANS", "MERKEZ", "ÜNLÜ", "DEVİR", "DÜĞÜN", "TABLO", "GÖLGE", "GAZ", "KALE", "HAZİNE", "KÖY", "MODA", "HAVUZ", "MAGAZİN", "KÜPE", "FATURA", "SAYFA", "ÇAMAŞIR", "TUR", "AMAZON", "SAHTE", "OYUNCAK", "SIRA", "FORM", "KARE", "KAŞ", "SANDIK", "ACI", "TREN", "SOSYETE", "ÖRGÜT", "SÖZ", "UÇAK", "ADET", "BALKON", "ÇOBAN", "AYNA", "KURU", "DELİ", "YAZ", "NOT", "BÖLÜM", "ŞERİT", "YUNANİSTAN", "HÜCRE", "MEZUNİYET", "FAUL", "LONDRA", "MUCİZE", "TEMEL", "AFRİKA", "BİLYE", "YAĞMUR", "KUYU", "KANAT"},
     ["en"] = {"STAR","BRIDGE","FIRE","RING","HEART","HORN","SPRING","TABLE","WHALE","SEAL","MOON","BLOCK","DRILL","FISH","TUBE","GRACE","IRON","DOCTOR","ROULETTE","DEGREE","WAKE","NEEDLE","TABLET","PIE","GREEN","DRAGON","NEW YORK","AUSTRALIA","MARCH","LINE","WAR","HONEY","JAM","CHURCH","COVER","LEAD","BERMUDA","CHANGE","TOKYO","EGYPT","BEAT","RAY","BELT","CAP","LEMON","NURSE","WIND","LION","LONDON","FALL","BOOT","DICE","EYE","BOARD","SWITCH","AIR","JUPITER","HAM","BATTERY","SPINE","VET","RABBIT","AGENT","DROP","TRACK","BANK","CLIFF","BOMB","CASINO","SKYSCRAPER","STOCK","BRUSH","GRASS","SATURN","DRESS","FAN","DWARF","ALIEN","WHIP","ANTARCTICA","PUMPKIN","MOSCOW","TRIP","SNOWMAN","FOREST","CAPITAL","STRIKE","COPPER","SOUL","CANADA","CONCERT","CHOCOLATE","JET","SHAKESPEARE","CAR","SHADOW","GLOVE","LITTER","COMIC","MILLIONAIRE","PITCH","BOND","APPLE","OIL","COOK","FLY","CAST","BEAR","PIN","MINE","CHECK","BAR","COLD","HOLLYWOOD","SCREEN","PLAY","MARBLE","DINOSAUR","CAT","GAME","LIFE","LUCK","HOOK","PARK","BAT","BOLT","GREECE","DECK","YARD","CONDUCTOR","GIANT","FACE","PIRATE","BEACH","POUND","ROUND","FIELD","CYCLE","ROME","HOTEL","SPOT","MOUNT","STICK","SINK","MOLE","SCHOOL","CHICK","WATER","PAPER","SLUG","BUTTON","HIMALAYAS","NINJA","CZECH","GROUND","BUGLE","MOUTH","TAG","NUT","WORM","PENGUIN","LAWYER","SPIDER","TAIL","TICK","MINT","MISSILE","EMBASSY","PISTOL","SCIENTIST","KIWI","LOG","GERMANY","HAND","DISEASE","BED","SPY","PRINCESS","DANCE","CARROT","STATE","RACKET","GENIUS","THIEF","TRUNK","AMERICA","NOVEL","WALL","BERRY","ATLANTIS","KETCHUP","PLOT","ENGLAND","TEMPLE","MAPLE","MAIL","AFRICA","OPERA","TOWER","NIGHT","POOL","ROBIN","BAND","DUCK","HOOD","CARD","COURT","TIE","DIAMOND","CROSS","NET","FRANCE","DATE","COTTON","POINT","OLIVE","MATCH","BALL","MERCURY","BOW","FIGHTER","SHOP","SLIP","KNIGHT","PASS","STADIUM","FOOT","LIMOUSINE","CONTRACT","PLATE","MOUSE","HORSESHOE","ORGAN","KNIFE","CELL","WATCH","ARM","ROSE","MODEL","THEATER","HOLE","POST","LIGHT","TRIANGLE","BELL","LEPRECHAUN","KID","POLICE","ROCK","SCALE","GHOST","SHIP","MEXICO","CLOAK","STRAW","CALF","SHARK","DRAFT","HAWK","PRESS","VAN","ICE CREAM","BUCK","PHOENIX","FORCE","BOOM","LAB","RULER","PILOT","LASER","DEATH","LOCK","SPELL","HOSPITAL","AMBULANCE","WEB","PLASTIC","KEY","OCTOPUS","THUMB","TEACHER","PALM","CRANE","HELICOPTER","BOTTLE","FENCE","KANGAROO","JACK","EUROPE","SCORPION","MUG","SUIT","MICROSCOPE","ENGINE","WAVE","CENTAUR","STREAM","HEAD","MAMMOTH","DAY","KING","PAN","POLE","SUPERHERO","REVOLUTION","PIT","GAS","GLASS","WASHINGTON","TURKEY","QUEEN","FILE","CRICKET","WELL","FAIR","TOOTH","STAFF","BILL","SHOT","WASHER","LAP","AMAZON","SPACE","FIGURE","MASS","CHINA","SQUARE","BUFFALO","CHEST","DOG","NAIL","BERLIN","HORSE","CHARGE","SUB","INDIA","TRAIN","TELESCOPE","PLANE","PARACHUTE","PIANO","BOX","PLATYPUS","CLUB","SHOE","SERVER","CENTER","CHAIR","SOUND","COMPOUND","FILM","CROWN","OLYMPUS","BACK","NOTE","PART","TAP","ICE","SOCK","ALPS","ROOT","SATELLITE","ANGEL","CRASH","GOLD","BUG","PASTE","ROBOT","ROW","SPIKE","CODE","LOCH NESS","FORK","SWING","PORT","CIRCLE","UNICORN","TIME","LINK","FLUTE","TORCH","BEIJING","EAGLE","BARK","SNOW","IVORY","PIPE","PANTS","SOLDIER","VACUUM","WITCH","PUPIL","SMUGGLER","ORANGE","AZTEC","UNDERTAKER","SCUBA DIVER","PYRAMID","POISON","STRING"},
@@ -53,7 +53,10 @@ translations = {
         ["createOwnRoom"] = "Create your own room: <V>/room <J>#codenames0<V>%s",
         ["shuffleButton"] = "<p align='center'><a href='event:shufflewords'><b>CHANGE WORDS</b></a></p>",
         ["shuffled"] = "<p align='center'><b>WORDS CHANGED, GAME IS STARTING IN %d SECONDS</b></p>",
-        ["shuffleText"] = "<p align='center'><b>YOU CAN CHANGE WORDS IN %d SECONDS</b></p>"
+        ["shuffleText"] = "<p align='center'><b>YOU CAN CHANGE WORDS IN %d SECONDS</b></p>",
+        ["wordIsExist"] = "<R>You can't give this clue because this word is on the word grid.</R>",
+        ["invalidClueError"] = "<R>Invalid clue! A clue cannot consist of multiple words.</R>",
+        ["clueNumError"] = "<R>Set the number of words your team can choose.</R>",
     },
 
     ["tr"] = {
@@ -101,6 +104,9 @@ translations = {
         ["shuffleButton"] = "<p align='center'><a href='event:shufflewords'><b><font size='9'>KELİMELERİ DEĞİŞTİR</font></b></a></p>",
         ["shuffled"] = "<p align='center'><b>KELİMELER DEĞİŞTİ, OYUN %d SANİYE SONRA BAŞLAYACAK!</b></p>",
         ["shuffleText"] = "<p align='center'><b>KELİMELERİ %d SANİYE İÇERİSİNDE DEĞİŞTİREBİLİRSİNİZ.</b></p>",
+        ["wordIsExist"] = "<R>Verdiğiniz ipucu, kelime tablosunda bulunduğundan bu ipucunu veremezsiniz.</R>",
+        ["invalidClueError"] = "<R>Geçersiz ipucu! İpucu birden fazla kelimez olamaz.</R>",
+        ["clueNumError"] = "<R>Ekibinizin seçebileceği kelime sayısını belirleyin.</R>",
     },
     
     ["es"] = {
@@ -112,7 +118,7 @@ translations = {
         ["opponentSetting"] = "<p align='right'><font size='10' color='#FFFFFF'>CONFIRMAR PISTA RIVAL</font></p>",
         ["timeSetting"] = "<p align='right'><font size='10' color='#FFFFFF'>LÍMITE DE TIEMPO</font></p>",
         ["startButton"] = "<p align='center'><font size='14' color='#FFFFFF'><a href='event:startGame'>JUGAR</font></p>",
-        ["joinButton"] = "<p align='center'><font color='#FFFFFF'><b><a href='event:joinTeam'>UNIRSE</a></b></font></p>",
+        ["joinButton"] = "<p align='center'><font color='#FFFFFF' size='10'><b><a href='event:joinTeam'>UNIRSE</a></b></font></p>",
         ["clueConfirmation"] = "<p align='center'>La pista del oponente es <b>%s</b> para <b>%d</b> palabra(s). ¿Estás de acuerdo con ello?</p>",
         ["clueChecking"] = "<font size='10'><p align='center'><font color='%s'><b>%s</b></font> está revisando la pista del oponente...</p></font>",
         ["clueInfo"] = "La pista es <b>%s</b> para <b>%d</b> palabra(s).",
@@ -148,6 +154,9 @@ translations = {
         ["shuffleButton"] = "<p align='center'><a href='event:shufflewords'><b><font size='9'>CAMBIAR PALABRAS</font></b></a></p>",
         ["shuffled"] = "<p align='center'><b>PALABRAS CAMBIANDAS, LA PARTIDA COMENZARÁ EN %d SEGUNDOS</b></p>",
         ["shuffleText"] = "<p align='center'><b>PODRÁS CAMBIAR PALABRAS EN %d SEGUNDOS</b></p>",
+        ["wordIsExist"] = "<R>No puedes dar esta pista ya que esta palabra está en la tabla de palabras.</R>",
+        ["invalidClueError"] = "<R>¡Pista invalida! Una pista no puede consistir de múltiples palabras.</R>",
+        ["clueNumError"] = "<R>Establece el número de palabras que tu equipo puede elegir.</R>",
     },
 }
 
@@ -269,7 +278,7 @@ help = {
             " Algunas de esas están secretamente asignadas al <font color='#8f2b1c'><b>Equipo Rojo</b></font>, otras al <font color='#3284a3'><b>Equipo Azul</b></font>. Un jugador de cada equipo es el Espía Maestro y sólo ellos pueden ver qué palabras pertenecen a cada equipo."..
             " Los Espías Maestros toman turnos para dar pistas a sus Operativos, tratando de llevarlos a adivinar las palabras de su equipo. El equipo que adivine todas sus palabras primero, ganará la partida.\n" ..
             "\n<b><font color='#f5d8b6' size='14'>EQUIPOS</font></b>\n" ..
-            "Un jugador de cada equipo debe cliquear en Unirse como Espía Maestro, este verá el color de las cartas. Todos los demás deben cliquear en Unirse como Operativos, estos no verán el color de las cartas. Has clic en tu nombre para salir de tu equipo, puedes hacerlo mientras no haya comenzado la partida.",
+            "Un jugador de cada equipo debe dar click en Unirse como Espía Maestro, este verá el color de las cartas. Todos los demás deben dar click en Unirse como Operativos, estos no verán el color de las cartas. Haz clic en tu nombre para salir de tu equipo, puedes hacerlo mientras no haya comenzado la partida.",
                 
             "<b><font color='#f5d8b6' size='14'>PISTAS</font></b>\n" ..
             "El Espía Maestro da pistas." ..
@@ -384,7 +393,7 @@ tips = {
         "If you want to leave your team, click on your username.",
         "The team that receives the first clue has <b>9</b> agents on the field!",
         "The other team has <b>8</b> agents on the field!",
-        "Clue cannot exceed <b>20</b> characters!",
+        "Clue cannot exceed <b>32</b> characters!",
         "You can't give more words than the remaining number of cards!",
         "Press <b>[CTRL]</b> to see game log.",
         "Press <b>[LSHIFT]</b> to see your team's clue log.",
@@ -397,7 +406,7 @@ tips = {
         "Oyunu başlatabilmek için en az <b>4</b> oyuncuya ihtiyacınız var!",
         "Takımınızdan ayrılmak istiyorsanız, kullanıcı adınıza tıklayın.",
         "İlk ipucu alan takımın sahada <b>9</b>, diğer takımın <b>8</b> ajanı bulunur!",
-        "İpucu <b>20</b> karakterden fazla olamaz!",
+        "İpucu <b>32</b> karakterden fazla olamaz!",
         "Kalan kart sayısından fazla kelime veremezsiniz!",
         "Oyun geçmişini görmek için <b>[CTRL]</b> tuşuna basın.",
         "Takımınızın ipucu geçmişini görmek için <b>[LSHIFT]</b> tuşuna basın.",
@@ -405,12 +414,12 @@ tips = {
         "Kendi odanızı oluşturun: <b><J>#codenames0</J><V>KullanıcıAdı</V><G>#etiket</G></b>",
     },
     ["es"] = {
-        "¡Has clic en el botón superior izquierdo para ser gestor de sala!!",
+        "¡Haz clic en el botón superior izquierdo para ser gestor de sala!",
         "¡Necesitas al menos <b>4</b> jugadores para jugar!",
         "Si deseas salir de tu equipo, has clic en tu nombre.",
         "<font size='10'>¡El Equipo que elige la primera pista tendrá <b>9</b> cartas en el tablero!</font>",
         "¡El otro equipo tendrá <b>8</b> cartas en el tablero!",
-        "¡Las pistas no pueden exceder los <b>20</b> caracteres!",
+        "¡Las pistas no pueden exceder los <b>32</b> caracteres!",
         "¡No puedes dar más pistas que el número restante de cartas!",
         "Presiona <b>[CTRL]</b> para ver el registro de la partida.",
         "Presiona <b>[LSHIFT]</b> para ver el registro de pistas de tu equipo.",
@@ -698,7 +707,6 @@ function eventNewGame()
     end
 
     wordsSize = math.floor(#words[roomLang] / 25)
-    roundWords = {} roundCardTypes = {}
     redCount = math.random(8,9) blueCount = nil
 
     if redCount == 8 then blueCount = 9 else blueCount = 8 end
@@ -707,7 +715,7 @@ function eventNewGame()
     ui.addTextArea(textAreas.shuffle_words, string.format(translations[roomLang].shuffleButton),nil,340,345,120,20,0,0,1,true) 
 
     tfm.exec.setGameTime(15)
-    shuffleWords(size)
+    shuffleWords()
     updateCardsCount()
 
     gameState.status = 6
@@ -781,10 +789,17 @@ function showRoundCards(showTrueColors, name)
 end
 
 function shuffleWords()
+        roundWords = {} roundCardTypes = {}
         --math.randomseed(8)
         for i = 1, 25 do table.insert(roundWords, words[roomLang][math.random(1 + wordsSize * (i - 1), wordsSize * i)]) end
         --math.randomseed(os.time())
         table.shuffle(roundWords)
+
+        roundWordsNormalized = {}
+        for i=1,25 do
+        roundWordsNormalized[normalizeWord(roundWords[i])]=true
+        end
+
         for i=1, 25 do roundCardTypes[i] = i end
     
         selectRoundCards(1, "black")
@@ -1353,7 +1368,7 @@ function checkClue(clueNum, clueText, name)
     end
 
     if redCount >= clueNum or blueCount >= clueNum then
-        addClue(clueText:sub(1, 20), clueNum, name)
+        addClue(clueText:sub(1, 32), clueNum, name)
         gameState.canGiveClue = false
         gameState.canVote = true
         ui.addPopup(1, 1, "", whichspy, 50000, 50000, 10, true)
@@ -1668,27 +1683,33 @@ function eventPopupAnswer(id, name, answer)
     end
 
     if id == 2 then
-        currentClueText = answer:gsub('<.->', ''):gsub("^%s+", ""):gsub("%s.+$", "")
-        if roomLang == "tr" then 
-            checkThisWord = string.upper(currentClueText:gsub('i', 'İ'))
-        else
-            checkThisWord = string.upper(currentClueText)
+        currentClueText = answer:match("^%s*([^%p%s]+)%s*$")
+        
+        if currentClueText == nil or currentClueText == "" then
+            tfm.exec.chatMessage(translations[roomLang].invalidClueError, name)
+            giveClue(spymasters[teams[name]])
+            return
         end
 
-        local checkClueWord = table.index(roundWords, checkThisWord)
-
-        if roundWords[checkClueWord] == checkThisWord or roundWords[checkClueWord] == currentClueText then 
+        if roundWordsNormalized[normalizeWord(currentClueText )] then
             giveClue(spymasters[teams[name]]) 
+            tfm.exec.chatMessage(translations[roomLang].wordIsExist, name)
             return 
         end
 
-        if currentClueNum <= 0 or currentClueText == nil or currentClueText == "" then
+        if currentClueNum <= 0 then
+            tfm.exec.chatMessage(translations[roomLang].clueNumError, name)
             giveClue(spymasters[teams[name]])
         else 
             checkClue(currentClueNum, currentClueText, currentPlayer)
         end
     end
 end
+
+function normalizeWord(word)
+    return word:upper():gsub('i', 'I'):gsub('İ', 'I'):gsub('ı', 'I'):gsub('ş', 'S'):gsub('Ş', 'S'):gsub('ğ', 'G'):gsub('Ğ', 'G'):gsub('ü', 'U'):gsub('Ü', 'U'):gsub('ç', 'C'):gsub('Ç', 'C'):gsub('ö', 'O'):gsub('Ö', 'O'):gsub('á', 'A'):gsub('Á', 'A'):gsub('é', 'E'):gsub('É', 'E'):gsub('í', 'I'):gsub('Í', 'I'):gsub('ó', 'O'):gsub('Ó', 'O'):gsub('ú', 'U'):gsub('Ú', 'U'):gsub('ñ', 'N'):gsub('Ñ', 'N') 
+end
+
 
 function checkRoomAdmin()
     if roomAdmin ~= nil then return end
@@ -1703,6 +1724,7 @@ function checkRoomAdmin()
         ui.addTextArea(textAreas.room_admin, string.format(translations[roomLang].getRoomAdmin),nil,5,y,120,nil,0,0,1,true)
     else
         ui.removeImage("getroomAdmin",nil)
+        ui.removeTextArea(textAreas.room_admin, nil)
     end
 end
 
