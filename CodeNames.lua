@@ -568,10 +568,8 @@ cards = {
 
 gameState = {
     status = 0,
-    guessCount = 0,
     blueTurn = false,
     redTurn = false,
-    firstTurn = true,
     canVote = false,
     canGiveClue = true,
 }
@@ -1291,8 +1289,10 @@ function eventChatCommand(playerName, cmd)
                 checkBan("uban", secondArg)
             end
             if firstArg == "lock" then
-                tfm.exec.setRoomMaxPlayers(secondArg)
-                tfm.exec.chatMessage(string.format(translations[roomLang].lockedRoom, playerName, secondArg), nil)
+                local locknum = tonumber(secondArg)
+                if locknum == nil or locknum < 1 or locknum > 100 then return end
+                tfm.exec.setRoomMaxPlayers(locknum)
+                tfm.exec.chatMessage(string.format(translations[roomLang].lockedRoom, playerName, locknum), nil)
             end
             if firstArg == "pw" then
                 tfm.exec.setRoomPassword(secondArg)
@@ -1560,7 +1560,7 @@ function changeTurn(cardID, name)
 
         giveClue(spymasters["red"])
     end
-    gameState.canGiveClue = true gameState.firstTurn = false gameState.canVote = false gameState.status = 2
+    gameState.canGiveClue = true gameState.canVote = false gameState.status = 2
     if settings.time then tfm.exec.setGameTime(180) end
 end
 
@@ -1655,6 +1655,12 @@ end
 
 noLimit = 0
 function eventPopupAnswer(id, name, answer)
+    if spymasters[teams[name]] ~= name then return end
+    if gameState.status ~= 4 and gameState.status ~= 2 then return end
+    if redTurn and spymasters["red"] ~= name then return end
+    if blueTurn and spymasters["blue"] ~= name then return end
+    if currentPlayer == nil then return end
+
     local sp = teams[name] == "red" and "blue" or "red"
     local notsp = teams[name] == "blue" and "blue" or "red"
 
@@ -1820,7 +1826,7 @@ function resetGame()
     spymasters = {}
     clues = {red = {}, blue={}}
     gameLog = {}
-    gameState = {status = 0, guessCount = 0, blueTurn = false, redTurn = false, firstTurn = true, canVote = false, canGiveClue = true}
+    gameState = {status = 0, blueTurn = false, redTurn = false, canVote = false, canGiveClue = true}
     settings = { clue = false, time = false, }
     shuffleVotes = {}
 
