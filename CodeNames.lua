@@ -1295,7 +1295,8 @@ function eventChatCommand(playerName, cmd)
                 tfm.exec.chatMessage(string.format(translations[roomLang].lockedRoom, playerName, locknum), nil)
             end
             if firstArg == "pw" then
-                tfm.exec.setRoomPassword(secondArg)
+                local roompass = secondArg or ""
+                tfm.exec.setRoomPassword(roompass)
                 tfm.exec.chatMessage(string.format(translations[roomLang].roomPassword, playerName), nil)
             end
 
@@ -1657,18 +1658,15 @@ noLimit = 0
 function eventPopupAnswer(id, name, answer)
     if spymasters[teams[name]] ~= name then return end
     if gameState.status ~= 4 and gameState.status ~= 2 then return end
-    if redTurn and spymasters["red"] ~= name then return end
-    if blueTurn and spymasters["blue"] ~= name then return end
     if currentPlayer == nil then return end
 
     local sp = teams[name] == "red" and "blue" or "red"
     local notsp = teams[name] == "blue" and "blue" or "red"
 
-    if id == 2 then
-        ui.removeImage("popupskin", name)
-        ui.removeImage("selectnumber", name)
-        ui.removeImage("selectednumber", name)
-        for i = 1, 10 do ui.removeTextArea(textAreas.clue_num+i, name) end
+    if id == 1 then
+        if gameState.redTurn and spymasters["blue"] ~= name then return end
+        if gameState.blueTurn and spymasters["red"] ~= name then return end
+        if gameState.status ~= 4 then return end
     end
 
     if id == 1 and answer == "yes" then
@@ -1689,6 +1687,15 @@ function eventPopupAnswer(id, name, answer)
     end
 
     if id == 2 then
+        if gameState.redTurn and spymasters["red"] ~= name then return end
+        if gameState.blueTurn and spymasters["blue"] ~= name then return end
+        if gameState.status ~= 2 then return end
+
+        ui.removeImage("popupskin", name)
+        ui.removeImage("selectnumber", name)
+        ui.removeImage("selectednumber", name)
+        for i = 1, 10 do ui.removeTextArea(textAreas.clue_num+i, name) end
+
         currentClueText = answer:match("^%s*([^%p%s]+)%s*$")
         
         if currentClueText == nil or currentClueText == "" then
