@@ -1,4 +1,4 @@
--- CodeNames V0.24
+-- CodeNames V0.25
 words = {
     ["tr"] = {"POKER", "EJDERHA", "SAVAŞ", "BAL", "BOMBA", "KUMARHANE", "GÖKDELEN", "SATÜRN", "UZAYLI", "KIRBAÇ", "ANTARTİKA", "KARDAN ADAM", "KONSER", "ÇİKOLATA", "JET", "MİLYONER", "DİNOZOR", "KORSAN", "DÜDÜK", "PENGUEN", "ÖRÜMCEK", "FÜZE", "KONSOLOSLUK", "TABANCA", "HASTALIK", "AJAN", "PRENSES", "DAHİ", "HIRSIZ", "OPERA", "ŞÖVALYE", "STADYUM", "LİMUZİN", "HAYALET", "KAMYONET", "DONDURMA", "LAZER", "ÖLÜM", "HASTANE", "AMBULANS", "AHTAPOT", "HELİKOPTER", "KANGURU", "MİKROSKOP", "TARZAN", "KAHRAMAN", "TELESKOP", "PARAŞÜT", "KAYNANA", "NEMRUT", "UYDU", "MELEK", "ROBOT", "AZRAİL", "CADI", "MEZARCI", "DALGIÇ", "ZEHİR", "KÖPRÜ", "ATEŞ", "MASA", "BALİNA", "AY", "BALIK", "DOKTOR", "CAMİ", "KEMER", "HEMŞİRE", "RÜZGAR", "ÇİZME", "PARK", "ALBÜM", "SİMİT", "TAŞ", "ŞOK", "BEYAZ", "HESAP", "KUPON", "MORS", "PALET", "REJİM", "PARTİ", "MAKAS", "KÖSTEBEK", "TAMPON", "PİLİÇ", "MANTAR", "ÖRGÜ", "NUMARA", "KUYRUK", "ALAY", "MACUN", "TARLA", "SATIR", "CEP", "PİKE", "SIRT", "TOPUZ", "TULUM", "POSTA", "TERAZİ", "SİTE", "VİZE", "TORPİL", "KAPTAN", "ATLAS", "KÜME", "CİLT", "BOY", "KURŞUN", "BANKO", "MAT", "BOĞAZ", "DİYET", "DOĞRU", "DÖVİZ", "KÖPEK", "AT", "AYAKKABI", "SANDALYE", "TAHT", "BUZ", "ALTIN", "ÇATAL", "ZAMAN", "FLÜT", "FENER", "YASTIK", "TESBİH", "ASKER", "PİRAMİT", "HALAT", "YILDIZ", "OCAK", "EKMEK", "YÜREK", "BLOK", "KUPA", "İĞNE", "DON", "ÖRTÜ", "KABUK", "BAYRAM", "PERDE", "BALTA", "YAKA", "DÜĞME", "AĞIZ", "ETİKET", "EL", "YATAK", "DUVAR", "KULE", "KART", "BAĞ", "YAY", "ORTA", "İNTERNET", "KAYMAK", "PAS", "DAMAT", "DELİK", "NİŞAN", "KUVVET", "ANAHTAR", "MOTOR", "DALGA", "AKIM", "BAŞ", "İSKELE", "ÇEKİRDEK", "KAZA", "DÜŞ", "KAZIK", "PUL", "DAİRE", "AĞ", "KANAL", "İSTANBUL", "AVUSTRALYA", "KIBRIS", "TOKYO", "MISIR", "REKLAM", "KAVURMA", "MOSKOVA", "DÖVME", "MEVLANA", "HOLLYWOOD", "BİZANS", "ROMA", "ARABESK", "NİNJA", "LAZ", "MANGO", "ALMANYA", "DEVLET", "AMERİKA", "MEZOPOTAMYA", "İNGİLTERE", "SURVİVOR", "KRİZ", "MECNUN", "EŞKİYA", "NAL", "GULYABANİ", "İRAN", "BERLİN", "KARINCA", "AVRUPA", "HİNDİSTAN", "ÇEYİZ", "EVEREST", "KALPAZAN", "PEKİN", "KARTAL", "PAZI", "BAKLAVA", "HİTİT", "YAŞ", "ATLET", "DİZİ", "BASKI", "DERECE", "DOLU", "TABLET", "YEŞİL", "ALEM", "MARŞ", "KUŞAK", "BOZUK", "MAKARA", "AĞAÇ", "BOT", "ZAR", "ORDU", "GÖÇ", "SERVİS", "MARS", "GÖBEK", "FESTİVAL", "OMURGA", "ÇATI", "DÜMEN", "İZ", "TAKIM", "ÇAY", "KANUN", "FAN", "FIRÇA", "KAHVE", "TAVLA", "GÜL", "ANA", "KOCA", "MASKARA", "PAZAR", "TEZ", "MAYA", "UŞAK", "MEMUR", "KEPÇE", "BEYİN", "KLASİK", "KOVAN", "PALA", "SOĞUK", "ASLAN", "TOP", "BANKA", "GÖZ", "HAVA", "TAVŞAN", "PASTA", "ELBİSE", "ÇİMEN", "CÜCE", "ORMAN", "ARABA", "ELDİVEN", "BERE", "BENZİN", "AŞÇI", "AYI", "KEDİ", "HAYAT", "PİRİNÇ", "DEV", "YÜZ", "PLAJ", "OTEL", "SU", "KAĞIT", "SOLUCAN", "AVUKAT", "BİLİM ADAMI", "DANS", "HAVUÇ", "SEPET", "GECE", "PAMUK", "AYAK", "FARE", "BIÇAK", "TİYATRO", "POLİS", "GEMİ", "PİLOT", "PARMAK", "ÖĞRETMEN", "ŞİŞE", "GÜN", "KRAL", "BARDAK", "ELMAS", "DİŞ", "KOPYA", "DARBE", "FİLM", "GIRGIR", "ARPACIK", "HORTUM", "IZGARA", "TORPİDO", "KEPEK", "GICIK", "KESE", "KISIR", "KOLON", "KULAÇ", "GAZİNO", "FELEK", "KAVAL", "KİTAP", "TIP", "KAYNAK", "GARAJ", "PAÇA", "LASTİK", "SAZ", "SET", "FAR", "KUTU", "KANEPE", "MAKAM", "ŞANS", "MERKEZ", "ÜNLÜ", "DEVİR", "DÜĞÜN", "TABLO", "GÖLGE", "GAZ", "KALE", "HAZİNE", "KÖY", "MODA", "HAVUZ", "MAGAZİN", "KÜPE", "FATURA", "SAYFA", "ÇAMAŞIR", "TUR", "AMAZON", "SAHTE", "OYUNCAK", "SIRA", "FORM", "KARE", "KAŞ", "SANDIK", "ACI", "TREN", "SOSYETE", "ÖRGÜT", "SÖZ", "UÇAK", "ADET", "BALKON", "ÇOBAN", "AYNA", "KURU", "DELİ", "YAZ", "NOT", "BÖLÜM", "ŞERİT", "YUNANİSTAN", "HÜCRE", "MEZUNİYET", "FAUL", "LONDRA", "MUCİZE", "TEMEL", "AFRİKA", "BİLYE", "YAĞMUR", "KUYU", "KANAT"},
     ["en"] = {"STAR","BRIDGE","FIRE","RING","HEART","HORN","SPRING","TABLE","WHALE","SEAL","MOON","BLOCK","DRILL","FISH","TUBE","GRACE","IRON","DOCTOR","ROULETTE","DEGREE","WAKE","NEEDLE","TABLET","PIE","GREEN","DRAGON","NEW YORK","AUSTRALIA","MARCH","LINE","WAR","HONEY","JAM","CHURCH","COVER","LEAD","BERMUDA","CHANGE","TOKYO","EGYPT","BEAT","RAY","BELT","CAP","LEMON","NURSE","WIND","LION","LONDON","FALL","BOOT","DICE","EYE","BOARD","SWITCH","AIR","JUPITER","HAM","BATTERY","SPINE","VET","RABBIT","AGENT","DROP","TRACK","BANK","CLIFF","BOMB","CASINO","SKYSCRAPER","STOCK","BRUSH","GRASS","SATURN","DRESS","FAN","DWARF","ALIEN","WHIP","ANTARCTICA","PUMPKIN","MOSCOW","TRIP","SNOWMAN","FOREST","CAPITAL","STRIKE","COPPER","SOUL","CANADA","CONCERT","CHOCOLATE","JET","SHAKESPEARE","CAR","SHADOW","GLOVE","LITTER","COMIC","MILLIONAIRE","PITCH","BOND","APPLE","OIL","COOK","FLY","CAST","BEAR","PIN","MINE","CHECK","BAR","COLD","HOLLYWOOD","SCREEN","PLAY","MARBLE","DINOSAUR","CAT","GAME","LIFE","LUCK","HOOK","PARK","BAT","BOLT","GREECE","DECK","YARD","CONDUCTOR","GIANT","FACE","PIRATE","BEACH","POUND","ROUND","FIELD","CYCLE","ROME","HOTEL","SPOT","MOUNT","STICK","SINK","MOLE","SCHOOL","CHICK","WATER","PAPER","SLUG","BUTTON","HIMALAYAS","NINJA","CZECH","GROUND","BUGLE","MOUTH","TAG","NUT","WORM","PENGUIN","LAWYER","SPIDER","TAIL","TICK","MINT","MISSILE","EMBASSY","PISTOL","SCIENTIST","KIWI","LOG","GERMANY","HAND","DISEASE","BED","SPY","PRINCESS","DANCE","CARROT","STATE","RACKET","GENIUS","THIEF","TRUNK","AMERICA","NOVEL","WALL","BERRY","ATLANTIS","KETCHUP","PLOT","ENGLAND","TEMPLE","MAPLE","MAIL","AFRICA","OPERA","TOWER","NIGHT","POOL","ROBIN","BAND","DUCK","HOOD","CARD","COURT","TIE","DIAMOND","CROSS","NET","FRANCE","DATE","COTTON","POINT","OLIVE","MATCH","BALL","MERCURY","BOW","FIGHTER","SHOP","SLIP","KNIGHT","PASS","STADIUM","FOOT","LIMOUSINE","CONTRACT","PLATE","MOUSE","HORSESHOE","ORGAN","KNIFE","CELL","WATCH","ARM","ROSE","MODEL","THEATER","HOLE","POST","LIGHT","TRIANGLE","BELL","LEPRECHAUN","KID","POLICE","ROCK","SCALE","GHOST","SHIP","MEXICO","CLOAK","STRAW","CALF","SHARK","DRAFT","HAWK","PRESS","VAN","ICE CREAM","BUCK","PHOENIX","FORCE","BOOM","LAB","RULER","PILOT","LASER","DEATH","LOCK","SPELL","HOSPITAL","AMBULANCE","WEB","PLASTIC","KEY","OCTOPUS","THUMB","TEACHER","PALM","CRANE","HELICOPTER","BOTTLE","FENCE","KANGAROO","JACK","EUROPE","SCORPION","MUG","SUIT","MICROSCOPE","ENGINE","WAVE","CENTAUR","STREAM","HEAD","MAMMOTH","DAY","KING","PAN","POLE","SUPERHERO","REVOLUTION","PIT","GAS","GLASS","WASHINGTON","TURKEY","QUEEN","FILE","CRICKET","WELL","FAIR","TOOTH","STAFF","BILL","SHOT","WASHER","LAP","AMAZON","SPACE","FIGURE","MASS","CHINA","SQUARE","BUFFALO","CHEST","DOG","NAIL","BERLIN","HORSE","CHARGE","SUB","INDIA","TRAIN","TELESCOPE","PLANE","PARACHUTE","PIANO","BOX","PLATYPUS","CLUB","SHOE","SERVER","CENTER","CHAIR","SOUND","COMPOUND","FILM","CROWN","OLYMPUS","BACK","NOTE","PART","TAP","ICE","SOCK","ALPS","ROOT","SATELLITE","ANGEL","CRASH","GOLD","BUG","PASTE","ROBOT","ROW","SPIKE","CODE","LOCH NESS","FORK","SWING","PORT","CIRCLE","UNICORN","TIME","LINK","FLUTE","TORCH","BEIJING","EAGLE","BARK","SNOW","IVORY","PIPE","PANTS","SOLDIER","VACUUM","WITCH","PUPIL","SMUGGLER","ORANGE","AZTEC","UNDERTAKER","SCUBA DIVER","PYRAMID","POISON","STRING"},
@@ -158,6 +158,56 @@ translations = {
         ["invalidClueError"] = "<R>¡Pista invalida! Una pista no puede consistir de múltiples palabras.</R>",
         ["clueNumError"] = "<R>Establece el número de palabras que tu equipo puede elegir.</R>",
     },
+
+    ["ar"] = {
+		["welcome"] = "<J><b><VP>H</VP></b> لتعلم كيفية اللعب اضغط <b>CODENAMES!</b> مرحبا بك في</J>",
+		["red"] = "احمر",
+		["blue"] = "ازرق",
+		["blueTurn"] = "<b><p align='center'><font color='#ffffff'>دور الفريق الأزرق</b></p></font>",
+		["redTurn"] = "<b><p align='center'><font color='#ffffff'>دور الفريق الأحمر</b></p></font>",
+		["opponentSetting"] = "<p align='right'><font size='10' color='#FFFFFF'>تأكيد دليل الخصم</font></p>",
+		["timeSetting"] = "<p align='right'><font size='10' color='#FFFFFF'>المؤقت</font></p>",
+		["startButton"] = "<p align='center'><font size='14' color='#FFFFFF'><a href='event:startGame'>ابدأ</font></p>",
+		["joinButton"] = "<p align='center'><font color='#FFFFFF'><b><a href='event:joinTeam'>الانضمام</a></b></font></p>",
+		["clueConfirmation"] = "<p align='center'>هل تؤكد ذلك؟ <b>%s</b> لـ <b>%d</b> دليل الخصم</p>",
+		["clueChecking"] = "<font size='10'><p align='center'><font color='%s'><b>%s</b></font>..يتحقق من دليل الخصم </p></font>",
+		["clueInfo"] = "<b>%s</b> كلمات لـ الدليل <b>%d</b> ",
+		["clueGameLog"] = "<b><font color='%s'>%s</b></font> <font color='%s'><b>%s</b></font> كلمات لـ الدليل <b><font color='%s'>%d</b></font>",
+		["roomAdminInfo"] = ".يمكن لمدير الغرفة تغيير الإعدادات وبدء اللعبة في أي وقت",
+		["restartedGame"] = "<R> .أعاد تشغيل اللعبة %s </R>",
+		["thinking"] = "<font color='#fafafa'><b> ...يفكر  </b></font>",
+		["blackGameOver"] = "<b><p align='center'><font size='10' color='#ffffff'>%s  !اختار الفريق بطاقة القاتل وخسر المباراة</b></p></font>",
+		["redTeamWon"] = "<b><p align='center'><font color='#ffffff'>!الفريق الأحمر فاز</b></p></font>",
+		["blueTeamWon"] = "<b><p align='center'><font color='#ffffff'>!الفريق الأزرق فاز</b></p></font>",
+		["validClue"] = "<p align='center'>.يمكن للفريق التصويت الآن <b>%s</b> الدليل صالح</p>",
+		["invalidClue"] = "<p align='center'>المزيد من المرات <b><R>%d</R></b> الدليل غير صالح! يمكنك المحاولة </p>",
+		["getRoomAdmin"] = "<p align='center'><font size='9'><a href='event:roomAdmin'><b>احصل على مسؤول الغرفة</b></a></font></p>",
+		["contactedBystander"] = "<font color='%s'><b>%s الفريق</b></font> اختار  <font color='#ac987f'>%s متفرج</font> ",	
+		["contactedAssassin"] = "<font color='%s'><b>%s الفريق</b></font> اختار <font color='#5B5B5B'>%s القاتل</font>",	
+		["contactedRedAgent"] = "<font color='%s'><b>%s الفريق</b></font> اختار  <font color='#8F2B1C'>%s عميل</font> ",	
+		["contactedBlueAgent"] = "<font color='%s'><b>%s الفريق</b></font> اختار  <font color='#3284A3'>%s عميل</font>",	
+		["noClueLog"] = ".لم يقدم أي دليل خلال الوقت المحدد <font color='%s'>%s</font> ",
+		["noWordLog"] = ".لم يختر كلمة خلال الوقت المحدد<font color='%s'>%s</font>",
+		["noActionSpy"] = ".لم يتخذ الخصم الجاسوس أي إجراء خلال الوقت المحدد وتمت الموافقة على الدليل",
+		["approvedClue"] = "<font color='%s'>%s</font> وافق على الدليل<font color='%s'>%s</font>",
+		["notApprovedClue"] = "<font color='%s'>%s</font> لم يوافق على الدليل <font color='%s'>%s</font>",
+		["newGameStarting"] = "<p align='center'><font size='15'>ثانية <b>%d</b> لعبة جديدة سوف تبدأ خلال</font></p>",
+		["votedFor"] = "%s صوت لصالح %s",
+		["moduleAdmins"] = "Mckeydown#0000, Indexinel#5948, Lays#1146 <J>:مشرفو اللعبة</J>",
+		["roomAdmin"] = "%s <J>مدير اللعبة</J>",
+		["forumTopic"] = "https://atelier801.com/topic?f=6&t=897423",
+		["lockedRoom"] = "%s أغلق الغرفة بعدد %s ",
+		["roomPassword"] = "%s تم تغيير كلمة مرور الغرفة بواسطة",
+		["kickedTeam"] = "%s حظر من قبل %s",
+		["currentlyPlaying"] = "لإنشاء غرفتك الخاصة. <J>!room</J> اللعبة قيد اللعب حاليًا ، إذا كنت لا تريد الانتظار ، فاكتب",
+		["createOwnRoom"] = "<V>/room <J>#codenames0<V>%s :قم بإنشاء غرفتك الخاصة",
+		["shuffleButton"] = "<p align='center'><a href='event:shufflewords'><b>تغيير الكلمات</b></a></p>",
+		["shuffled"] = "<p align='center'><b>تم تغيير الكلمات ، اللعبة تبدأ خلال %d ثانية</b></p>",
+		["shuffleText"] = "<p align='center'><b> يمكنك تغيير الكلمات خلال %d ثانية</b></p>",
+		["wordIsExist"] = "<R>.لا يمكنك إعطاء هذا الدليل لأن هذه الكلمة موجودة على شبكة الكلمات</R>",
+		["invalidClueError"] = "<R>.دليل غير صحيح! لا يمكن أن يتكون الدليل من كلمات متعددة</R>",
+		["clueNumError"] = "<R>.حدد عدد الكلمات التي يمكن لفريقك أن يختارها</R>",
+    },
 }
 
 help = {
@@ -213,6 +263,9 @@ help = {
         "<p align='left'><font color='#f5d8b6' size='13'><V>       Indexinel</V><G>#5948</G>                         <V>Lays</V><G>#1146</G></font></p>\n"..
         "<b><font color='#f5d8b6' size='13'>TESTERS</font></b>\n"..
         "<font size='12'><V>Kucukstarr</V><G>#3074</G>, <V>Monteriple</V><G>#3222</G>, <V>Nnaaaz</V><G>#0000</G>, <V>Tactcat</V><G>#0000</G>, <V>Fatihmilano</V><G>#0000</G>, <V>Hotspotower</V><G>#0000</G>, <V>Neonstrayzer</V><G>#0000</G>, <V>Ulubilge</V><G>#0000</G>, <V>Meltlemon</V><G>#8284</G>, <V>Lagneia</V><G>#2678</G>, <V>Yoda</V><G>#7355</G>, <V>Marijuana</V><G>#0387</G>, <V>Lowdemort</V><G>#9914</G>, <V>Nehirsenn</V><G>#0000</G></font>",
+        "<p align='center'><b><font color='#f5d8b6' size='13'>TRANSLATORS</font></b></p>\n"..
+        "[ES] <V>Indexinel</V><G>#5948</G>\n"..
+        "[AR] <V>Nnaaaz</V><G>#0000</G>\n",
     }
 },
     ["tr"] = {
@@ -267,6 +320,9 @@ help = {
         "<p align='left'><font color='#f5d8b6' size='13'><V>     Indexinel</V><G>#5948</G>                          <V>Lays</V><G>#1146</G></font></p>\n"..
         "<b><font color='#f5d8b6' size='13'>TEST EDENLER</font></b>\n"..
         "<font size='12'><V>Kucukstarr</V><G>#3074</G>, <V>Monteriple</V><G>#3222</G>, <V>Nnaaaz</V><G>#0000</G>, <V>Tactcat</V><G>#0000</G>, <V>Fatihmilano</V><G>#0000</G>, <V>Hotspotower</V><G>#0000</G>, <V>Neonstrayzer</V><G>#0000</G>, <V>Ulubilge</V><G>#0000</G>, <V>Meltlemon</V><G>#8284</G>, <V>Lagneia</V><G>#2678</G>, <V>Yoda</V><G>#7355</G>, <V>Marijuana</V><G>#0387</G>, <V>Lowdemort</V><G>#9914</G>, <V>Nehirsenn</V><G>#0000</G></font>",
+        "<p align='center'><b><font color='#f5d8b6' size='13'>ÇEVİRMENLER</font></b></p>\n"..
+        "[ES] <V>Indexinel</V><G>#5948</G>\n"..
+        "[AR] <V>Nnaaaz</V><G>#0000</G>\n",
     }
 },
 
@@ -318,9 +374,70 @@ help = {
             "<p align='left'><font color='#f5d8b6' size='13'><V>       Indexinel</V><G>#5948</G>                         <V>Lays</V><G>#1146</G></font></p>\n"..
             "<b><font color='#f5d8b6' size='13'>AYUDANTES</font></b>\n"..
             "<font size='12'><V>Kucukstarr</V><G>#3074</G>, <V>Monteriple</V><G>#3222</G>, <V>Nnaaaz</V><G>#0000</G>, <V>Tactcat</V><G>#0000</G>, <V>Fatihmilano</V><G>#0000</G>, <V>Hotspotower</V><G>#0000</G>, <V>Neonstrayzer</V><G>#0000</G>, <V>Ulubilge</V><G>#0000</G>, <V>Meltlemon</V><G>#8284</G>, <V>Lagneia</V><G>#2678</G>, <V>Yoda</V><G>#7355</G>, <V>Marijuana</V><G>#0387</G>, <V>Lowdemort</V><G>#9914</G>, <V>Nehirsenn</V><G>#0000</G></font>",
+            "<p align='center'><b><font color='#f5d8b6' size='13'>TRADUCTORES</font></b></p>\n"..
+            "[ES] <V>Indexinel</V><G>#5948</G>\n"..
+            "[AR] <V>Nnaaaz</V><G>#0000</G>\n",
         }
-    }
+    },
 
+    ["ar"] = {
+        {
+            "كيفية اللعب",
+
+            "<p align='right'>كلمة <b>25</b> هذه اللعبة مكونة من  فريقين هناك شبكة من\n"..
+            "<font color='#3284a3'><b>الفريق الأزرق</b></font> والبعض الآخر <font color='#8f2b1c'><b>الفريق الأحمر</b></font>  تم تعيين بعضهم سرا إلى\n    لاعب واحد من كل فريق هو الجاسوس والجواسيس فقط هم من يرون الكلمات     التي تنتمي إلى أي فريق "..
+            "يتناوب الجاسوس على إعطاء أدلة لعملائهم ، في محاولة        لإقناعهم بتخمين كلمات فريقهم. الفريق الذي يخمن كل كلماته يفوز باللعبة أولاً\n"..
+            "\n<b><font color='#f5d8b6' size='14'>الفريقين</font></b></font> \n"..
+            ".يجب أن ينقر لاعب واحد من كل فريق على الانضمام كجاسوس. سيرون بعد ذلك     ألوان البطاقات. يجب على أي شخص آخر النقر فوق الانضمام كعامل تشغيل. لا يرون ألوان البطاقات. انقر فوق اسم المستخدم الخاص بك لمغادرة فريقك ، يمكنك القيام بذلك في الردهة",
+
+
+            "<p align='right'><b><font color='#f5d8b6' size='14'>الدليل</font></b>\n"..
+            "<p align='right'>.الجاسوس يقدم الدليل"..
+            "<p align='right'>.عندما يحين دورك لإعطاء فكرة ، ستظهر لوحة إدخال وأرقام   على الشاشة "..
+            "<p align='right'>.يجب عليك كتابة كلمة واحدة في الإدخال ، وتحديد عدد البطاقات         المرتبطة بهذه الكلمة على لوحة الأرقام ، ثم النقر فوق زر الإرسال لجعل الدليل         رسميًا "..
+            "<p align='right'>.لن يرى عملاؤك سوى الدليل وعدد البطاقات ذات الصلة\n"..
+            "\n<p align='right'>.احترس من البطاقة السوداء - إنها قاتل! تجنب الدليل التي من شأنها أن تؤدي إلى            القاتل أو إلى كلمات الفريق الآخر</p>"..
+            "\n<p align='right'>.بعض الادلة غير مسموح بها ، على سبيل المثال استخدام أي شكل من أشكال أي كلمة على السبورة. من فضلك لا تنسى علامة تبويب التحقق من القواعد لاحقًا</p>",
+
+
+
+            "<p align='right'><b><font color='#f5d8b6' size='14'>التخمين</font></b>\n"..
+            "<p align='right'>.يخمن العملاء الكلمات بناءً على دليل الجاسوس. يمكنك مناقشة الدليل مع            زملائك في الفريق. يمكنك أيضًا اقتراح تخمين من خلال النقر على البطاقة التي تعتقد أنها تتطابق مع الدليل"..
+            "<p align='right'>.يجب أن يصوت نصف زملائك في الفريق لنفس              الكلمة لجعل التخمين رسميًا\n\n"..
+            "<p align='right'>.إذا كنت تخمن كلمة من لون فريقك ، فيمكنك التخمين مرة أخرى. سترغب في          تخمين العديد من الكلمات  التي أشار إليها جاسوسك"..
+            "<p align='right'>\n<p align='center'>يمكنك أيضًا تخمين الادلة التي لم يتم حلها من الادوار السابقة. </p>\n",
+
+            "<p align='right'><b><font color='#f5d8b6' size='14'>الفوز والخسارة</font></b>\n"..
+            "<p align='right'>!الفرق يتناوبون. يفوز الفريق بمجرد أن يتم تخمين كل كلماتهم. يخسرون إذا خمنوا             القاتل\n\n"..
+            "<p align='right'><b><font color='#f5d8b6' size='14'>الإعدادات</font></b>\n"..
+            "<p align='right'><b><PT>:تأكيد دليل الخصم</PT></b>\n .يجب أن يؤكد الجواسيس أدلة بعضهم البعض ، ولا يمكن إطلاق دليل غير مؤكد          ويجب تقديم دليل مختلف. كل جاسوس لديه 3 فرص لإعطاء فكرة صحيحة عن دوره\n\n"..
+            "<p align='right'><b><PT>:المهلة الزمنية</PT></b>\n .يفرض حدًا زمنيًا على إعطاء الادلة واختيار الكلمات. إذا لم يتم اتخاذ أي إجراء      خلال الوقت المحدد ، ينتقل الدور إلى الفريق الآخر. 180 ثانية للدليل، 120 ثانية لاختيار الكلمات",
+
+        },
+        {
+
+            "القوانين",
+            "<p align='right'><u>ألا</u> يجب على الجاسوس <b>كلمة واحدة ورقم واحد</b> الدليل يقتصر على •\n يعلق على تخمينات اللاعبين لتجنب اعطاء عن أي معلومات غير مرغوب فيه </p>\n\n"..
+            "<p align='right'><b>كلمة واحدة</b> من المفترض أن يكون الدليل الخاص بك •\nلكن الجواسيس يمكنهم الاتفاق على قواعد أكثر مرونة على سبيل المثال\nيمكنك الموافقة على السماح بأسماء الأماكن المكونة من كلمتين مثل نيو يورك</p>\n\n"..
+            "<p align='right'><b>أي شكل من أشكال الكلمة في الشبكة</b> لا تستخدم •\n ولا تحاول الالتفاف على هذه القاعدة باستخدام أدلة مثل سكري او سكاكر\nكدليل لا تكتب السكر كدليل على السكر والشوكولاتة </p>\n\n",
+            "<p align='right'>لا تستخدم كلمات أجنبية لإعطاء معلومات إضافية <b>باللغة التي تلعب بها</b> قدِّم أدلة •</p>\n\n"..
+            "<p align='right'>لا تعطِ أدلة حول  <b>معنى الكلمات</b> يجب أن يرتبط الدليل بـ •\nالأحرف الموجودة في الكلمة أو موضعها في الشبكة\n\n"..
+            "<p align='right'>تخريب سير اللعبة بأي شكل من الاشكال <b>لاتقم بتخريب اللعبة</b> •\n<u>دائم</u> سوف يؤدي الى الطرد بشكل</p>\n\n"..
+            "<p align='right'>اجعل الادلة قريبة للكلمات ، وإذا لم تكن متأكدًا • \n فاسأل الجاسوس المعارض باستخدام\nبعض قنوات الدردشة التي لا يسمعها اللاعبون الآخرون أو يراها</p>",
+        },
+        {
+            "قائمة الشكر",
+            "<p align='center'><b><font color='#f5d8b6' size='13'>التطوير والتصميم</font></b>\n"..
+            "<font size='12'><V>Mckeydown</V><G>#0000</G></font>\n\n"..
+            "<p align='center'><b><font color='#f5d8b6' size='13'>كبير المستشارين                      مستضيف اللعبة</font></b></p>"..
+            "<p align='left'><font color='#f5d8b6' size='13'><V>       Indexinel</V><G>#5948</G>                         <V>Lays</V><G>#1146</G></font></p>\n"..
+            "<b><font color='#f5d8b6' size='13'>المساهمين</font></b>\n"..
+            "<font size='12'><V>Kucukstarr</V><G>#3074</G>, <V>Monteriple</V><G>#3222</G>, <V>Nnaaaz</V><G>#0000</G>, <V>Tactcat</V><G>#0000</G>, <V>Fatihmilano</V><G>#0000</G>, <V>Hotspotower</V><G>#0000</G>, <V>Neonstrayzer</V><G>#0000</G>, <V>Ulubilge</V><G>#0000</G>, <V>Meltlemon</V><G>#8284</G>, <V>Lagneia</V><G>#2678</G>, <V>Yoda</V><G>#7355</G>, <V>Marijuana</V><G>#0387</G>, <V>Lowdemort</V><G>#9914</G>, <V>Nehirsenn</V><G>#0000</G></font>",
+            "<p align='center'><b><font color='#f5d8b6' size='13'>مترجمون</font></b></p>\n"..
+            "[ES] <V>Indexinel</V><G>#5948</G>\n"..
+            "[AR] <V>Nnaaaz</V><G>#0000</G>\n",
+        }
+    },
 }
 
 commandsPage = {
@@ -384,6 +501,27 @@ commandsPage = {
     "<b><PT>[CTRL]</PT></b> — Muestra los registros de la partida.\n"..
     "<b><PT>[LSHIFT]</PT></b> — Muestra los registros del equipo en el que estás.\n",
     },
+
+    ["ar"] = {
+        "<font color='#ffffff' size='20'><p align='center'>الأوامر والمفاتيح</font></p>",
+        "<b><p align='left'><font size='13'><CS>أوامر مدير الغرفة</CS></font></p></b>"..
+        "<PT><b>!restart</b></PT> — يعيد تعيين الإعدادات والفرق والبطاقات والنتائج والسجلات ويعيدك إلى الردهة\n"..
+        "<b><PT>!ban</PT> <V>اسم اللاعب</V><G>#tag</G></b> — لا يمكن للاعب المحدد الانضمام إلى أي فريق ، ولا يمكنه رؤية البطاقات والادلة\n"..
+        "<b><PT>!uban</PT> <V>اسم اللاعب</V><G>#tag</G></b> — يزيل تأثيرات أمر الحظر من اللاعب\n"..
+        "<b><PT>!lock</PT> <V>[رقم]</V></b> — يعيّن حدًا لعدد اللاعبين في الغرفة\n"..
+        "<b><PT>!pw</PT> <V>[كلمة المرور]</V></b> — يعين كلمة مرور الغرفة\n"..
+        "<b><PT>!kick</PT> <V>اسم اللاعب</V><G>#tag</G></b> — حظر لاعب محدد من الفريق\n\n",
+        "<b><p align='left'><font size='13'><CS>أوامر اللاعب</CS></font></p></b>"..
+        "<b><PT>!admins</PT></b> — يظهر مسؤولي اللعبة\n"..
+        "<b><PT>!admin</PT></b> — يظهر مدير اللعبة\n"..
+        "<b><PT>!forum</PT></b> — موضوع اللعبة في المنتدى\n"..
+        "<b><PT>!room</PT></b> — يكتب اسم غرفتك الخاصة\n\n"..
+        "<b><p align='left'><font size='13'><CS>المفاتيح</CS></font></p></b>"..
+        "<b><PT>[H]</PT></b> — يظهر صفحة المساعدة\n"..
+        "<b><PT>[K]</PT></b> — يظهر صفحة الأوامر والمفاتيح\n"..
+        "<b><PT>[CTRL]</PT></b> — يظهر سجلات اللعبة\n"..
+        "<b><PT>[LSHIFT]</PT></b> — يظهر سجلات الفريق التي أنت فيها\n",
+    },
 }
 
 tips = {
@@ -425,6 +563,19 @@ tips = {
         "Presiona <b>[LSHIFT]</b> para ver el registro de pistas de tu equipo.",
         "Puedes jugar en 6 idiomas distintos: EN, TR, FR, ES, PT, AR",
         "<font size='10'>Crea tu propia sala escribiendo <b><J>#codenames0</J><V>PlayerName</V><G>#tag</G></b></font>",
+    },
+    ["ar"] = {
+		"!انقر فوق الزر الموجود في الجزء العلوي الأيسر لتكون مدير الغرفة",
+		"!لاعبين على الأقل لبدء اللعبة <b>4</b> تحتاج إلى",
+		".إذا كنت تريد مغادرة فريقك ، فانقر فوق اسم المستخدم الخاص بك",
+		"!كلمات على الشبكة <b>9</b> الفريق الذي يتلقى الدليل الأول لديه",
+		"!كلمات على الشبكة <b>8</b> الفريق الآخر لديه",
+		"!حرفًا <b>32</b> لا يمكن أن يتجاوز الدليل",
+		"!لا يمكنك إعطاء كلمات أكثر من العدد المتبقي من البطاقات",
+		".لمشاهدة سجل اللعبة <b>[CTRL]</b> اضغط على",
+		".للاطلاع على سجل الدليل الخاص بفريقك <b>[LSHIFT]</b> اضغط على",
+		"EN ، TR ، FR ، ES ، PT ، AR :يمكنك اللعب بست لغات مختلفة",
+		"<b><J>#codenames0</J><V>PlayerName</V><G>#tag</G></b> :أنشئ غرفتك الخاصة باستخدام",
     },
 }
 
@@ -1588,7 +1739,11 @@ end
 
 function addGameLog(message)
     table.insert(gameLog, 1, message)
-    gameLogList = '• '.. table.concat(gameLog, '\n• ')
+    if roomLang == 'ar' then 
+        gameLogList = '<p align="right">' .. table.concat(gameLog, ' •\n') .. ' •'
+    else
+        gameLogList = '• '.. table.concat(gameLog, '\n• ')
+    end
 
     if #gameLog >= 10 then 
         table.remove(gameLog, 10)
