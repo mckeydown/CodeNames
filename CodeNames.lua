@@ -1739,12 +1739,7 @@ end
 
 function addGameLog(message)
     table.insert(gameLog, 1, message)
-    if roomLang == 'ar' then 
-        gameLogList = '<p align="right">' .. table.concat(gameLog, ' •\n') .. ' •'
-    else
         gameLogList = '• '.. table.concat(gameLog, '\n• ')
-    end
-
     if #gameLog >= 10 then 
         table.remove(gameLog, 10)
     end
