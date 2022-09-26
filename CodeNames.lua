@@ -449,7 +449,8 @@ commandsPage = {
     "<b><PT>!uban</PT> <V>PlayerName</V><G>#tag</G></b> — Removes the effects of ban command from specified player.\n"..
     "<b><PT>!lock</PT> <V>[number]</V></b> — Sets a limit for the number of players in the room.\n"..
     "<b><PT>!pw</PT> <V>[password]</V></b> — Sets room password.\n"..
-    "<b><PT>!kick</PT> <V>PlayerName</V><G>#tag</G></b> — Kicks specified player from the team.\n\n",
+    "<b><PT>!kick</PT> <V>PlayerName</V><G>#tag</G></b> — Kicks specified player from the team.\n"..
+    "<b><PT>!newadmin</PT> <V>PlayerName</V><G>#tag</G></b> — Sets new room admin.\n\n",
     "<b><p align='left'><font size='13'><CS>PLAYER COMMANDS</CS></font></p></b>"..
     "<b><PT>!admins</PT></b> — Shows the module admins.\n"..
     "<b><PT>!admin</PT></b> — Shows the room admin.\n"..
@@ -469,7 +470,8 @@ commandsPage = {
     "<b><PT>!uban</PT> <V>KullanıcıAdı</V><G>#etiket</G></b> — Belirtilen kullanıcıdan ban komutunun etkilerini kaldırır.\n"..
     "<b><PT>!lock</PT> <V>[sayı]</V></b> — Odadaki oyuncu sayısı için bir sınır belirler.\n"..
     "<b><PT>!pw</PT> <V>[şifre]</V></b> — Oda şifresini ayarlar.\n"..
-    "<b><PT>!kick</PT> <V>PlayerName</V><G>#tag</G></b> — Belirtilen kullanıcıyı takımdan atar.\n\n",
+    "<b><PT>!kick</PT> <V>KullanıcıAdı</V><G>#etiket</G></b> — Belirtilen kullanıcıyı takımdan atar.\n"..
+    "<b><PT>!newadmin</PT> <V>KullanıcıAdı</V><G>#etiket</G></b> — Yeni oda yöneticisini belirler.\n\n",
     "<b><p align='left'><font size='13'><CS>OYUNCU KOMUTLARI</CS></font></p></b>"..
     "<b><PT>!admins</PT></b> — Modül yöneticilerini gösterir.\n"..
     "<b><PT>!admin</PT></b> — Oda yöneticisini gösterir.\n"..
@@ -489,7 +491,8 @@ commandsPage = {
     "<b><PT>!uban</PT> <V>PlayerName</V><G>#tag</G></b> — Remueve los efectos del comando ban para el jugador especificado.\n"..
     "<b><PT>!lock</PT> <V>[number]</V></b> — Establece un límite para el número de jugadores en la sala.\n"..
     "<b><PT>!pw</PT> <V>[password]</V></b> — Establece la contraseña de la sala.\n"..
-    "<b><PT>!kick</PT> <V>PlayerName</V><G>#tag</G></b> — Expulsa al jugador especificado de un equipo.\n\n",
+    "<b><PT>!kick</PT> <V>PlayerName</V><G>#tag</G></b> — Expulsa al jugador especificado de un equipo.\n"..
+    "<b><PT>!newadmin</PT> <V>PlayerName</V><G>#tag</G></b> — Sets new room admin.\n\n",
     "<b><p align='left'><font size='13'><CS>COMANDOS DE JUGADORES</CS></font></p></b>"..
     "<b><PT>!admins</PT></b> — Muestra a los administradores del módulo.\n"..
     "<b><PT>!admin</PT></b> — Muestra al gestor del la sala.\n"..
@@ -510,7 +513,8 @@ commandsPage = {
         "<b><PT>!uban</PT> <V>اسم اللاعب</V><G>#tag</G></b> — يزيل تأثيرات أمر الحظر من اللاعب\n"..
         "<b><PT>!lock</PT> <V>[رقم]</V></b> — يعيّن حدًا لعدد اللاعبين في الغرفة\n"..
         "<b><PT>!pw</PT> <V>[كلمة المرور]</V></b> — يعين كلمة مرور الغرفة\n"..
-        "<b><PT>!kick</PT> <V>اسم اللاعب</V><G>#tag</G></b> — حظر لاعب محدد من الفريق\n\n",
+        "<b><PT>!kick</PT> <V>اسم اللاعب</V><G>#tag</G></b> — حظر لاعب محدد من الفريق\n"..
+        "<b><PT>!newadmin</PT> <V>PlayerName</V><G>#tag</G></b> — Sets new room admin.\n\n",
         "<b><p align='left'><font size='13'><CS>أوامر اللاعب</CS></font></p></b>"..
         "<b><PT>!admins</PT></b> — يظهر مسؤولي اللعبة\n"..
         "<b><PT>!admin</PT></b> — يظهر مدير اللعبة\n"..
@@ -1450,6 +1454,16 @@ function eventChatCommand(playerName, cmd)
                 tfm.exec.setRoomPassword(roompass)
                 tfm.exec.chatMessage(string.format(translations[roomLang].roomPassword, playerName), nil)
             end
+            if firstArg == "newadmin" then
+                local tName = secondArg or ""
+                if tName == nil then return end
+                for n in pairs(tfm.get.room.playerList) do
+                    if n == tName then
+                        roomAdmin = tName
+                        tfm.exec.chatMessage(string.format("Room admin changed by %s", playerName), nil)
+                    end
+                end
+            end
 
             if firstArg == "kick" then
                 if admins[secondArg] then return end
@@ -1466,6 +1480,16 @@ function eventChatCommand(playerName, cmd)
                     if firstArg == "lobby" then gameState.status = 5 tfm.exec.setGameTime(5) return end
                     if firstArg == "time" then tfm.exec.setGameTime(secondArg) return end
                     if firstArg == "uadmin" then roomAdmin = nil checkRoomAdmin() end
+                    if firstArg == "transfer" then 
+                        local tName = secondArg or ""
+                        if tName == nil then return end
+                        for n in pairs(tfm.get.room.playerList) do
+                            if n == tName then
+                                roomAdmin = tName
+                                tfm.exec.chatMessage(string.format("Room admin changed by %s", playerName), nil)
+                            end
+                        end
+                    end
             end
     end
 
