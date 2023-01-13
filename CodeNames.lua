@@ -1428,6 +1428,28 @@ function eventChatCommand(playerName, cmd)
     local firstArg = args[1] 
     local secondArg = args[2]
 
+    if teams[playerName] and firstArg == "t" then 
+        local setTeam = teams[playerName]
+        local chatMsg = cmd:sub(#("t")+1)
+
+        if setTeam == "red" and spymasters[teams[playerName]] ~= playerName then
+            for i = 1, #operatives["red"] do
+                tfm.exec.chatMessage(string.format("<R>[%s]</R> %s",playerName, chatMsg), operatives["red"][i])
+                print(chatMsg)
+            end
+        end
+        if setTeam == "blue" and spymasters[teams[playerName]] ~= playerName then
+            for i = 1, #operatives["blue"] do
+                tfm.exec.chatMessage(string.format("<CH>[%s]</CH> %s",playerName, chatMsg), operatives["blue"][i])
+            end
+        end
+
+        local spyChat = spymasters["red"] == playerName and spymasters["blue"] or spymasters["red"]
+        if spymasters[teams[playerName]] == playerName and firstArg == "t" then
+            tfm.exec.chatMessage(string.format("<CE>[%s]</CE> %s",playerName, chatMsg), spyChat)
+        end
+    end
+
     if isAdmin then
             if firstArg == "restart" then 
                 gameState.status = 5
