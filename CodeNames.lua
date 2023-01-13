@@ -1444,7 +1444,7 @@ function eventChatCommand(playerName, cmd)
         end
         if setTeam == "blue" and spymasters[teams[playerName]] ~= playerName then
             for i = 1, #operatives["blue"] do
-                tfm.exec.chatMessage(string.format("<CH>[♥] [%s] </CH><N>%s</N>",playerName, chatMsg), operatives["blue"][i])
+                tfm.exec.chatMessage(string.format("<CH>[♥] [%s]</CH><N>%s</N>",playerName, chatMsg), operatives["blue"][i])
             end
         end
 
