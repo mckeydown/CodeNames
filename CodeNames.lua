@@ -453,6 +453,7 @@ commandsPage = {
     "<b><PT>!newadmin</PT> <V>PlayerName</V><G>#tag</G></b> — Sets new room admin.\n\n",
     "<b><p align='left'><font size='13'><CS>PLAYER COMMANDS</CS></font></p></b>"..
     "<b><PT>!admins</PT></b> — Shows the module admins.\n"..
+    "<b><PT>!t</PT> <V>[message]</V></b> — Communicate with your teammates, also spymasters can talk among themselves.\n"..
     "<b><PT>!admin</PT></b> — Shows the room admin.\n"..
     "<b><PT>!forum</PT></b> — Module forum thread.\n"..
     "<b><PT>!discord</PT></b> — Join our Discord server to report bugs, words suggestions.\n"..
@@ -475,6 +476,7 @@ commandsPage = {
     "<b><PT>!newadmin</PT> <V>KullanıcıAdı</V><G>#etiket</G></b> — Yeni oda yöneticisini belirler.\n\n",
     "<b><p align='left'><font size='13'><CS>OYUNCU KOMUTLARI</CS></font></p></b>"..
     "<b><PT>!admins</PT></b> — Modül yöneticilerini gösterir.\n"..
+    "<b><PT>!t</PT> <V>[mesaj]</V></b> — Takım arkadaşlarınla iletişime geç, ayrıca spymaster'lar kendi aralarında konuşabilir.\n"..
     "<b><PT>!admin</PT></b> — Oda yöneticisini gösterir.\n"..
     "<b><PT>!forum</PT></b> — Modül forum konusu.\n"..
     "<b><PT>!discord</PT></b> — Hataları raporlamak ve kelime önerisi yapmak için Discord sunucumuza katılın.\n"..
@@ -497,6 +499,7 @@ commandsPage = {
     "<b><PT>!newadmin</PT> <V>PlayerName</V><G>#tag</G></b> — Sets new room admin.\n\n",
     "<b><p align='left'><font size='13'><CS>COMANDOS DE JUGADORES</CS></font></p></b>"..
     "<b><PT>!admins</PT></b> — Muestra a los administradores del módulo.\n"..
+    "<b><PT>!t</PT> <V>[message]</V></b> — Communicate with your teammates, also spymasters can talk among themselves.\n"..
     "<b><PT>!admin</PT></b> — Muestra al gestor del la sala.\n"..
     "<b><PT>!forum</PT></b> — Hilo del Módulo en el foro.\n"..
     "<b><PT>!discord</PT></b> — Join our Discord server to report bugs, words suggestions.\n"..
@@ -520,6 +523,7 @@ commandsPage = {
         "<b><PT>!newadmin</PT> <V>PlayerName</V><G>#tag</G></b> — Sets new room admin.\n\n",
         "<b><p align='left'><font size='13'><CS>أوامر اللاعب</CS></font></p></b>"..
         "<b><PT>!admins</PT></b> — يظهر مسؤولي اللعبة\n"..
+        "<b><PT>!t</PT> <V>[message]</V></b> — Communicate with your teammates, also spymasters can talk among themselves.\n"..
         "<b><PT>!admin</PT></b> — يظهر مدير اللعبة\n"..
         "<b><PT>!forum</PT></b> — موضوع اللعبة في المنتدى\n"..
         "<b><PT>!discord</PT></b> — Join our Discord server to report bugs, words suggestions.\n"..
@@ -1440,11 +1444,13 @@ function eventChatCommand(playerName, cmd)
         end
         if setTeam == "blue" and spymasters[teams[playerName]] ~= playerName then
             for i = 1, #operatives["blue"] do
-                tfm.exec.chatMessage(string.format("<CH>[%s][♥] </CH><N>%s</N>",playerName, chatMsg), operatives["blue"][i])
+                tfm.exec.chatMessage(string.format("<CH>[♥] [%s] </CH><N>%s</N>",playerName, chatMsg), operatives["blue"][i])
             end
         end
 
         if spymasters[teams[playerName]] == playerName and firstArg == "t" then
+            local checkSpymasters = (spymasters["blue"] ~= nil and spymasters["red"] ~= nil) 
+            if not checkSpymasters then return end
             tfm.exec.chatMessage(string.format("<CE>[~] [%s]</CE><N>%s</N>",playerName, chatMsg), spymasters["red"])
             tfm.exec.chatMessage(string.format("<CE>[~] [%s]</CE><N>%s</N>",playerName, chatMsg), spymasters["blue"])
         end
