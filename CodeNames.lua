@@ -261,8 +261,6 @@ help = {
         "<font size='12'><V>Mckeydown</V><G>#0000</G></font>\n\n"..
         "<p align='center'><b><font color='#f5d8b6' size='13'>MODULE HOSTER                       GRAND ADVISOR</font></b></p>"..
         "<p align='left'><font color='#f5d8b6' size='13'><V>       Indexinel</V><G>#5948</G>                         <V>Lays</V><G>#1146</G></font></p>\n"..
-        "<b><font color='#f5d8b6' size='13'>TESTERS</font></b>\n"..
-        "<font size='12'><V>Kucukstarr</V><G>#3074</G>, <V>Monteriple</V><G>#3222</G>, <V>Nnaaaz</V><G>#0000</G>, <V>Tactcat</V><G>#0000</G>, <V>Fatihmilano</V><G>#0000</G>, <V>Hotspotower</V><G>#0000</G>, <V>Neonstrayzer</V><G>#0000</G>, <V>Ulubilge</V><G>#0000</G>, <V>Meltlemon</V><G>#8284</G>, <V>Lagneia</V><G>#2678</G>, <V>Yoda</V><G>#7355</G>, <V>Marijuana</V><G>#0387</G>, <V>Lowdemort</V><G>#9914</G>, <V>Nehirsenn</V><G>#0000</G></font>",
         "<p align='center'><b><font color='#f5d8b6' size='13'>TRANSLATORS</font></b></p>\n"..
         "[ES] <V>Indexinel</V><G>#5948</G>\n"..
         "[AR] <V>Nnaaaz</V><G>#0000</G>\n",
@@ -318,8 +316,6 @@ help = {
         "<font size='12'><V>Mckeydown</V><G>#0000</G></font>\n\n"..
         "<p align='center'><b><font color='#f5d8b6' size='13'>MODÜL HOSTER                       BÜYÜK DANIŞMAN</font></b></p>"..
         "<p align='left'><font color='#f5d8b6' size='13'><V>     Indexinel</V><G>#5948</G>                          <V>Lays</V><G>#1146</G></font></p>\n"..
-        "<b><font color='#f5d8b6' size='13'>TEST EDENLER</font></b>\n"..
-        "<font size='12'><V>Kucukstarr</V><G>#3074</G>, <V>Monteriple</V><G>#3222</G>, <V>Nnaaaz</V><G>#0000</G>, <V>Tactcat</V><G>#0000</G>, <V>Fatihmilano</V><G>#0000</G>, <V>Hotspotower</V><G>#0000</G>, <V>Neonstrayzer</V><G>#0000</G>, <V>Ulubilge</V><G>#0000</G>, <V>Meltlemon</V><G>#8284</G>, <V>Lagneia</V><G>#2678</G>, <V>Yoda</V><G>#7355</G>, <V>Marijuana</V><G>#0387</G>, <V>Lowdemort</V><G>#9914</G>, <V>Nehirsenn</V><G>#0000</G></font>",
         "<p align='center'><b><font color='#f5d8b6' size='13'>ÇEVİRMENLER</font></b></p>\n"..
         "[ES] <V>Indexinel</V><G>#5948</G>\n"..
         "[AR] <V>Nnaaaz</V><G>#0000</G>\n",
@@ -372,8 +368,6 @@ help = {
             "<font size='12'><V>Mckeydown</V><G>#0000</G></font>\n\n"..
             "<p align='center'><b><font color='#f5d8b6' size='13'>HOST DEL MÓDULO                       GRAN ASESOR</font></b></p>"..
             "<p align='left'><font color='#f5d8b6' size='13'><V>       Indexinel</V><G>#5948</G>                         <V>Lays</V><G>#1146</G></font></p>\n"..
-            "<b><font color='#f5d8b6' size='13'>AYUDANTES</font></b>\n"..
-            "<font size='12'><V>Kucukstarr</V><G>#3074</G>, <V>Monteriple</V><G>#3222</G>, <V>Nnaaaz</V><G>#0000</G>, <V>Tactcat</V><G>#0000</G>, <V>Fatihmilano</V><G>#0000</G>, <V>Hotspotower</V><G>#0000</G>, <V>Neonstrayzer</V><G>#0000</G>, <V>Ulubilge</V><G>#0000</G>, <V>Meltlemon</V><G>#8284</G>, <V>Lagneia</V><G>#2678</G>, <V>Yoda</V><G>#7355</G>, <V>Marijuana</V><G>#0387</G>, <V>Lowdemort</V><G>#9914</G>, <V>Nehirsenn</V><G>#0000</G></font>",
             "<p align='center'><b><font color='#f5d8b6' size='13'>TRADUCTORES</font></b></p>\n"..
             "[ES] <V>Indexinel</V><G>#5948</G>\n"..
             "[AR] <V>Nnaaaz</V><G>#0000</G>\n",
@@ -431,8 +425,6 @@ help = {
             "<font size='12'><V>Mckeydown</V><G>#0000</G></font>\n\n"..
             "<p align='center'><b><font color='#f5d8b6' size='13'>كبير المستشارين                      مستضيف اللعبة</font></b></p>"..
             "<p align='left'><font color='#f5d8b6' size='13'><V>       Indexinel</V><G>#5948</G>                         <V>Lays</V><G>#1146</G></font></p>\n"..
-            "<b><font color='#f5d8b6' size='13'>المساهمين</font></b>\n"..
-            "<font size='12'><V>Kucukstarr</V><G>#3074</G>, <V>Monteriple</V><G>#3222</G>, <V>Nnaaaz</V><G>#0000</G>, <V>Tactcat</V><G>#0000</G>, <V>Fatihmilano</V><G>#0000</G>, <V>Hotspotower</V><G>#0000</G>, <V>Neonstrayzer</V><G>#0000</G>, <V>Ulubilge</V><G>#0000</G>, <V>Meltlemon</V><G>#8284</G>, <V>Lagneia</V><G>#2678</G>, <V>Yoda</V><G>#7355</G>, <V>Marijuana</V><G>#0387</G>, <V>Lowdemort</V><G>#9914</G>, <V>Nehirsenn</V><G>#0000</G></font>",
             "<p align='center'><b><font color='#f5d8b6' size='13'>مترجمون</font></b></p>\n"..
             "[ES] <V>Indexinel</V><G>#5948</G>\n"..
             "[AR] <V>Nnaaaz</V><G>#0000</G>\n",
@@ -823,6 +815,7 @@ tfm.exec.disableAfkDeath(true)
 tfm.exec.disableAutoNewGame(true)
 system.disableChatCommandDisplay()
 tfm.exec.disableMortCommand(true)
+tfm.exec.disablePhysicalConsumables(true)
 
 if tfm.get.room.isTribeHouse then
     tfm.exec.chatMessage(translations[roomLang].welcome, nil)
@@ -841,6 +834,17 @@ function gameStatus()
 
     if gameState.status == 1 then
         tfm.exec.newGame(7911404)
+
+        for i = 1, #operatives["blue"] do
+            tfm.exec.movePlayer(operatives["blue"][i], 240, 300, false, 0, 0, false)
+            tfm.exec.setNameColor(operatives["blue"][i], 0x3284a3)
+        end
+
+        for i = 1, #operatives["red"] do
+            tfm.exec.movePlayer(operatives["red"][i], 560, 300, false, 0, 0, false)
+            tfm.exec.setNameColor(operatives["red"][i], 0x8F2B1C)
+        end
+        
     end
 end
 
@@ -1051,21 +1055,6 @@ function checkBan(action, name)
 
     if action == "uban" then
         ui.removeImage("banned", name)
-    end
-end
-
-function pickWinner()
-    local whichTeam = blueCount < redCount and "blue" or "red"
-    if os.time()-last_enter > 2 * 60 * 1000 then
-        for i = 1, #operatives[whichTeam] do
-            tfm.exec.respawnPlayer(operatives[whichTeam][i])
-            tfm.exec.giveCheese(operatives[whichTeam][i])
-            tfm.exec.playerVictory(operatives[whichTeam][i])
-        end
-            tfm.exec.respawnPlayer(spymasters[whichTeam])
-            tfm.exec.giveCheese(spymasters[whichTeam])
-            tfm.exec.playerVictory(spymasters[whichTeam])
-            last_enter = os.time()
     end
 end
 
@@ -1735,7 +1724,6 @@ end
 
 function changeTurn(cardID, name)
     tfm.exec.playSound('transformice/son/np', 100, nil, nil, nil)
-    pickWinner()
     noLimit = 0
     ui.updateTextArea(textAreas.clue_text, translations[roomLang].thinking, nil)
     ui.updateTextArea(textAreas.clue_number, "<font color='#fafafa'><b>-</b></font>", nil)
@@ -2012,7 +2000,7 @@ function loadGameUI(name)
         ui.removeImage("prev_tips",name)
         ui.removeImage("logo",name)
 
-        ui.addImage("clue", images.clue_input, "_41", 300, 260,name)
+        ui.addImage("clue", images.clue_input, "!41", 300, 260,name)
 
         ui.addImage("bluecardscount", images.blue_circle, "_47", 30, 80,name,1, 1)
         ui.addImage("redcardscount", images.red_circle, "_47", 725, 80,name,1, 1)
