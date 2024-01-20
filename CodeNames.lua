@@ -60,7 +60,7 @@ translations = {
     },
     
     ["br"] = {
-        ["welcome"] = "<J>Bem vindo a <b>CODENAMES!</b> Aperta <b><VP>H</VP></b> Para aprender como jogar.</J>\n<ROSE>Entre no nosso discord: https://discord.gg/2fGUK2znyg </ROSE>",
+        ["welcome"] = "<J>Bem vindo a <b>CODENAMES!</b> Aperte <b><VP>H</VP></b> Para aprender como jogar.</J>\n<ROSE>Entre no nosso discord: https://discord.gg/2fGUK2znyg </ROSE>",
         ["red"] = "VERMELHO",
         ["blue"] = "AZUL",
         ["blueTurn"] = "<b><p align='center'><font color='#ffffff'>VEZ DO TIME AZUL </b></p></font>",
@@ -70,10 +70,10 @@ translations = {
         ["startButton"] = "<p align='center'><font size='14' color='#FFFFFF'><a href='event:startGame'>COMEÇAR</font></p>",
         ["joinButton"] = "<p align='center'><font color='#FFFFFF'><b><a href='event:joinTeam'>ENTRAR</a></b></font></p>",
         ["clueConfirmation"] = "<p align='center'>A dica do oponente é <b>%s</b> para <b>%d</b> palavras. Você confirma isso?</p>",
-        ["clueChecking"] = "<font size='10'><p align='center'><font color='%s'><b>%s</b></font> esta checando dica do oponente..</p></font>",
+        ["clueChecking"] = "<font size='10'><p align='center'><font color='%s'><b>%s</b></font> esta checando a dica do oponente..</p></font>",
         ["clueInfo"] = "A dica é <b>%s</b> para <b>%d</b> palavras.",
         ["clueGameLog"] = "<b>A dica de <font color='%s'>%s</b></font> é <font color='%s'><b>%s</b></font> para <b><font color='%s'>%d</b></font> palavra(s).",
-        ["roomAdminInfo"] = "O administrador da sala pode mudar as configurações e começar a qualquer momento.",
+        ["roomAdminInfo"] = "O administrador da sala pode mudar as configurações e começar o jogo a qualquer momento.",
         ["restartedGame"] = "<R> %s recomeçou o jogo. </R>",
         ["thinking"] = "<font color='#fafafa'><b> Pensando... </b></font>",
         ["blackGameOver"] = "<b><p align='center'><font size='10' color='#ffffff'>A EQUIPE %s FEZ CONTATO COM O ASSASSINO E PERDEU O JOGO! </b></p></font>",
@@ -86,7 +86,7 @@ translations = {
         ["contactedAssassin"] = "<font color='%s'><b>%s TIME</b></font> fez contato com <font color='#5B5B5B'>Assassino %s</font>",
         ["contactedRedAgent"] = "<font color='%s'><b>%s TIME</b></font> fez contato com <font color='#8F2B1C'>Agente %s</font>",
         ["contactedBlueAgent"] = "<font color='%s'><b>%s TIME</b></font> fez contato com <font color='#3284A3'>Agente %s</font>",
-        ["noClueLog"] = "<font color='%s'>%s</font> não proprocionou uma dica no tempo estabelecido.",
+        ["noClueLog"] = "<font color='%s'>%s</font> não proporcionou uma dica no tempo estabelecido.",
         ["noWordLog"] = "<font color='%s'>%s</font> não escolheu uma palavra no tempo estabelecido.",
         ["noActionSpy"] = "O espião mestre oponente não realizou nenhuma ação dentro do tempo especificado e a pista foi aprovada.",
         ["approvedClue"] = "<font color='%s'>%s</font> aprovou a dica de <font color='%s'>%s</font>.",
@@ -99,12 +99,12 @@ translations = {
         ["lockedRoom"] = "%s bloqueou a sala para %s ratos.",
         ["roomPassword"] = "Senha da sala mudada por %s",
         ["kickedTeam"] = "%s expulso por %s",
-        ["currentlyPlaying"] = "Um jogo esta sendo jogado, se você nao quer esperar, escreva <J>!sala</J> para criar sua sala.",
-        ["createOwnRoom"] = "Crie sua prorpia sala: <V>/sala <J>#codenames0<V>%s",
+        ["currentlyPlaying"] = "Um jogo esta sendo jogado, se você não quer esperar, escreva <J>!sala</J> para criar sua sala.",
+        ["createOwnRoom"] = "Crie sua propria sala: <V>/sala <J>#codenames0<V>%s",
         ["shuffleButton"] = "<p align='center'><a href='event:shufflewords'><b>MUDAR PALAVRAS</b></a></p>",
         ["shuffled"] = "<p align='center'><b>PALAVRAS MUDADAS, JOGO COMEÇA EM %d SEGUNDOS</b></p>",
-        ["shuffleText"] = "<p align='center'><b>VOCÊ PODE MUDAR AS PALAVRAS EM %d SEGUNDOS</b></p>",
-        ["wordIsExist"] = "<R>Você não pode dar essa dica porque esta palavra esta na grade de palavras.</R>",
+        ["shuffleText"] = "<p align='center'><b>VOCÊ PODERÁ MUDAR AS PALAVRAS EM %d SEGUNDOS</b></p>",
+        ["wordIsExist"] = "<R>Você não pode dar essa dica porque esta palavra está na grade de palavras.</R>",
         ["invalidClueError"] = "<R>Dica invalida! Uma pista não pode consistir em várias palavras.</R>",
         ["clueNumError"] = "<R>Escolha o número de palavras que seu time pode escolher.</R>",
     
@@ -323,15 +323,15 @@ help = {
         "COMO JOGAR",
 
         "Codenames é um jogo para dois times. Existe uma grade de <b>25</b> palavras."..
-        " Alguns deles são designados secretamente para o <font color='#8f2b1c'><b>Time vermelho</b></font>, algumas para o <font color='#3284a3'><b>Time azul</b></font>. Um jogador de  cade time é o Espião mestre, e somente Espiões mestres veem quais palavras pertencem a cada time."..
-        "  Os Espiões mestres tomam turnos dando dicas para cada Operantes, tentando levá-los a adivinhar as palavras de sua equipe. O time que adivinhar todas as suas palavras primeiro ganham o jogo.\n" ..
+        " Algumas delas são designadas secretamente para o <font color='#8f2b1c'><b>Time vermelho</b></font>, algumas para o <font color='#3284a3'><b>Time azul</b></font>. Um jogador de cada time é o Espião mestre, e somente Espiões mestres veem quais palavras pertencem a cada time."..
+        "  Os Espiões mestres tomam turnos dando dicas para cada Operantes, tentando levá-los a adivinhar as palavras de sua equipe. O time que adivinhar todas as suas palavras primeiro ganha o jogo.\n" ..
         "\n<b><font color='#f5d8b6' size='14'>TIMES</font></b>\n" ..
         "Um jogador de cada time deve clicar para Entrar como Espião mestre. Eles então verão as cores das cartas. Todos os outros devem clicar para entrar como Operantes. Eles não veem as cores das cartas. Clique no seu nome para sair do time, você consegue fazer isso antes de começar a partida.",
         
 
         "<b><font color='#f5d8b6' size='14'>DICAS</font></b>\n" ..
-        "Espião mestre da dicas." ..
-        " Quando é sua vez de dar uma dica, uma entrada de texto e um teclado númerico aparecerá na tela."..
+        "Espião mestre da as dicas." ..
+        " Quando é sua vez de dar uma dica, uma entrada de texto e um teclado númerico aparecerá na sua tela."..
         " Você deve escrever uma palavra na entrada como dica, selecione quantas cartas estão relacionadas a esta palavra no quadro numérico e clique no botão enviar para tornar sua dica oficial."..
         " Seus Operantes verão apenas a pista e o número de cartas relacionadas .\n"..
         "\n<p align='left'>Cuidado com a carta preta – isso é um assassino! Evite dicas que possam levar ao assassino ou às palavras da outra equipe.</p>"..
@@ -348,7 +348,7 @@ help = {
         "<b><font color='#f5d8b6' size='14'>GANHANDO & PERDENDO</font></b>\n"..
         "As equipes alternam turnos. Uma equipe vence quando todas as suas palavras forem adivinhadas. Eles perdem se adivinharem o Assassino!\n\n"..
         "<b><font color='#f5d8b6' size='14'>CONFIGURAÇÕES</font></b>\n"..
-        "<b><PT>CONFIRMAR DICAS DO OPONENTE:</PT></b> Espiões mestres devem confirmar as dicas de cada um, uma dica não confirmada não pode ser divulgada e uma dica diferente deve ser dada. Cada Espião mestre tem três chances para dar uma dica valida na sua vez.\n\n"..
+        "<b><PT>CONFIRMAR DICAS DO OPONENTE:</PT></b> Espiões mestres devem confirmar as dicas de cada um, uma dica não confirmada não pode ser divulgada e uma dica diferente deve ser dada. Cada Espião mestre tem três chances para dar uma dica válida na sua vez.\n\n"..
         "<b><PT>TEMPO LIMITE:</PT></b> Impõe um limite de tempo para dar dicas e escolher palavras. se nenhuma ação for tomada dentro do tempo especificado, a vez passa pro outro time. (180 segundos para dicas, 120 segundos para escolha de palavras)",
 
     },
@@ -363,7 +363,7 @@ help = {
         "• Mantenha suas pistas no espírito do jogo e, se não tiver certeza, pergunte ao Espião mestre adversário (usando algum canal de bate-papo que os outros jogadores não possam ouvir ou ver)..",
     },
     {
-        "CREDITOS",
+        "CRÉDITOS",
         "<p align='center'><b><font color='#f5d8b6' size='13'>DESENVOLVIMENTO & DESIGN</font></b>\n"..
         "<font size='12'><V>Mckeydown</V><G>#0000</G></font>\n\n"..
         "<p align='center'><b><font color='#f5d8b6' size='13'>MODULE HOSTER                       GRANDE CONSULTOR</font></b></p>"..
@@ -568,25 +568,25 @@ commandsPage = {
 ["br"] = {
     "<font color='#ffffff' size='20'><p align='center'>COMANDOS & TECLAS</font></p>",
     "<b><p align='left'><font size='13'><CS>COMANDOS DE ADMINISTRADORES DE SALA</CS></font></p></b>"..
-    "<PT><b>!restart</b></PT> — Reseta configurações, times, cartas, pontos, historico e te leva de volta pro inicio.\n"..
-    "<b><PT>!ban</PT> <V>Jogador</V><G>#tag</G></b> — O jogador especificado nao pode entrar em time nenhum, Não pode ver cartas nem dicas.\n"..
+    "<PT><b>!restart</b></PT> — Reseta configurações, times, cartas, pontos, histórico e te leva de volta pro inicio.\n"..
+    "<b><PT>!ban</PT> <V>Jogador</V><G>#tag</G></b> — O jogador especificado não poderá entrar em time nenhum, nem poderá ver cartas nem dicas.\n"..
     "<b><PT>!uban</PT> <V>Jogador</V><G>#tag</G></b> — Remove os efeitos do comando de ban do jogador especificado.\n"..
     "<b><PT>!lock</PT> <V>[número]</V></b> — Coloca um limite no número de ratos na sala.\n"..
     "<b><PT>!pw</PT> <V>[senha]</V></b> — Coloca senha.\n"..
     "<b><PT>!kick</PT> <V>Jogador</V><G>#tag</G></b> — Expulsa um jogador especifico do time.\n"..
-    "<b><PT>!newadmin</PT> <V>Jogador</V><G>#tag</G></b> — Seta um novo admin de sala.\n\n",
+    "<b><PT>!newadmin</PT> <V>Jogador</V><G>#tag</G></b> — Seta um novo administrador de sala.\n\n",
     "<b><p align='left'><font size='13'><CS>COMANDOS DOS JOGADORES</CS></font></p></b>"..
-    "<b><PT>!admins</PT></b> — Mostra os adms do module.\n"..
+    "<b><PT>!admins</PT></b> — Mostra os administradores do module.\n"..
     "<b><PT>!t</PT> <V>[mensagem]</V></b> — Comunica com seus companheiros de equipe, Espiões mestres tambem podem conversar entre eles.\n"..
     "<b><PT>!admin</PT></b> — Mostra o adm da sala.\n"..
     "<b><PT>!forum</PT></b> — Tópico do module no forum.\n"..
-    "<b><PT>!discord</PT></b> — Entre no nosso servidor do Discord para reportar bugs, e sugerir palavras.\n"..
+    "<b><PT>!discord</PT></b> — Entre no nosso servidor do Discord para reportar bugs e/ou sugerir palavras.\n"..
     "<b><PT>!room</PT></b> — Printa sua própria sala.\n\n"..
     "<b><p align='left'><font size='13'><CS>TECLAS</CS></font></p></b>"..
-    "<b><PT>[H]</PT></b> — Mostra pagina de ajuda.\n"..
-    "<b><PT>[K]</PT></b> — Mostra pagina de comandos e teclas.\n"..
-    "<b><PT>[CTRL]</PT></b> — Mostra o historico.\n"..
-    "<b><PT>[LSHIFT]</PT></b> — Mostra o histórico de  tme que voce está.\n",
+    "<b><PT>[H]</PT></b> — Mostra página de ajuda.\n"..
+    "<b><PT>[K]</PT></b> — Mostra página de comandos e teclas.\n"..
+    "<b><PT>[CTRL]</PT></b> — Mostra o histórico.\n"..
+    "<b><PT>[LSHIFT]</PT></b> — Mostra o histórico de  time que voce está.\n",
 },
 
     ["tr"] = {
@@ -674,6 +674,20 @@ tips = {
         "Press <b>[LSHIFT]</b> to see your team's clue log.",
         "You can play in 6 different languages: EN, TR, FR, ES, PT, AR",
         "Create your own room with: <b><J>#codenames0</J><V>PlayerName</V><G>#tag</G></b>",
+    },
+
+    ["br"] = {
+        "Clique no botão no canto superior esquerdo para ser o administrador da sala!",
+        "Você precisa pelo menos <b>4</b> jogadores para começar o jogo!",
+        "Se você quiser sair do time, clique no seu nome.",
+        "A equipe que receber a primeira dica tem <b>9</b> agentes em campo!",
+        "O outro time tem <b>8</b> agentes em campo!",
+        "A dica não pode exceder <b>32</b> letras!",
+        "Você não pode dar mais palavras do que o número restante de cartas!",
+        "Aperte <b>[CTRL]</b> para ver históricode.",
+        "Aperte <b>[LSHIFT]</b> para ver histórico de dicas do seu time.",
+        "Você pode jogar em 6 diferentes idiomas: EN, TR, FR, ES, PT, AR",
+        "Crie sua própria sala com: <b><J>#codenames0</J><V>PlayerName</V><G>#tag</G></b>",
     },
 
     ["tr"] = {
